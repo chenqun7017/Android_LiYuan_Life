@@ -9,4 +9,8 @@
     <color name="black">#191919</color>
     <color name="viewbadger">#FE0001</color>
 
+    <color name="text">#EFEFEF</color>
+    <color name="activityback">#EFEFEF</color>
+
+
 </resources>

@@ -13,7 +13,6 @@ import android.view.Window;
 
 @SuppressLint("NewApi")
 public abstract class BaseDialog extends DialogFragment {
-	/** 官方推荐使用DialogFragment有生命周期可管理Dialog,不建议Dialog*/
 	public View view;
 	public Context mContext;
 

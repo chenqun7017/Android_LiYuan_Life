@@ -29,16 +29,17 @@
 
     <TextView
         android:id="@+id/tv_badge"
-        android:layout_width="21px"
-        android:layout_height="21px"
+        android:layout_width="23px"
+        android:layout_height="23px"
         app:layout_auto_basewidth="height"
         android:gravity="center"
         android:text="99+"
+        android:padding="1px"
         android:textColor="@android:color/white"
         android:background="@drawable/viewbadger"
-        android:textSize="14px"
+        android:textSize="13px"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="22px"
+        android:layout_marginTop="18px"
         android:layout_alignParentRight="true"
         android:layout_marginRight="22px"/>
 

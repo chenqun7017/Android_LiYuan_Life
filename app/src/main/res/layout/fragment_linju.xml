@@ -2,8 +2,51 @@
 <com.zhy.autolayout.AutoLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include layout="@layout/include_apptoolbar"/>
+    <include layout="@layout/include3line"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="26px"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="40px"
+        android:text="联系人"
+        android:drawablePadding="10px"
+        android:drawableLeft="@drawable/ic_launcher"/>
+
+<com.zhy.autolayout.AutoRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="100px"
+    android:background="@color/activityback">
+    <TextView
+        android:layout_width="4px"
+        android:layout_height="40px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3px"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26px"
+        android:textColor="@color/black"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50px"
+        android:text="聊天"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_linju"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+
 
 </com.zhy.autolayout.AutoLinearLayout>

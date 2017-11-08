@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@android:color/white"
     android:id="@+id/rl_toolbar"
     android:layout_height="88px">
 
@@ -16,21 +18,45 @@
 
 
     <TextView
+        android:id="@+id/toolbar_center_text"
         android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="35px"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:visibility="gone"
-        android:layout_marginRight="30px"
-        android:layout_centerVertical="true"/>
+        android:id="@+id/toolbar_right_image"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10px"
+        android:layout_toLeftOf="@+id/toolbar_right_text"/>
     <TextView
+        android:id="@+id/toolbar_right_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="26px"
+        android:textColor="@color/black"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30px"/>
+
+    <TextView
+        android:id="@+id/tv_badge"
+        android:layout_width="23px"
+        android:layout_height="23px"
+        app:layout_auto_basewidth="height"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="99+"
+        android:padding="1px"
+        android:textColor="@android:color/white"
+        android:background="@drawable/viewbadger"
+        android:textSize="13px"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18px"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="22px"/>
 
 </com.zhy.autolayout.AutoRelativeLayout>
