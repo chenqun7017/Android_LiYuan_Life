@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-  <include layout="@layout/include_apptoolbar"/>
+  <include layout="@layout/include_apptoolbar_w"/>
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_xhoubian_search"
@@ -21,13 +21,70 @@
             android:layout_marginBottom="10px"
             android:layout_centerInParent="true"
             android:background="@drawable/shape_zhoubianservices_search"/>
-
-
     </com.zhy.autolayout.AutoRelativeLayout>
 
 
+    <include
+        layout="@layout/public_title_layout"/>
+
+    <include
+        layout="@layout/include3line"/>
+
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/rc_zhoubian_first"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+</android.support.v7.widget.RecyclerView>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="10px"
+      android:background="#C2C2C2"/>
 
 
+  <com.zhy.autolayout.AutoRelativeLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="110px">
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="3px"
+        android:layout_height="40px"
+        android:layout_marginLeft="40px"
+        android:layout_centerVertical="true"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/line"
+        android:textSize="25px"
+        android:layout_marginLeft="20px"
+        android:text="sss"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"  />
+
+  </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/rc_zhoubian_second"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+  </android.support.v7.widget.RecyclerView>
+
+  <include
+      layout="@layout/include3line"/>
+
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/rc_guangchang_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+  </android.support.v7.widget.RecyclerView>
 
 
 

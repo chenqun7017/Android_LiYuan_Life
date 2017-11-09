@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include layout="@layout/include_apptoolbar"/>
+    <include layout="@layout/include_apptoolbar_w"/>
 
  <TextView
     android:layout_width="match_parent"
@@ -51,6 +51,7 @@
             android:id="@+id/tv_my_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="8px"
             android:layout_below="@+id/iv_my_userimage"
             android:layout_alignParentRight="true"
             android:layout_marginTop="30px"
@@ -132,7 +133,7 @@
                 android:layout_centerInParent="true"
                 android:textColor="@color/black"
                 android:textSize="26px"
-                android:text="我的动态"/>
+                android:text="我的收藏"/>
 
 
         </com.zhy.autolayout.AutoRelativeLayout>
@@ -185,6 +186,8 @@
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
+
+    <include layout="@layout/include3line"/>
 
 
     <com.zhy.autolayout.AutoLinearLayout

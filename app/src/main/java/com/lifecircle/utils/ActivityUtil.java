@@ -1,84 +1,78 @@
 package com.lifecircle.utils;
 
+import android.app.Activity;
+import android.content.Intent;
 
-/*
- *
- *
- * 版 权 :@Copyright 北京******有限公司版权所有
- *
- * 作 者 :desperado
- *
- * 版 本 :1.0
- *
- * 创建日期 :2016/4/7 下午10:45
- *
- * 描 述 :activity页面跳转
- *
- * 修订日期 :
- */
+import com.lifecircle.ui.guangchang.MainActivity;
+import com.lifecircle.ui.my.MyIntegralActivity;
+import com.lifecircle.ui.my.MyOrderActivity;
+import com.lifecircle.ui.my.MySetActivity;
+import com.lifecircle.ui.my.MyWalletActivity;
+
 public class ActivityUtil {
 
-/*
-
-    */
 /**
-     * 跳转到登陆页面
+     * 跳转到主页面
      *
      * @param _activity
-     *//*
+     */
 
     public static void startMainActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, MainActivity.class);
         localIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         _activity.startActivity(localIntent);
+        _activity.finish();
     }
 
-    */
 /**
-     * 跳转到登陆页面
+     * 跳转到我的设置页面
      *
      * @param _activity
-     *//*
+     */
 
-    public static void startLoginActivity(Activity _activity) {
-        Intent localIntent = new Intent(_activity, LoginActivity.class);
-        localIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    public static void startMySetActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MySetActivity.class);
         _activity.startActivity(localIntent);
     }
 
-    */
 /**
-     * 跳转到登陆页面
+     * 跳转到我的订单
      *
      * @param _activity
-     *//*
+     */
 
-    public static void startLoginActivityForResult(Activity _activity) {
-        Intent localIntent = new Intent(_activity, LoginActivity.class);
-        localIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        localIntent.putExtra(LocalConstant.KEY_REFRESH_NEWS_STATUS, true);
-        _activity.startActivityForResult(localIntent, LocalConstant.CODE_REFRESH_NEWS_STATUS);
+    public static void startMyOrderAcitivy(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyOrderActivity.class);
+        _activity.startActivity(localIntent);
+
     }
 
 
-    */
 /**
-     * 跳转到注册页面页面
+     * 跳转到我的钱包页面
      *
      * @param _activity
-     *//*
+     */
 
-    public static void startRegisterActivity(Activity _activity) {
-        Intent localIntent = new Intent(_activity, RegisterActivity.class);
+    public static void startMyWalletActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyWalletActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到我的积分页面
+     *
+     * @param _activity
+     */
+
+    public static void startIntegralActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyIntegralActivity.class);
         _activity.startActivity(localIntent);
     }
 
 
-
-
-    */
 /**
-     * 跳转到重新设置密码页面
+     * 跳转到我的积分页面
      *
      * @param _activity
      * @param phone     电话号码

@@ -14,7 +14,7 @@ import com.lifecircle.base.BaseActivity;
 import com.lifecircle.ui.fragmemt.GuangChangFragment;
 import com.lifecircle.ui.fragmemt.LinJuFragment;
 import com.lifecircle.ui.fragmemt.MyFragment;
-import com.lifecircle.ui.fragmemt.ZhouBianServices;
+import com.lifecircle.ui.fragmemt.ZhouBianServiceFragment;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -121,7 +121,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private void clickTabToZhouBianServices() {
         if (zhouBianServices == null) {
-            zhouBianServices = new ZhouBianServices();
+            zhouBianServices = new ZhouBianServiceFragment();
         }
         addOrShowFragment(getSupportFragmentManager().beginTransaction(), zhouBianServices);
         // 设置图片文本的变化

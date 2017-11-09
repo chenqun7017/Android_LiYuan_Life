@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_item_zhoubian_second"
+        android:layout_width="90px"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="40px"
+        android:layout_height="90px"
+        android:src="@drawable/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tv_item_zhoubian_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_item_zhoubian_second"
+        android:layout_marginLeft="20px"
+        android:textSize="28px"
+        android:layout_marginTop="20px"
+        android:textColor="@color/black"
+        android:text="第二份食物"/>
+
+    <TextView
+        android:id="@+id/tv_item_zhoubian_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_item_zhoubian_title"
+        android:layout_toRightOf="@+id/iv_item_zhoubian_second"
+        android:layout_marginLeft="20px"
+        android:textSize="24px"
+        android:layout_marginTop="10px"
+        android:textColor="#C6C6C6"
+        android:text="金秋风暴下单立返20%"/>
+
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

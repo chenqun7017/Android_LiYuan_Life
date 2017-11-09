@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseFragment;
+import com.lifecircle.utils.ActivityUtil;
 
 /**
  * Created by lenovo on 2017/11/7.
@@ -26,6 +27,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         centerText.setText("我");
         TextView rightText=view.findViewById(R.id.toolbar_right_text);
         rightText.setText("设置");
+        rightText.setOnClickListener(this);
         ImageView rightImage=view.findViewById(R.id.toolbar_right_image);
         rightImage.setImageResource(R.drawable.ic_launcher);
 
@@ -40,6 +42,8 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
 
         TextView tv_my_info=view.findViewById(R.id.tv_my_info);
         tv_my_info.setText("修改资料");
+        TextView tv_my_integral_tag=view.findViewById(R.id.tv_my_integral_tag);
+        tv_my_integral_tag.setOnClickListener(this);
 
         RelativeLayout rl_my_dynamics=view.findViewById(R.id.rl_my_dynamics);
         rl_my_dynamics.setOnClickListener(this);
@@ -98,10 +102,15 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 break;
             case R.id.tv_my_sign:
                 break;
+            case R.id.tv_my_integral_tag:
+                ActivityUtil.startIntegralActivity(getActivity());
+                break;
 
             case R.id.rl_my_order:
+                ActivityUtil.startMyOrderAcitivy(getActivity());
                 break;
             case R.id.rl_my_money:
+                ActivityUtil.startMyWalletActivity(getActivity());
                 break;
             case R.id.rl_my_mission:
                 break;
@@ -114,6 +123,12 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 break;
             case R.id.ll_my_myinvitation:
                 break;
+
+            case R.id.toolbar_right_text:
+                ActivityUtil.startMySetActivity(getActivity());
+                break;
+                default:
+                    break;
 
         }
 

@@ -22,13 +22,26 @@
             android:background="@drawable/banner_sp">
         </ImageView>
 
-   <android.support.v7.widget.RecyclerView
-       android:id="@+id/guangchang_listvew"
-       android:layout_width="match_parent"
-       android:layout_below="@+id/banner"
-       android:layout_height="262px">
+    <com.lifecircle.view.publicViewPageMens
+        android:id="@+id/guangchang_viewpager"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/banner"
+        android:layout_height="262px">
+    </com.lifecircle.view.publicViewPageMens>
 
-   </android.support.v7.widget.RecyclerView>
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/guangchang_viewpager"
+        android:id="@+id/rc_guangchang_list"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
 
 
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -12,5 +12,7 @@
     <color name="text">#EFEFEF</color>
     <color name="activityback">#EFEFEF</color>
 
+    <color name="divider">#EFEFEF</color>
+
 
 </resources>

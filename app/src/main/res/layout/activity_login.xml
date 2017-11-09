@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_apptoolbar_b"/>
+
+<ImageView
+    android:id="@+id/iv_login_img"
+    android:layout_width="100px"
+    android:layout_height="110px"
+    android:layout_marginTop="100px"
+    android:layout_gravity="center_horizontal"
+    android:src="@drawable/ic_launcher"/>
+
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_login_et"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px"
+        android:orientation="horizontal"
+        android:layout_marginTop="50px"
+        android:layout_height="100px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginLeft="20px"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/colorPrimary"
+    android:textSize="26px"
+    android:layout_marginLeft="20px"
+    android:text="手机号码"/>
+        <EditText
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_weight="1"/>
+
+
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="494px"
+        android:background="@drawable/shape_login_et"
+        android:layout_centerVertical="true"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="26px"
+            android:layout_marginLeft="20px"
+            android:text="手机号码"/>
+        <EditText
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_weight="1"/>
+
+
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:layout_width="160px"
+            android:layout_height="match_parent"
+            android:textSize="26px"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimary"
+            android:text="发送验证码"
+            android:gravity="center"
+            android:background="@drawable/shape_login_et"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="100px"
+        android:background="@drawable/shape_login_btn"
+        android:textSize="26px"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="登陆"/>
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#D1D1D1"
+    android:textSize="24px"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="50px"
+    android:text="第三方登陆"/>
+
+
+<com.zhy.autolayout.AutoLinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="150px"
+    android:layout_marginLeft="50px"
+    android:layout_marginTop="50px"
+    android:layout_marginRight="50px"
+    android:orientation="horizontal">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_login_weixi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:src="@drawable/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="#D1D1D1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:layout_below="@+id/iv_login_weixi"
+            android:text="QQ"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_login_wei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:src="@drawable/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="#D1D1D1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:layout_below="@+id/iv_login_wei"
+            android:text="微信"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_login_we"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:src="@drawable/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="#D1D1D1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:layout_below="@+id/iv_login_we"
+            android:text="QQ"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

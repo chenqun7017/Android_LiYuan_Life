@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110px">
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="3px"
+        android:layout_height="40px"
+        android:layout_marginLeft="40px"
+        android:layout_centerVertical="true"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/tv_title_name"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/tv_line"
+        android:textSize="25px"
+        android:layout_marginLeft="20px"
+        android:text="sss"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"  />
+
+    <TextView
+        android:id="@+id/tv_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25px"
+        android:layout_marginRight="30px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="全部"/>
+
+
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

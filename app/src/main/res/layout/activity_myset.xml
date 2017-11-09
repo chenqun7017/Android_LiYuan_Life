@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="98px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="通知设置"/>
+
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/ic_launcher"
+           android:layout_centerVertical="true"
+           android:layout_marginRight="30px"
+           android:layout_alignParentRight="true"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <include layout="@layout/include3line"/>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="98px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="意建反馈"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <include layout="@layout/include3line"/>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="98px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="清除缓存"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <include layout="@layout/include3line"/>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="98px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="分享"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <include layout="@layout/include3line"/>
+
+
+    <TextView
+        android:id="@+id/tv_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="100px"
+        android:background="@drawable/shape_login_btn"
+        android:textSize="26px"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="退出登陆"/>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
