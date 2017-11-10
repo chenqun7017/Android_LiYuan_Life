@@ -18,7 +18,7 @@
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:background="@drawable/shape_login_et"
+        android:background="@drawable/shape_colorprimary_nor"
         android:layout_marginLeft="40px"
         android:layout_marginRight="40px"
         android:orientation="horizontal"
@@ -60,7 +60,7 @@
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="494px"
-        android:background="@drawable/shape_login_et"
+        android:background="@drawable/shape_colorprimary_nor"
         android:layout_centerVertical="true"
         android:layout_height="match_parent">
 
@@ -97,7 +97,7 @@
             android:textColor="@color/colorPrimary"
             android:text="发送验证码"
             android:gravity="center"
-            android:background="@drawable/shape_login_et"/>
+            android:background="@drawable/shape_colorprimary_nor"/>
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <TextView
@@ -107,7 +107,7 @@
         android:layout_marginLeft="30px"
         android:layout_marginRight="30px"
         android:layout_marginTop="100px"
-        android:background="@drawable/shape_login_btn"
+        android:background="@drawable/shape_colorprimary_pre"
         android:textSize="26px"
         android:textColor="@android:color/white"
         android:gravity="center"

@@ -30,6 +30,10 @@
         <activity android:name="com.lifecircle.ui.my.MyWalletActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyIntegralActivity"/>
 
+        <activity android:name="com.lifecircle.ui.SearchActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyTaskActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyFollowActivity"/>
+
 
 
 
@@ -39,5 +43,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- if you want to load images from a file OR from the internet -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
 </manifest>

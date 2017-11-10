@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseFragment;
+import com.lifecircle.ui.dialog.DialogSign;
 import com.lifecircle.utils.ActivityUtil;
 
 /**
@@ -81,12 +82,6 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         LinearLayout ll_my_myinvitation=view.findViewById(R.id.ll_my_myinvitation);
         rl_my_follow.setOnClickListener(this);
 
-
-
-
-
-
-
         return view;
 
     }
@@ -101,6 +96,8 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
             case R.id.rl_my_collection:
                 break;
             case R.id.tv_my_sign:
+                DialogSign dialogSign=new DialogSign();
+                dialogSign.show(getActivity().getFragmentManager(),"dialogSign");
                 break;
             case R.id.tv_my_integral_tag:
                 ActivityUtil.startIntegralActivity(getActivity());
@@ -113,8 +110,10 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 ActivityUtil.startMyWalletActivity(getActivity());
                 break;
             case R.id.rl_my_mission:
+                ActivityUtil.startTaskActivity(getActivity());
                 break;
             case R.id.rl_my_follow:
+                ActivityUtil.startFollowActivity(getActivity());
                 break;
 
             case R.id.ll_my_storecollection:

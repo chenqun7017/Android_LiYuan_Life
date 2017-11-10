@@ -46,7 +46,7 @@
         android:id="@+id/tv_item_leadscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/text_leadscore"
+        android:background="@drawable/shape_colorprimary_pre"
         android:layout_below="@+id/line"
         android:textSize="25px"
         android:textColor="#E9A160"

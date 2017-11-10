@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/guangchang_viewpager"
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
         android:layout_height="262px">

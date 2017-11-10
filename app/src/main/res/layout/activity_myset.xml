@@ -120,7 +120,7 @@
         android:layout_marginLeft="30px"
         android:layout_marginRight="30px"
         android:layout_marginTop="100px"
-        android:background="@drawable/shape_login_btn"
+        android:background="@drawable/shape_colorprimary_pre"
         android:textSize="26px"
         android:textColor="@android:color/white"
         android:gravity="center"

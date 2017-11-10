@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170px">
+    <TextView
+        android:id="@+id/tv_mytask_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="10px"
+        android:textSize="24px"
+        android:textColor="@color/black"
+       android:text="送快递"/>
+    <TextView
+        android:id="@+id/tv_mytask_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20px"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="10px"
+        android:layout_below="@+id/tv_mytask_name"
+        android:textColor="@color/text"
+        android:lines="1"
+        android:text="注法制备及其可见光催化性能"/>
+
+    <TextView
+        android:id="@+id/tv_mytask_times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20px"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="10px"
+        android:layout_below="@+id/tv_mytask_notes"
+        android:textColor="@color/text"
+        android:lines="1"
+        android:text="发布时间：2017-14-25"/>
+
+    <TextView
+        android:id="@+id/tv_mytask_tate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20px"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="10px"
+        android:layout_below="@+id/tv_mytask_times"
+        android:textColor="@color/text"
+        android:lines="1"
+        android:text="任务状态"/>
+
+    <TextView
+        android:id="@+id/tv_mytask_tatecode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20px"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="10px"
+        android:layout_toRightOf="@+id/tv_mytask_tate"
+        android:layout_below="@+id/tv_mytask_times"
+        android:textColor="@color/colorPrimary"
+        android:lines="1"
+        android:text="待接单"/>
+
+<TextView
+    android:id="@+id/tv_my_taskmoney"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/colorPrimary"
+    android:textSize="24px"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="30px"
+    android:layout_marginTop="10px"
+    android:layout_alignParentTop="true"
+    android:text="￥200"/>
+
+    <TextView
+        android:id="@+id/tv_my_taskcancl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:padding="10px"
+        android:text="取消任务"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20px"
+        android:layout_marginRight="20px"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shape_colorprimary_pre"/>
+
+
+    <TextView
+        android:id="@+id/tv_my_task_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:padding="10px"
+        android:text="编缉"
+        android:layout_toLeftOf="@+id/tv_my_taskcancl"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20px"
+        android:layout_marginRight="10px"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/shape_colorprimary_nor"/>
+
+
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

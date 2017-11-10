@@ -11,19 +11,17 @@ import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.utils.ActivityUtil;
 
+import retrofit2.Retrofit;
+
 /**
  * Created by lenovo on 2017/11/9.
  */
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
-   private TextView toolbar_center_text;
+    private TextView toolbar_center_text;
 
     private TextView tv_login_btn;
-
-
-
-
 
     @SuppressLint("ResourceAsColor")
     @Override

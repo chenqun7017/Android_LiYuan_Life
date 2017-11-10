@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px">
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_myorder_all"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_myorder_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="30px"
+                android:text="全部订单"/>
+            <TextView
+                android:id="@+id/tv_myorder_alltab"
+                android:layout_width="121px"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3px"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_myorder_ing"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_myorder_ing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="30px"
+                android:text="进行中"/>
+            <TextView
+                android:id="@+id/tv_myorder_ingtab"
+                android:layout_width="95px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3px"
+                android:layout_centerHorizontal="true"
+                android:layout_height="3px"
+                android:visibility="gone"
+                android:background="@color/colorPrimary"/>
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_myorder_commenting"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_myorder_commenting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="30px"
+                android:text="待评价"/>
+            <TextView
+                android:id="@+id/tv_myorder_commentingtab"
+                android:layout_width="95px"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:layout_marginBottom="3px"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_myorder_backmoney"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_myorder_backmoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="30px"
+                android:text="退款中"/>
+            <TextView
+                android:id="@+id/tv_myorder_backmoneytab"
+                android:layout_width="95px"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:layout_marginBottom="3px"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_myorder_finish"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_myorder_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="30px"
+                android:text="已关闭"/>
+            <TextView
+                android:id="@+id/tv_myorder_finishtab"
+                android:layout_width="95px"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3px"
+                android:visibility="gone"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_my_task"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

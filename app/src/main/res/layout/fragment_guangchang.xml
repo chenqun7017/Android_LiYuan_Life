@@ -5,30 +5,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_search"
-        android:id="@+id/include"/>
+    <include layout="@layout/include_search"/>
 
         <com.youth.banner.Banner
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="336px"
-            android:layout_below="@+id/include"/>
+            android:layout_below="@+id/rl_search"/>
 
         <ImageView
-            android:layout_below="@+id/include"
+            android:layout_below="@+id/rl_search"
             android:layout_width="match_parent"
             android:layout_height="100px"
             android:layout_marginTop="286px"
             android:background="@drawable/banner_sp">
         </ImageView>
 
-    <com.lifecircle.view.publicViewPageMens
+    <com.lifecircle.view.PublicViewPageMens
         android:id="@+id/guangchang_viewpager"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
         android:layout_below="@+id/banner"
         android:layout_height="262px">
-    </com.lifecircle.view.publicViewPageMens>
+    </com.lifecircle.view.PublicViewPageMens>
 
 
 

@@ -9,10 +9,12 @@
     <color name="black">#191919</color>
     <color name="viewbadger">#FE0001</color>
 
-    <color name="text">#EFEFEF</color>
+    <color name="text">#C8C8C8</color>
     <color name="activityback">#EFEFEF</color>
-
     <color name="divider">#EFEFEF</color>
+
+
+
 
 
 </resources>

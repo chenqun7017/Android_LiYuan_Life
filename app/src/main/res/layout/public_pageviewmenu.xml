@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.lifecircle.view.publicViewPageMens
+    <com.lifecircle.view.PublicViewPageMens
         android:id="@+id/guangchang_viewpager"
         android:layout_width="match_parent"
         android:layout_below="@+id/banner"
         android:layout_height="262px">
-    </com.lifecircle.view.publicViewPageMens>
+    </com.lifecircle.view.PublicViewPageMens>
 </com.zhy.autolayout.AutoLinearLayout>

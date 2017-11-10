@@ -181,6 +181,7 @@
       android:layout_marginRight="30px"
       android:layout_centerVertical="true"
     android:textSize="20px"
+      android:padding="10px"
       android:textColor="#FA773C"
     android:background="@drawable/shape_my_sing"/>
 
@@ -369,7 +370,7 @@
             android:textSize="26px"
             android:layout_marginLeft="10px"
             android:textColor="@color/text"
-            android:text="店铺收藏"/>
+            android:text="我的邀请"/>
 
         <ImageView
             android:layout_width="wrap_content"

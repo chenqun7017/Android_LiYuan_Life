@@ -20,7 +20,7 @@ public class linjuAdapter extends BaseQuickAdapter<linJuChatBean, BaseViewHolder
 
 
     public linjuAdapter(int layoutResId, List data) {
-        super(R.layout.item_linju_chat, data);
+        super(layoutResId, data);
 
     }
 

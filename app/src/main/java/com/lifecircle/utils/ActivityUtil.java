@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.lifecircle.ui.guangchang.MainActivity;
+import com.lifecircle.ui.my.MyFollowActivity;
 import com.lifecircle.ui.my.MyIntegralActivity;
 import com.lifecircle.ui.my.MyOrderActivity;
 import com.lifecircle.ui.my.MySetActivity;
 import com.lifecircle.ui.my.MyWalletActivity;
+import com.lifecircle.ui.my.MyTaskActivity;
 
 public class ActivityUtil {
 
@@ -67,6 +69,38 @@ public class ActivityUtil {
 
     public static void startIntegralActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, MyIntegralActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到搜索页面
+     *
+     * @param _activity
+     */
+
+    public static void startSearchActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyIntegralActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 跳转到任务页面
+     *
+     * @param _activity
+     */
+
+    public static void startTaskActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyTaskActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到关注页面
+     *
+     * @param _activity
+     */
+
+    public static void startFollowActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyFollowActivity.class);
         _activity.startActivity(localIntent);
     }
 
