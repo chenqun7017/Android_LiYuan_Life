@@ -45,7 +45,7 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
         toolbar_center_text.setText("生活服务");
 
         ImageView toolbar_right_image=view.findViewById(R.id.toolbar_right_image);
-        toolbar_right_image.setImageResource(R.drawable.ic_launcher);
+        toolbar_right_image.setImageResource(R.drawable.fabu);
 
         RelativeLayout rl_xhoubian_search=view.findViewById(R.id.rl_xhoubian_search);
         rl_xhoubian_search.setOnClickListener(this);
@@ -88,6 +88,8 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
         switch (view.getId()){
             case R.id.rl_xhoubian_search:
                 break;
+                default:
+                    break;
         }
 
     }

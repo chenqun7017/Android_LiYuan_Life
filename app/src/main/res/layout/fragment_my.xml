@@ -1,91 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/activityback"
     android:orientation="vertical">
-    <include layout="@layout/include_apptoolbar_w"/>
 
- <TextView
-    android:layout_width="match_parent"
-    android:layout_height="10px"
-    android:background="@color/text"/>
+    <include layout="@layout/include_apptoolbar_w" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30px"
+        android:layout_marginTop="20px"
         android:background="@android:color/white">
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_my_userimage"
             android:layout_width="120px"
             android:layout_height="120px"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="19px"
+            android:src="@drawable/userdefaultimage"
             app:civ_border_color="@android:color/white"
             app:civ_border_width="0px"
-            app:layout_auto_basewidth="height"
-            android:layout_marginLeft="40px"/>
+            app:layout_auto_basewidth="height" />
+
         <TextView
             android:id="@+id/tv_my_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="36px"
+            android:layout_marginLeft="19px"
+            android:layout_marginTop="50px"
             android:layout_toRightOf="@+id/iv_my_userimage"
-            android:layout_marginLeft="90px"
-            android:layout_marginTop="50px"/>
+            android:textColor="@color/black"
+            android:textSize="36px" />
 
         <TextView
             android:id="@+id/tv_my_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_my_userimage"
-            android:layout_marginTop="30px"
-            android:layout_marginLeft="40px"
-            android:textSize="26px"
-            android:textColor="#C2C2C2"/>
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="36px"
+            android:textColor="@color/text"
+            android:textSize="23px" />
 
         <TextView
             android:id="@+id/tv_my_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8px"
-            android:layout_below="@+id/iv_my_userimage"
+            android:layout_width="150px"
+            android:layout_height="60px"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="30px"
+            android:layout_marginBottom="29px"
             android:layout_marginRight="30px"
-            android:textSize="26px"
-            android:textColor="@color/text"
-            android:background="@drawable/shape_my_info"/>
+            android:layout_marginTop="148px"
+            android:background="@drawable/shape_my_info"
+            android:gravity="center"
+            android:textColor="#636363"
+            android:textSize="24px" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
-    <include layout="@layout/include3line"/>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="80px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white"
         android:orientation="horizontal">
+
         <com.zhy.autolayout.AutoRelativeLayout
             android:id="@+id/rl_my_dynamics"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:text="我的动态"
                 android:textColor="@color/black"
-                android:textSize="26px"
-                android:text="我的动态"/>
+                android:textSize="26px" />
+
             <TextView
                 android:layout_width="1px"
-                android:layout_height="10px"
-                android:background="#EFEFEF"
+                android:layout_height="30px"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:background="@color/activityback" />
 
         </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -94,25 +97,28 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
             <TextView
                 android:layout_width="1px"
-                android:layout_height="10px"
-                android:background="#EFEFEF"
+                android:layout_height="30px"
                 android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:background="@color/activityback" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:text="我的评论"
                 android:textColor="@color/black"
-                android:textSize="26px"
-                android:text="我的评论"/>
+                android:textSize="26px" />
+
             <TextView
                 android:layout_width="1px"
                 android:layout_height="10px"
-                android:background="#EFEFEF"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:background="#EFEFEF" />
 
         </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -121,269 +127,294 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
             <TextView
                 android:layout_width="1px"
-                android:layout_height="10px"
-                android:background="#EFEFEF"
-              android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"/>
+                android:layout_height="30px"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@color/activityback" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:text="我的收藏"
                 android:textColor="@color/black"
-                android:textSize="26px"
-                android:text="我的收藏"/>
+                android:textSize="26px" />
 
 
         </com.zhy.autolayout.AutoRelativeLayout>
 
     </com.zhy.autolayout.AutoLinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="7px"
-        android:background="@color/text"/>
-
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100px">
+        android:layout_height="98px"
+        android:layout_marginTop="20px"
+        android:background="@android:color/white">
+
         <ImageView
             android:id="@+id/iv_my_integral_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="39px"
+            android:layout_height="43px"
             android:layout_centerVertical="true"
             android:layout_marginLeft="40px"
-            android:src="@drawable/ic_launcher"/>
+            android:src="@drawable/jinfen" />
+
         <TextView
             android:id="@+id/tv_my_integral_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_my_integral_img"
-            android:textSize="26px"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10px"
-            android:text="我的积分"/>
+            android:layout_toRightOf="@+id/iv_my_integral_img"
+            android:text="我的积分"
+            android:textSize="30px" />
 
         <TextView
             android:id="@+id/tv_my_integral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/tv_my_integral_tag"
             android:layout_centerVertical="true"
-            android:textSize="20px" />
+            android:layout_marginLeft="5px"
+            android:layout_toRightOf="@+id/tv_my_integral_tag"
+            android:textSize="30px" />
 
-  <TextView
-   android:id="@+id/tv_my_sign"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-      android:layout_alignParentRight="true"
-      android:layout_marginRight="30px"
-      android:layout_centerVertical="true"
-    android:textSize="20px"
-      android:padding="10px"
-      android:textColor="#FA773C"
-    android:background="@drawable/shape_my_sing"/>
+        <TextView
+            android:id="@+id/tv_my_sign"
+            android:layout_width="148px"
+            android:layout_height="60px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:gravity="center"
+            android:background="@drawable/shape_my_sing"
+            android:textColor="@color/yolle"
+            android:textSize="24px" />
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
-    <include layout="@layout/include3line"/>
-
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/rl_my_order"
             android:layout_width="0px"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="39px"
+                android:layout_height="41px"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10px"
-                android:src="@drawable/ic_launcher"/>
+                android:layout_marginTop="20px"
+                android:src="@drawable/dindan" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10px"
                 android:layout_marginTop="10px"
                 android:text="我的订单"
-                android:layout_marginBottom="10px"
-                android:textSize="26px"/>
+                android:textColor="@color/black"
+                android:textSize="24px" />
 
         </com.zhy.autolayout.AutoLinearLayout>
+
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/rl_my_money"
             android:layout_width="0px"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="46px"
+                android:layout_height="43px"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10px"
-                android:src="@drawable/ic_launcher"/>
+                android:layout_marginTop="20px"
+                android:src="@drawable/qianbao" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10px"
                 android:layout_marginTop="10px"
                 android:text="我的钱包"
-                android:layout_marginBottom="10px"
-                android:textSize="26px"/>
+                android:textColor="@color/black"
+                android:textSize="24px" />
 
         </com.zhy.autolayout.AutoLinearLayout>
+
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/rl_my_mission"
             android:layout_width="0px"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="46px"
+                android:layout_height="43px"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10px"
-                android:src="@drawable/ic_launcher"/>
+                android:layout_marginTop="20px"
+                android:src="@drawable/woderenwu" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10px"
                 android:layout_marginTop="10px"
                 android:text="我的任务"
-                android:layout_marginBottom="10px"
-                android:textSize="26px"/>
+                android:textColor="@color/black"
+                android:textSize="24px" />
 
         </com.zhy.autolayout.AutoLinearLayout>
+
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/rl_my_follow"
             android:layout_width="0px"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="43px"
+                android:layout_height="43px"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10px"
-                android:src="@drawable/ic_launcher"/>
+                android:layout_marginTop="20px"
+                android:src="@drawable/wodguanzhu" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10px"
                 android:layout_marginTop="10px"
                 android:text="我的关注"
-                android:layout_marginBottom="10px"
-                android:textSize="26px"/>
+                android:textColor="@color/black"
+                android:textSize="26px" />
 
         </com.zhy.autolayout.AutoLinearLayout>
 
     </com.zhy.autolayout.AutoLinearLayout>
 
-    <include layout="@layout/include3line"/>
+
 
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/ll_my_storecollection"
         android:layout_width="match_parent"
+        android:layout_marginTop="3px"
+        android:background="@android:color/white"
+        android:layout_height="99px"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_height="100px">
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="46px"
+            android:layout_height="42px"
             android:layout_marginLeft="40px"
-            android:src="@drawable/ic_launcher"/>
+            android:src="@drawable/dianpu" />
+
         <TextView
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="26px"
             android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:text="店铺收藏"
             android:textColor="@color/text"
-            android:text="店铺收藏"/>
+            android:textSize="26px" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_launcher"/>
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="30px"
+            android:src="@drawable/you" />
 
     </com.zhy.autolayout.AutoLinearLayout>
-    <include layout="@layout/include3line"/>
+
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/ll_my_opinionfeedback"
         android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="99px"
+        android:layout_marginTop="3px"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_height="100px">
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40px"
-            android:src="@drawable/ic_launcher"/>
+            android:src="@drawable/above" />
+
         <TextView
             android:layout_width="0px"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="26px"
             android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:text="意见反馈"
             android:textColor="@color/text"
-            android:text="意见反馈"/>
+            android:textSize="26px" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_launcher"/>
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="30px"
+            android:src="@drawable/you" />
+
 
     </com.zhy.autolayout.AutoLinearLayout>
-    <include layout="@layout/include3line"/>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/ll_my_myinvitation"
         android:layout_width="match_parent"
+        android:layout_marginTop="3px"
+        android:layout_height="99px"
+        android:background="@android:color/white"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_height="100px">
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40px"
-            android:src="@drawable/ic_launcher"/>
+            android:layout_marginLeft="30px"
+            android:src="@drawable/invitation" />
+
         <TextView
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="26px"
             android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:text="我的邀请"
             android:textColor="@color/text"
-            android:text="我的邀请"/>
+            android:textSize="26px" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_launcher"/>
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="30px"
+            android:src="@drawable/you" />
+
 
     </com.zhy.autolayout.AutoLinearLayout>
-
-
-
-
-
 
 
 </com.zhy.autolayout.AutoLinearLayout>

@@ -10,53 +10,67 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="82px"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_marginLeft="30px"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/lianxiren"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="26px"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="80px"
+                    android:text="联系人"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:background="@color/activityback">
+                <TextView
+                    android:layout_width="4px"
+                    android:layout_height="50px"
+                    android:layout_centerVertical="true"
+                    android:background="@color/colorPrimary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="26px"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="26px"
+                    android:text="聊天"/>
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_linju"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
 
     </android.support.v4.widget.NestedScrollView>
 
-    <com.zhy.autolayout.AutoLinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="26px"
-        android:gravity="center_vertical"
-        android:layout_marginLeft="40px"
-        android:text="联系人"
-        android:drawablePadding="10px"
-        android:drawableLeft="@drawable/ic_launcher"/>
 
-<com.zhy.autolayout.AutoRelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="100px"
-    android:background="@color/activityback">
-    <TextView
-        android:layout_width="4px"
-        android:layout_height="40px"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="3px"
-        android:background="@color/colorPrimary"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26px"
-        android:textColor="@color/black"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="50px"
-        android:text="聊天"/>
-
-</com.zhy.autolayout.AutoRelativeLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rc_linju"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
-
-    </com.zhy.autolayout.AutoLinearLayout>
 
 </com.zhy.autolayout.AutoLinearLayout>

@@ -3,114 +3,120 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="236px">
-
+    android:layout_height="246px">
 
     <TextView
         android:layout_below="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="20px"
+        android:layout_height="10px"
         android:background="#EFEFEF"/>
-
-
-
-
 
     <TextView
         android:id="@+id/tv_public_list_title"
-        android:layout_width="300px"
+        android:layout_width="320px"
         android:layout_below="@+id/line"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40px"
+        android:layout_marginLeft="30px"
         android:layout_marginTop="20px"
-        android:textSize="26px"
+        android:textColor="@color/black"
+        android:textSize="30px"
         android:text="我们来确定自定义View的构造方法构造查看View类我们知道，View类有四个构"
         android:lines="2"/>
 
     <TextView
         android:id="@+id/tv_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/text_top"
-        android:textSize="25px"
+        android:layout_width="120px"
+        android:layout_height="60px"
+        android:background="@color/colorPrimary"
+        android:textSize="24px"
         android:textColor="@android:color/white"
         android:layout_below="@+id/line"
-        android:padding="10px"
-        android:visibility="gone"
+        android:gravity="center"
+        android:visibility="visible"
         android:layout_toRightOf="@+id/tv_public_list_title"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="15px"
         android:layout_marginLeft="20px"
         android:text="置顶"/>
 
     <TextView
         android:id="@+id/tv_item_leadscore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_colorprimary_pre"
+        android:layout_width="120px"
+        android:layout_height="60px"
+        android:background="@drawable/shape_integral"
         android:layout_below="@+id/line"
         android:textSize="25px"
+        android:gravity="center"
+        android:visibility="gone"
         android:textColor="#E9A160"
-        android:padding="10px"
         android:layout_toRightOf="@+id/tv_public_list_title"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="15px"
         android:layout_marginLeft="20px"
         android:text="领积分"/>
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/tv_item_userimage"
-        android:layout_width="50px"
-        android:layout_height="50px"
-        android:layout_marginTop="30px"
+        android:layout_width="46px"
+        android:layout_height="46px"
         app:civ_border_color="@android:color/white"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/userdefaultimage"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20px"
         app:civ_border_width="0px"
         app:layout_auto_basewidth="height"
-        android:layout_marginLeft="40px"/>
+        android:layout_marginLeft="30px"/>
     <TextView
         android:id="@+id/tv_item_orgo"
         android:layout_width="wrap_content"
         android:layout_toRightOf="@+id/tv_item_userimage"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20px"
-        android:layout_marginLeft="20px"
+        android:layout_marginBottom="30px"
+        android:layout_marginLeft="10px"
         android:layout_height="wrap_content"
-        android:textSize="22px"
-        android:text="你好你好你好你好众"/>
+        android:textSize="23px"
+        android:text="有一种爱叫做放手  发布于生活圈爆料"/>
 
     <ImageView
         android:id="@+id/iv_item_title_image"
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:layout_width="142px"
+        android:layout_height="142px"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/line"
         android:layout_marginRight="30px"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/net_bitmap"
         android:layout_marginTop="20px"/>
 
+
+    <ImageView
+        android:id="@+id/iv_item_comments"
+        android:layout_width="30px"
+        android:layout_height="30px"
+        android:layout_toLeftOf="@+id/tv_item_comments"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30px"
+        android:layout_marginRight="10px"
+        android:src="@drawable/xiaoxi"/>
 
  <TextView
      android:id="@+id/tv_item_comments"
      android:layout_width="wrap_content"
-    android:layout_height="40px"
+     android:layout_height="wrap_content"
      android:layout_alignParentBottom="true"
      android:layout_alignParentRight="true"
      android:layout_marginRight="30px"
-     android:drawableLeft="@drawable/ic_launcher"
-     android:layout_marginBottom="20px"
-     android:textSize="22px"
+     android:layout_marginBottom="28px"
+     android:textSize="26px"
      android:text="20"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22px"
-        android:layout_toLeftOf="@+id/tv_item_comments"
+        android:textSize="26px"
+        android:textColor="@color/text"
+        android:layout_toLeftOf="@+id/iv_item_comments"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="20px"
-        android:layout_marginBottom="20px"
+        android:layout_marginBottom="28px"
         android:text="1小时前"/>
 
 

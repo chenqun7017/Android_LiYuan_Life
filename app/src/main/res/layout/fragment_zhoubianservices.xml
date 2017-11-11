@@ -3,89 +3,94 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/activityback"
     android:orientation="vertical">
 
   <include layout="@layout/include_apptoolbar_w"/>
 
+  <android.support.v4.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+  <com.zhy.autolayout.AutoLinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_xhoubian_search"
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="98px"
         android:background="@color/activityback">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60px"
             android:layout_marginLeft="30px"
             android:layout_marginRight="30px"
-            android:layout_marginTop="10px"
-            android:layout_marginBottom="10px"
-            android:layout_centerInParent="true"
-            android:background="@drawable/shape_zhoubianservices_search"/>
+            android:paddingLeft="20px"
+            android:text="搜索"
+            android:textSize="24px"
+            android:drawablePadding="10px"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/sousuo"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rectangle_search"/>
     </com.zhy.autolayout.AutoRelativeLayout>
-
 
     <include
         layout="@layout/public_title_layout"/>
 
-    <include
-        layout="@layout/include3line"/>
-
 <android.support.v7.widget.RecyclerView
     android:id="@+id/rc_zhoubian_first"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:layout_marginTop="3px">
 </android.support.v7.widget.RecyclerView>
-
-  <TextView
-      android:layout_width="match_parent"
-      android:layout_height="10px"
-      android:background="#C2C2C2"/>
 
 
   <com.zhy.autolayout.AutoRelativeLayout
-      xmlns:android="http://schemas.android.com/apk/res/android"
       android:layout_width="match_parent"
-      android:layout_height="110px">
+      android:layout_marginTop="10px"
+      android:background="@android:color/white"
+      android:layout_height="62px">
 
     <TextView
         android:id="@+id/line"
         android:layout_width="3px"
         android:layout_height="40px"
-        android:layout_marginLeft="40px"
+        android:layout_marginLeft="30px"
         android:layout_centerVertical="true"
         android:background="@color/colorPrimary"/>
-
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/line"
-        android:textSize="25px"
-        android:layout_marginLeft="20px"
-        android:text="sss"
+        android:textSize="24px"
+        android:layout_marginLeft="10px"
+        android:text="热门话题"
         android:textColor="@color/black"
         android:layout_height="wrap_content"  />
-
   </com.zhy.autolayout.AutoRelativeLayout>
 
 
 
   <android.support.v7.widget.RecyclerView
       android:id="@+id/rc_zhoubian_second"
+      android:background="@android:color/white"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
   </android.support.v7.widget.RecyclerView>
-
-  <include
-      layout="@layout/include3line"/>
-
 
   <android.support.v7.widget.RecyclerView
       android:id="@+id/rc_guangchang_list"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:background="@android:color/white"
+      android:layout_marginTop="3px">
   </android.support.v7.widget.RecyclerView>
 
-
-
+  </com.zhy.autolayout.AutoLinearLayout>
+  </android.support.v4.widget.NestedScrollView>
 </com.zhy.autolayout.AutoLinearLayout>

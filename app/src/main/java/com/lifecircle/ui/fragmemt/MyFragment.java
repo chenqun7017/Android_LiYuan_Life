@@ -30,10 +30,10 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         rightText.setText("设置");
         rightText.setOnClickListener(this);
         ImageView rightImage=view.findViewById(R.id.toolbar_right_image);
-        rightImage.setImageResource(R.drawable.ic_launcher);
+        rightImage.setImageResource(R.drawable.shezhi);
 
         ImageView iv_my_userimage=view.findViewById(R.id.iv_my_userimage);
-        iv_my_userimage.setImageResource(R.drawable.ic_launcher);
+        iv_my_userimage.setImageResource(R.drawable.userdefaultimage);
 
         TextView tv_my_username=view.findViewById(R.id.tv_my_username);
         tv_my_username.setText("慢慢的生活");
@@ -115,10 +115,10 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
             case R.id.rl_my_follow:
                 ActivityUtil.startFollowActivity(getActivity());
                 break;
-
             case R.id.ll_my_storecollection:
                 break;
             case R.id.ll_my_opinionfeedback:
+                ActivityUtil.startFeedBackActivity(getActivity());
                 break;
             case R.id.ll_my_myinvitation:
                 break;

@@ -19,14 +19,14 @@ public class DialogSign extends BaseDialog {
      View  view=inflater.inflate(R.layout.dialog_sign,null);
         return view;
     }
-    public void onResume() {
+   /* public void onResume() {
         // 屏幕高宽度
-     /*   DisplayMetrics metric = new DisplayMetrics();
+        DisplayMetrics metric = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metric);
 
         // 根据需求可设置Dialog的长高
         getDialog().getWindow().setLayout(
-                (int)(metric.widthPixels * 0.7), ViewGroup.LayoutParams.WRAP_CONTENT);*/
+                metric.widthPixels, metric.heightPixels);
         super.onResume();
-    }
+    }*/
 }

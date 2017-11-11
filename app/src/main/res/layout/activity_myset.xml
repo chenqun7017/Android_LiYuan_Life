@@ -8,9 +8,10 @@
     <include layout="@layout/include_apptoolbar_b" />
 
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_notification_settings"
         android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="98px">
+        android:layout_height="84px">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,7 +25,7 @@
        <ImageView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:src="@drawable/ic_launcher"
+           android:src="@drawable/you"
            android:layout_centerVertical="true"
            android:layout_marginRight="30px"
            android:layout_alignParentRight="true"/>
@@ -32,11 +33,12 @@
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
-    <include layout="@layout/include3line"/>
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_feedback"
         android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="98px">
+        android:layout_marginTop="3px"
+        android:layout_height="84px">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,7 +52,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/you"
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
             android:layout_alignParentRight="true"/>
@@ -58,11 +60,13 @@
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
-    <include layout="@layout/include3line"/>
+
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_clearcache"
         android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="98px">
+        android:layout_marginTop="3px"
+        android:layout_height="84px">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,7 +80,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/you"
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
             android:layout_alignParentRight="true"/>
@@ -84,11 +88,12 @@
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
-    <include layout="@layout/include3line"/>
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_sharing"
         android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="98px">
+        android:layout_marginTop="3px"
+        android:layout_height="84px">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,7 +107,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/you"
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
             android:layout_alignParentRight="true"/>
@@ -110,21 +115,7 @@
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
-    <include layout="@layout/include3line"/>
 
-
-    <TextView
-        android:id="@+id/tv_login_out"
-        android:layout_width="match_parent"
-        android:layout_height="98px"
-        android:layout_marginLeft="30px"
-        android:layout_marginRight="30px"
-        android:layout_marginTop="100px"
-        android:background="@drawable/shape_colorprimary_pre"
-        android:textSize="26px"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:text="退出登陆"/>
 
 
 </com.zhy.autolayout.AutoLinearLayout>

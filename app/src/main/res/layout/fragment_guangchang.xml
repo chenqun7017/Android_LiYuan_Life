@@ -2,16 +2,26 @@
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <include layout="@layout/include_search"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_search">
+
+<com.zhy.autolayout.AutoRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
 
         <com.youth.banner.Banner
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="336px"
-            android:layout_below="@+id/rl_search"/>
+          />
 
         <ImageView
             android:layout_below="@+id/rl_search"
@@ -29,10 +39,6 @@
         android:layout_height="262px">
     </com.lifecircle.view.PublicViewPageMens>
 
-
-
-
-
     <android.support.v7.widget.RecyclerView
         android:layout_below="@+id/guangchang_viewpager"
         android:id="@+id/rc_guangchang_list"
@@ -41,6 +47,7 @@
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
 
+</com.zhy.autolayout.AutoRelativeLayout>
 
-
+    </android.support.v4.widget.NestedScrollView>
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -8,6 +8,18 @@
     android:layout_height="88px">
 
 
+    <TextView
+        android:id="@+id/toolbar_tv_zou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"
+        android:textSize="24px"
+        android:padding="10px"
+        android:layout_marginLeft="20px" />
+
+
     <ImageView
         android:id="@+id/toolbar_iv_back"
         android:layout_width="wrap_content"
@@ -38,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:textSize="26px"
-        android:textColor="@color/black"
+        android:textColor="@android:color/white"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30px"/>
 

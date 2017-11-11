@@ -49,20 +49,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void initView() {
-        iv_guangchang= (ImageView) findViewById(R.id.iv_guangchang);
-        iv_zhoubianservices= (ImageView) findViewById(R.id.iv_zhoubianservices);
-        iv_linju= (ImageView) findViewById(R.id.iv_linju);
-        iv_my= (ImageView) findViewById(R.id.iv_my);
+        iv_guangchang= findViewById(R.id.iv_guangchang);
+        iv_zhoubianservices= findViewById(R.id.iv_zhoubianservices);
+        iv_linju= findViewById(R.id.iv_linju);
+        iv_my=  findViewById(R.id.iv_my);
 
-        tv_guangchang= (TextView) findViewById(R.id.tv_guangchang);
-        tv_zhoubianservices= (TextView) findViewById(R.id.tv_zhoubianservices);
-        tv_linju= (TextView) findViewById(R.id.tv_linju);
-        tv_my= (TextView) findViewById(R.id.tv_my);
+        tv_guangchang= findViewById(R.id.tv_guangchang);
+        tv_zhoubianservices= findViewById(R.id.tv_zhoubianservices);
+        tv_linju= findViewById(R.id.tv_linju);
+        tv_my=  findViewById(R.id.tv_my);
 
-        rl_guangchang=(RelativeLayout) findViewById(R.id.rl_guangchang);
-        rl_zhoubianservices=(RelativeLayout) findViewById(R.id.rl_zhoubianservices);
-        rl_linju=(RelativeLayout) findViewById(R.id.rl_linju);
-        rl_my=(RelativeLayout) findViewById(R.id.rl_my);
+        rl_guangchang=findViewById(R.id.rl_guangchang);
+        rl_zhoubianservices=findViewById(R.id.rl_zhoubianservices);
+        rl_linju= findViewById(R.id.rl_linju);
+        rl_my= findViewById(R.id.rl_my);
 
         rl_guangchang.setOnClickListener(this);
         rl_zhoubianservices.setOnClickListener(this);
@@ -83,16 +83,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             currentFragment = guangChangFragment;
 
             // 设置图片文本的变化
-            iv_guangchang.setImageResource(R.drawable.ic_launcher);
+            iv_guangchang.setImageResource(R.drawable.guangchang_pre);
             tv_guangchang.setTextColor(getResources().getColor(R.color.colorPrimary));
 
-            iv_zhoubianservices.setImageResource(R.drawable.ic_launcher);
+            iv_zhoubianservices.setImageResource(R.drawable.zhoubianfuwu_nor);
             tv_zhoubianservices.setTextColor(getResources().getColor(R.color.black));
 
-            iv_linju.setImageResource(R.drawable.ic_launcher);
+            iv_linju.setImageResource(R.drawable.linju_nor);
             tv_linju.setTextColor(getResources().getColor(R.color.black));
 
-            iv_my.setImageResource(R.drawable.ic_launcher);
+            iv_my.setImageResource(R.drawable.my_nor);
             tv_my.setTextColor(getResources().getColor(R.color.black));
 
         }
@@ -105,16 +105,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
         addOrShowFragment(getSupportFragmentManager().beginTransaction(), guangChangFragment);
         // 设置图片文本的变化
-        iv_guangchang.setImageResource(R.drawable.ic_launcher);
+        iv_guangchang.setImageResource(R.drawable.guangchang_pre);
         tv_guangchang.setTextColor(getResources().getColor(R.color.colorPrimary));
 
-        iv_zhoubianservices.setImageResource(R.drawable.ic_launcher);
+        iv_zhoubianservices.setImageResource(R.drawable.zhoubianfuwu_nor);
         tv_zhoubianservices.setTextColor(getResources().getColor(R.color.black));
 
-        iv_linju.setImageResource(R.drawable.ic_launcher);
+        iv_linju.setImageResource(R.drawable.linju_nor);
         tv_linju.setTextColor(getResources().getColor(R.color.black));
 
-        iv_my.setImageResource(R.drawable.ic_launcher);
+        iv_my.setImageResource(R.drawable.my_nor);
         tv_my.setTextColor(getResources().getColor(R.color.black));
 
     }
@@ -125,16 +125,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
         addOrShowFragment(getSupportFragmentManager().beginTransaction(), zhouBianServices);
         // 设置图片文本的变化
-        iv_guangchang.setImageResource(R.drawable.ic_launcher);
+        iv_guangchang.setImageResource(R.drawable.guangchang_nor);
         tv_guangchang.setTextColor(getResources().getColor(R.color.black));
 
-        iv_zhoubianservices.setImageResource(R.drawable.ic_launcher);
+        iv_zhoubianservices.setImageResource(R.drawable.zhoubianfuwu_pre);
         tv_zhoubianservices.setTextColor(getResources().getColor(R.color.colorPrimary));
 
-        iv_linju.setImageResource(R.drawable.ic_launcher);
+        iv_linju.setImageResource(R.drawable.linju_nor);
         tv_linju.setTextColor(getResources().getColor(R.color.black));
 
-        iv_my.setImageResource(R.drawable.ic_launcher);
+        iv_my.setImageResource(R.drawable.my_nor);
         tv_my.setTextColor(getResources().getColor(R.color.black));
     }
 
@@ -145,16 +145,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         addOrShowFragment(getSupportFragmentManager().beginTransaction(), linJuFragment);
 
         // 设置图片文本的变化
-        iv_guangchang.setImageResource(R.drawable.ic_launcher);
+        iv_guangchang.setImageResource(R.drawable.guangchang_nor);
         tv_guangchang.setTextColor(getResources().getColor(R.color.black));
 
-        iv_zhoubianservices.setImageResource(R.drawable.ic_launcher);
+        iv_zhoubianservices.setImageResource(R.drawable.zhoubianfuwu_nor);
         tv_zhoubianservices.setTextColor(getResources().getColor(R.color.black));
 
-        iv_linju.setImageResource(R.drawable.ic_launcher);
+        iv_linju.setImageResource(R.drawable.linju_pre);
         tv_linju.setTextColor(getResources().getColor(R.color.colorPrimary));
 
-        iv_my.setImageResource(R.drawable.ic_launcher);
+        iv_my.setImageResource(R.drawable.my_nor);
         tv_my.setTextColor(getResources().getColor(R.color.black));
     }
 
@@ -164,16 +164,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
         addOrShowFragment(getSupportFragmentManager().beginTransaction(), myFragment);
         // 设置图片文本的变化
-        iv_guangchang.setImageResource(R.drawable.ic_launcher);
+        iv_guangchang.setImageResource(R.drawable.guangchang_nor);
         tv_guangchang.setTextColor(getResources().getColor(R.color.black));
 
-        iv_zhoubianservices.setImageResource(R.drawable.ic_launcher);
+        iv_zhoubianservices.setImageResource(R.drawable.zhoubianfuwu_nor);
         tv_zhoubianservices.setTextColor(getResources().getColor(R.color.black));
 
-        iv_linju.setImageResource(R.drawable.ic_launcher);
+        iv_linju.setImageResource(R.drawable.linju_nor);
         tv_linju.setTextColor(getResources().getColor(R.color.black));
 
-        iv_my.setImageResource(R.drawable.ic_launcher);
+        iv_my.setImageResource(R.drawable.my_pre);
         tv_my.setTextColor(getResources().getColor(R.color.colorPrimary));
     }
 

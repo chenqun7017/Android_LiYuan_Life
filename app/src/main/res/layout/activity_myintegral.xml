@@ -3,22 +3,104 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical">
     <include layout="@layout/include_apptoolbar_b" />
-<com.zhy.autolayout.AutoRelativeLayout
+  <com.zhy.autolayout.AutoRelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="150px"
+    android:layout_height="246px"
     android:background="@color/colorPrimary">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40px"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher"
-        />
+        android:src="@drawable/jifen_bai"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:textColor="@android:color/white"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="70px"
+          android:textSize="30px"
+          android:text="7" />
+
+
 
 
 
 </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160px"
+        android:orientation="horizontal">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36px"
+                android:src="@drawable/jifen_lv"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40px"
+                android:text="积分规则"/>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36px"
+                android:src="@drawable/duihuan"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40px"
+                android:text="我的兑换"/>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:background="@color/activityback"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+        android:text="积分兑换更多好礼"
+        android:paddingLeft="40px"
+        android:paddingRight="40px"
+        android:textSize="30px"
+        android:textColor="@color/colorPrimary"
+        android:paddingTop="15px"
+        android:paddingBottom="15px"
+        android:background="@drawable/shape_colorprimary_nor"
+        android:layout_marginTop="158px"/>
 
 
 

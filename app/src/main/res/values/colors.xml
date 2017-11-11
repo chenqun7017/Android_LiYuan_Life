@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#49AF30</color>
     <color name="colorPrimaryDark">#49AF30</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#C8C8C8</color>
 
 
     <color name="search">#F8F8F8</color>
@@ -12,6 +12,8 @@
     <color name="text">#C8C8C8</color>
     <color name="activityback">#EFEFEF</color>
     <color name="divider">#EFEFEF</color>
+
+    <color name="yolle">#FA773C</color>
 
 
 

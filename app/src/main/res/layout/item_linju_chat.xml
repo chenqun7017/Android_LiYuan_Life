@@ -2,37 +2,39 @@
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="154px">
 
     <ImageView
         android:id="@+id/iv_linju_img"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:layout_marginTop="20px"
+        android:layout_width="114px"
+        android:layout_height="114px"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="30px"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/net_bitmap"/>
 
     <TextView
         android:id="@+id/tv_linju_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/iv_linju_img"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="22px"
         android:layout_marginLeft="10px"
-        android:textSize="24px"
+        android:textSize="30px"
         android:textColor="@color/black"
-        android:text="repository"/>
+        android:text="小清晰的生活"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="450px"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/iv_linju_img"
         android:layout_below="@+id/tv_linju_title"
         android:layout_marginTop="20px"
         android:layout_marginLeft="10px"
+        android:lines="1"
+        android:ellipsize="end"
         android:textSize="24px"
         android:textColor="@color/text"
-        android:text="repository"/>
+        android:text="周天我们去那玩啊！"/>
 
 <TextView
     android:layout_width="wrap_content"
@@ -42,9 +44,9 @@
     android:textSize="24px"
     android:layout_alignParentRight="true"
     android:layout_alignParentTop="true"
-    android:layout_marginTop="20px"
-    android:layout_marginRight="20px"
-    android:text="2017-2-15"/>
+    android:layout_marginTop="23px"
+    android:layout_marginRight="30px"
+    android:text="17/2/15"/>
 
     <TextView
         android:layout_width="match_parent"

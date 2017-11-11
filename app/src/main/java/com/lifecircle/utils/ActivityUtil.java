@@ -3,13 +3,16 @@ package com.lifecircle.utils;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.lifecircle.ui.SearchActivity;
 import com.lifecircle.ui.guangchang.MainActivity;
+import com.lifecircle.ui.my.MyFeedBackActivity;
 import com.lifecircle.ui.my.MyFollowActivity;
 import com.lifecircle.ui.my.MyIntegralActivity;
 import com.lifecircle.ui.my.MyOrderActivity;
 import com.lifecircle.ui.my.MySetActivity;
 import com.lifecircle.ui.my.MyWalletActivity;
 import com.lifecircle.ui.my.MyTaskActivity;
+import com.lifecircle.ui.my.NotificationSettingsActivity;
 
 public class ActivityUtil {
 
@@ -79,7 +82,7 @@ public class ActivityUtil {
      */
 
     public static void startSearchActivity(Activity _activity) {
-        Intent localIntent = new Intent(_activity, MyIntegralActivity.class);
+        Intent localIntent = new Intent(_activity, SearchActivity.class);
         _activity.startActivity(localIntent);
     }
     /**
@@ -103,6 +106,29 @@ public class ActivityUtil {
         Intent localIntent = new Intent(_activity, MyFollowActivity.class);
         _activity.startActivity(localIntent);
     }
+
+    /**
+     * 跳转到通知设置页面
+     *
+     * @param _activity
+     */
+
+    public static void startNotificationSetActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, NotificationSettingsActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到通知设置页面
+     *
+     * @param _activity
+     */
+
+    public static void startFeedBackActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyFeedBackActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
 
 
 /**

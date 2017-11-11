@@ -22,11 +22,12 @@
 
             <ImageView
                 android:id="@+id/iv_guangchang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="46px"
+                android:layout_height="34px"
                 android:layout_above="@+id/tv_guangchang"
+                android:layout_marginTop="14px"
                 android:layout_marginBottom="6px"
-                android:src="@drawable/ic_launcher"
+                android:src="@drawable/guangchang_pre"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
@@ -63,10 +64,11 @@
 
             <ImageView
                 android:id="@+id/iv_zhoubianservices"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"
+                android:layout_width="33px"
+                android:layout_height="44px"
+                android:src="@drawable/zhoubianfuwu_nor"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="14px"
                 android:layout_marginBottom="6px"
                 android:layout_above="@+id/tv_zhoubianservices"/>
 
@@ -103,10 +105,11 @@
 
             <ImageView
                 android:id="@+id/iv_linju"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"
+                android:layout_width="44px"
+                android:layout_height="40px"
+                android:src="@drawable/linju_nor"
                 android:layout_above="@+id/tv_linju"
+                android:layout_marginTop="14px"
                 android:layout_marginBottom="6px"
                 android:layout_centerHorizontal="true"/>
 
@@ -144,10 +147,11 @@
 
             <ImageView
                 android:id="@+id/iv_my"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_launcher"
+                android:src="@drawable/my_nor"
+                android:layout_marginTop="14px"
                 android:layout_marginBottom="6px"
                 android:layout_above="@+id/tv_my"/>
 

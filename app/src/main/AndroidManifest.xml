@@ -33,6 +33,8 @@
         <activity android:name="com.lifecircle.ui.SearchActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyTaskActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyFollowActivity"/>
+        <activity android:name="com.lifecircle.ui.my.NotificationSettingsActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyFeedBackActivity"/>
 
 
 

@@ -5,36 +5,38 @@
     android:layout_height="match_parent">
 
 
-   <com.zhy.autolayout.AutoRelativeLayout
-       android:layout_width="500px"
-       android:layout_centerInParent="true"
-       android:layout_height="600px">
+       <com.zhy.autolayout.AutoRelativeLayout
+           android:layout_width="630px"
+           android:layout_height="517px"
+           android:layout_centerInParent="true">
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="100px"
-           android:background="@drawable/ic_launcher"/>
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/qiandao_beijingtu"/>
 
-       <TextView
-           android:id="@+id/tv_mysing_content"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="恭喜您今日签到成功"
-           android:layout_centerHorizontal="true"
-           android:textColor="@color/black"
-           android:textSize="35px"/>
-       <TextView
-           android:id="@+id/tv_mysing_nums"
-           android:layout_below="@+id/tv_mysing_content"
-           android:layout_marginTop="10px"
-           android:textColor="@color/black"
-           android:textSize="35px"
-           android:layout_centerHorizontal="true"
-           android:text="+5金币"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+              <TextView
+                  android:id="@+id/tv_mysing_content"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="恭喜您今日签到成功"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="320px"
+                  android:textColor="@color/black"
+                  android:textSize="30px"/>
+              <TextView
+                  android:id="@+id/tv_mysing_nums"
+                  android:layout_below="@+id/tv_mysing_content"
+                  android:textColor="@color/black"
+                  android:textSize="50px"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="30px"
+                  android:text="+5金币"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" />
 
-   </com.zhy.autolayout.AutoRelativeLayout>
+       </com.zhy.autolayout.AutoRelativeLayout>
+
 
 
 

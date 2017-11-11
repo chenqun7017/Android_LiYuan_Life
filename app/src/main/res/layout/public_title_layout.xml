@@ -2,15 +2,16 @@
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="110px">
+    android:background="@android:color/white"
+    android:layout_height="62px">
 
     <TextView
         android:id="@+id/tv_line"
         android:layout_width="3px"
         android:layout_height="40px"
-        android:layout_marginLeft="40px"
+        android:layout_marginLeft="30px"
         android:layout_centerVertical="true"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/viewbadger"/>
 
     <TextView
         android:id="@+id/tv_title_name"
@@ -18,8 +19,8 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/tv_line"
         android:textSize="25px"
-        android:layout_marginLeft="20px"
-        android:text="sss"
+        android:layout_marginLeft="10px"
+        android:text="热门分类"
         android:textColor="@color/black"
         android:layout_height="wrap_content"  />
 
@@ -27,13 +28,13 @@
         android:id="@+id/tv_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25px"
+        android:textSize="24px"
         android:layout_marginRight="30px"
         android:layout_alignParentRight="true"
+        android:drawableRight="@drawable/you"
+        android:drawablePadding="10px"
         android:layout_centerVertical="true"
         android:text="全部"/>
-
-
 
 
 

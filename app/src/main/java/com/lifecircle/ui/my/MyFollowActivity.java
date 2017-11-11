@@ -18,7 +18,6 @@ public class MyFollowActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myfollow);
         toolbar_center_text=findViewById(R.id.toolbar_center_text);
-        toolbar_center_text.setText("我的钱包");
-
+        toolbar_center_text.setText("我的关注");
     }
 }

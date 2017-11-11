@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="306px"
+        android:gravity="top"
+        android:background="@android:color/white"/>
+
+<com.zhy.autolayout.AutoRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="84px"
+    android:layout_marginTop="3px"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tv_my_feedback_zou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30px"
+        android:textColor="@color/black"
+        android:text="您的邮箱:"/>
+
+    <TextView
+        android:id="@+id/tv_my_feedback_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_my_feedback_zou"
+        android:textSize="24px"
+        android:layout_marginLeft="44px"
+        android:layout_centerVertical="true"
+        android:textColor="@color/text"
+        android:text="以便我们及时回复你的反馈"/>
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="30px"
+    android:layout_centerVertical="true"
+    android:src="@drawable/you"/>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="82px"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="80px"
+        android:text="提交"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_marginRight="30px"/>
+
+</com.zhy.autolayout.AutoLinearLayout>

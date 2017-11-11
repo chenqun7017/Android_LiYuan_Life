@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="接收新消息通知：已关闭"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_centerVertical="true"
+           android:src="@drawable/you" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="92px"
+      android:lines="2"
+      android:paddingLeft="30px"
+      android:paddingRight="20px"
+      android:layout_marginTop="20px"
+      android:text="*如果你要开启或关闭新消息通知，请在手机的设置-通知管理中,找到生活圈进行修改。"
+      android:background="@color/activityback"/>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="系统通知"/>
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="新消息"/>
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="评论回复"/>
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64px"
+        android:background="@color/activityback"
+        android:paddingLeft="30px"
+        android:gravity="center_vertical"
+        android:textSize="24px"
+        android:text="*应用内部通知-运行应用时，消息通知会有声音或者震动提示"/>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="声音"/>
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="震动"/>
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginTop="10px"
+        android:layout_height="82px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="桌面图标提示"/>
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginTop="10px"
+        android:layout_height="82px">
+
+        <TextView
+            android:id="@+id/tv_notificationset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="10px"
+            android:textSize="24px"
+            android:layout_marginLeft="30px"
+            android:text="夜间免打扰"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:layout_marginTop="2px"
+            android:layout_below="@+id/tv_notificationset"
+            android:textSize="20px"
+            android:layout_marginLeft="30px"
+            android:text="22:00-8:00间不接受通知"/>
+
+
+
+
+        <com.lifecircle.view.SwitchView
+            android:layout_width="110px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_height="50px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

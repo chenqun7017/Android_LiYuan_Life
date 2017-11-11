@@ -64,6 +64,6 @@ public class CountTimer extends CountDownTimer {//CountDownTimer
             btn.setTextColor(timingColor);
         }
         btn.setEnabled(false);
-        btn.setText(millisUntilFinished / 1000 + "s"+"后重新获取");
+        btn.setText(millisUntilFinished / 1000 + "s");
     }
 }
