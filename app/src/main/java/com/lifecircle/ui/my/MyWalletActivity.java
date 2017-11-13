@@ -2,17 +2,23 @@ package com.lifecircle.ui.my;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.utils.ActivityUtil;
 
 /**
  * Created by lenovo on 2017/11/9.
  */
 
-public class MyWalletActivity extends BaseActivity {
+public class MyWalletActivity extends BaseActivity implements View.OnClickListener{
     private TextView toolbar_center_text;
+
+    private RelativeLayout rl_recharge;
+    private RelativeLayout  rl_cashwithdrawal;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,6 +26,20 @@ public class MyWalletActivity extends BaseActivity {
         setContentView(R.layout.activity_mywallet);
         toolbar_center_text=findViewById(R.id.toolbar_center_text);
         toolbar_center_text.setText("我的钱包");
+        rl_recharge=findViewById(R.id.rl_recharge);
+        rl_recharge.setOnClickListener(this);
+        rl_cashwithdrawal=findViewById(R.id.rl_cashwithdrawal);
+        rl_cashwithdrawal.setOnClickListener(this);
+    }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.rl_recharge:
+                ActivityUtil.startMyRechageActivity(this);
+                break;
+            case R.id.rl_cashwithdrawal:
+                break;
+        }
     }
 }

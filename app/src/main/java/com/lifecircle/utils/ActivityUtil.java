@@ -5,13 +5,19 @@ import android.content.Intent;
 
 import com.lifecircle.ui.SearchActivity;
 import com.lifecircle.ui.guangchang.MainActivity;
+import com.lifecircle.ui.linju.ContactsActivity;
+import com.lifecircle.ui.my.ModifyPersonalDataActivity;
 import com.lifecircle.ui.my.MyFeedBackActivity;
 import com.lifecircle.ui.my.MyFollowActivity;
 import com.lifecircle.ui.my.MyIntegralActivity;
 import com.lifecircle.ui.my.MyOrderActivity;
+import com.lifecircle.ui.my.MyRechargeActivity;
 import com.lifecircle.ui.my.MySetActivity;
+import com.lifecircle.ui.my.MySingActivity;
 import com.lifecircle.ui.my.MyWalletActivity;
 import com.lifecircle.ui.my.MyTaskActivity;
+import com.lifecircle.ui.my.MyWithLifeCirleActivity;
+import com.lifecircle.ui.my.MyinvitationActivity;
 import com.lifecircle.ui.my.NotificationSettingsActivity;
 
 public class ActivityUtil {
@@ -128,6 +134,74 @@ public class ActivityUtil {
         Intent localIntent = new Intent(_activity, MyFeedBackActivity.class);
         _activity.startActivity(localIntent);
     }
+
+    /**
+     * 跳转到通知设置页面
+     *
+     * @param _activity
+     */
+
+    public static void startPersonalDataActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ModifyPersonalDataActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到我的邀请页面
+     *
+     * @param _activity
+     */
+
+    public static void startMyinvitationActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyinvitationActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到我的联系人页面
+     *
+     * @param _activity
+     */
+
+    public static void startContactsActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ContactsActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到我的联系人页面
+     *
+     * @param _activity
+     */
+
+    public static void startMySingActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MySingActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+
+    /**
+     * 跳转到关于生活圈页面
+     *
+     * @param _activity
+     */
+
+    public static void startWithLifeCirleActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyWithLifeCirleActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到我的充值页面
+     *
+     * @param _activity
+     */
+
+    public static void startMyRechageActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyRechargeActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
 
 
 

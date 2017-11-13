@@ -13,8 +13,10 @@
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
             android:orientation="vertical">
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_contacts"
                 android:layout_width="match_parent"
                 android:layout_height="82px"
                 android:background="@android:color/white">

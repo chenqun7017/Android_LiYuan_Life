@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="98px">
+        <TextView
+            android:id="@+id/tv_recharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:textSize="24px"
+            android:text="金额:"/>
+
+        <EditText
+            android:id="@+id/et_recharge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_recharge"
+            android:inputType="number"
+            android:gravity="center_vertical"
+            android:textSize="24px"
+            android:background="@null"
+            android:maxLength="8"
+            android:layout_marginLeft="20px"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10px"
+        android:background="@android:color/white"
+        android:layout_height="98px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:drawableLeft="@drawable/weixin_recharge"
+            android:layout_marginLeft="30px"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:drawablePadding="10px"
+            android:text="微信"/>
+
+
+        <ImageView
+            android:id="@+id/iv_recharge_weixi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/weixuanzhe"
+            android:layout_marginRight="30px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white"
+        android:layout_height="98px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:drawableLeft="@drawable/zhifubao_recharge"
+            android:layout_marginLeft="30px"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:drawablePadding="10px"
+            android:text="微信"/>
+
+
+        <ImageView
+            android:id="@+id/iv_recharge_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/weixuanzhe"
+            android:layout_marginRight="30px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <TextView
+        android:id="@+id/rv_recharge_submit"
+        android:layout_width="match_parent"
+        android:background="#BBBBBB"
+        android:layout_marginRight="30px"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="60px"
+        android:text="充值"
+        android:gravity="center"
+        android:textSize="24px"
+        android:textColor="@android:color/white"
+        android:layout_height="76px" />
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

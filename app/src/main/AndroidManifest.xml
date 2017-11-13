@@ -35,6 +35,12 @@
         <activity android:name="com.lifecircle.ui.my.MyFollowActivity"/>
         <activity android:name="com.lifecircle.ui.my.NotificationSettingsActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyFeedBackActivity"/>
+        <activity android:name="com.lifecircle.ui.my.ModifyPersonalDataActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyinvitationActivity"/>
+        <activity android:name="com.lifecircle.ui.linju.ContactsActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MySingActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyWithLifeCirleActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyRechargeActivity"/>
 
 
 

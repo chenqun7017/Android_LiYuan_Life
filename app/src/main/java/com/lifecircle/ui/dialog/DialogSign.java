@@ -1,5 +1,6 @@
 package com.lifecircle.ui.dialog;
 
+import android.content.DialogInterface;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseDialog;
+import com.lifecircle.utils.ActivityUtil;
 
 /**
  * Created by lenovo on 2017/11/8.
@@ -17,6 +19,7 @@ public class DialogSign extends BaseDialog {
     @Override
     public View initView(LayoutInflater inflater) {
      View  view=inflater.inflate(R.layout.dialog_sign,null);
+
         return view;
     }
    /* public void onResume() {
@@ -29,4 +32,11 @@ public class DialogSign extends BaseDialog {
                 metric.widthPixels, metric.heightPixels);
         super.onResume();
     }*/
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        ActivityUtil.startMySingActivity(getActivity());
+
+    }
 }

@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lifecircle.R;
@@ -14,6 +15,7 @@ import com.lifecircle.base.BaseFragment;
 import com.lifecircle.javaBean.ZhouBianSecondBean;
 import com.lifecircle.javaBean.ZhoubianFristBean;
 import com.lifecircle.javaBean.linJuChatBean;
+import com.lifecircle.utils.ActivityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +24,11 @@ import java.util.List;
  * Created by lenovo on 2017/11/7.
  */
 
-public class LinJuFragment extends BaseFragment {
+public class LinJuFragment extends BaseFragment implements View.OnClickListener{
 
     private List<linJuChatBean> listSecondDate=new ArrayList<linJuChatBean>();
+
+    private RelativeLayout rl_contacts;
     @Override
     public View initView(LayoutInflater inflater) {
         View view=inflater.inflate(R.layout.fragment_linju,null);
@@ -35,6 +39,8 @@ public class LinJuFragment extends BaseFragment {
 
         TextView  toolbar_right_text=view.findViewById(R.id.toolbar_right_text);
         toolbar_right_text.setText("消息");
+        rl_contacts=view.findViewById(R.id.rl_contacts);
+        rl_contacts.setOnClickListener(this);
 
         RecyclerView rc_linju=view.findViewById(R.id.rc_linju);
         for (int i=0;i<10;i++){
@@ -49,5 +55,13 @@ public class LinJuFragment extends BaseFragment {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.rl_contacts:
+                ActivityUtil.startContactsActivity(getActivity());
+                break;
+        }
 
+    }
 }

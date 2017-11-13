@@ -43,6 +43,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
 
         TextView tv_my_info=view.findViewById(R.id.tv_my_info);
         tv_my_info.setText("修改资料");
+        tv_my_info.setOnClickListener(this);
         TextView tv_my_integral_tag=view.findViewById(R.id.tv_my_integral_tag);
         tv_my_integral_tag.setOnClickListener(this);
 
@@ -80,7 +81,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         ll_my_opinionfeedback.setOnClickListener(this);
 
         LinearLayout ll_my_myinvitation=view.findViewById(R.id.ll_my_myinvitation);
-        rl_my_follow.setOnClickListener(this);
+        ll_my_myinvitation.setOnClickListener(this);
 
         return view;
 
@@ -121,10 +122,14 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 ActivityUtil.startFeedBackActivity(getActivity());
                 break;
             case R.id.ll_my_myinvitation:
+                ActivityUtil.startMyinvitationActivity(getActivity());
                 break;
 
             case R.id.toolbar_right_text:
                 ActivityUtil.startMySetActivity(getActivity());
+                break;
+            case R.id.tv_my_info:
+                ActivityUtil.startPersonalDataActivity(getActivity());
                 break;
                 default:
                     break;

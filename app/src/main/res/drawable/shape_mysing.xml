@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <corners
+        android:bottomLeftRadius = "180px"
+        android:bottomRightRadius = "180px"
+        android:topLeftRadius = "180px"
+        android:topRightRadius = "180px"/>
+    <stroke
+        android:width="5px"
+        android:color="#AF7F24" />
+
+    <solid android:color="@android:color/white" />
+
+</shape>

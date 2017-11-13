@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_apptoolbar_b" />
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_img"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="128px">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_persondata_imag"
+            android:layout_width="96px"
+            android:layout_height="96px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="19px"
+            android:src="@drawable/userdefaultimage"
+            app:civ_border_color="@android:color/white"
+            app:civ_border_width="0px"
+            app:layout_auto_basewidth="height" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_centerVertical="true"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_toRightOf="@+id/iv_persondata_imag"
+            android:text="修改头像"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="10px">
+
+<TextView
+    android:layout_width="200px"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:textColor="@color/black"
+    android:textSize="24px"
+    android:gravity="right"
+    android:text="昵称"/>
+
+<TextView
+    android:id="@+id/tv_persondata_nickname"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="24px"
+    android:textColor="@color/text"
+    android:layout_centerVertical="true"
+    android:text="小气鬼"
+    android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_profile"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="个人简介"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="性别"/>
+
+        <ImageView
+            android:id="@+id/iv_persondata_nanimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/nan"
+            android:layout_marginLeft="230px"/>
+
+        <ImageView
+            android:id="@+id/iv_persondata_nvimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_persondata_nanimg"
+            android:layout_centerVertical="true"
+            android:src="@drawable/nv"
+            android:layout_marginLeft="40px"/>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_perdondata_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="生日"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:text="请输入你的生日"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_location"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="所在地"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_thatbuild"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="我在那栋楼"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_thatbuild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_grade"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="等级"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="手机号码"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_phonenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_mailbox"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white"
+        android:layout_marginTop="3px">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="24px"
+            android:gravity="right"
+            android:text="邮箱"/>
+
+        <TextView
+            android:id="@+id/tv_persondata_mailbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:text="请添加邮箱，用来登陆找回"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

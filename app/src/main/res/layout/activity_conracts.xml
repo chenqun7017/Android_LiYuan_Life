@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/activityback">
+    <include layout="@layout/include_apptoolbar_w" />
+
+<com.zhy.autolayout.AutoLinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="82px"
+    android:layout_marginTop="3px"
+    android:orientation="horizontal"
+    android:background="@android:color/white">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_me_conracts"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_me_conacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24px"
+            android:layout_centerInParent="true"
+            android:text="我的关注"/>
+        <TextView
+            android:id="@+id/tv_me_conacts_lines"
+            android:layout_width="100px"
+            android:layout_height="3px"
+            android:background="@color/colorPrimary"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_me_fans"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_me_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="24px"
+            android:layout_centerInParent="true"
+            android:text="我的粉丝"/>
+        <TextView
+            android:id="@+id/tv_me_fans_lines"
+            android:layout_width="100px"
+            android:layout_height="3px"
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
+
+ <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72px">
+
+        <TextView
+            android:id="@+id/tv_line"
+            android:layout_width="4px"
+            android:layout_height="40px"
+            android:layout_centerVertical="true"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/tv_title_name"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_line"
+            android:textSize="23px"
+            android:layout_marginLeft="31px"
+            android:text="全部关注"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"  />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

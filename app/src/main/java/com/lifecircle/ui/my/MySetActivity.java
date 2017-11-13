@@ -34,6 +34,7 @@ public class MySetActivity extends BaseActivity implements View.OnClickListener{
         toolbar_tv_zou.setOnClickListener(this);
         toolbar_right_text=findViewById(R.id.toolbar_right_text);
         toolbar_right_text.setText("关于");
+        toolbar_right_text.setOnClickListener(this);
 
         rl_notification_settings=findViewById(R.id.rl_notification_settings);
         rl_feedback=findViewById(R.id.rl_feedback);
@@ -59,6 +60,9 @@ switch (view.getId()){
         break;
     case R.id.toolbar_tv_zou:
     finish();
+        break;
+    case R.id.toolbar_right_text:
+    ActivityUtil.startWithLifeCirleActivity(this);
         break;
 
 }

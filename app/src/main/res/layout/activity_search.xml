@@ -41,14 +41,45 @@
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
+        android:background="@android:color/white"
         android:layout_height="98px">
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="24px"
+          android:drawablePadding="10px"
+          android:drawableLeft="@drawable/lishijilu"
+          android:layout_toRightOf="@+id/iv_search_img"
+          android:layout_marginLeft="30px"
+          android:layout_centerVertical="true"
+          android:textColor="@color/text"
+          android:text="最近搜索"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="30px"
+            android:textSize="24px"
+            android:textColor="@color/text"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="10px"
+            android:drawableRight="@drawable/qingchu"
+            android:text="清空"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3px">
+
+
+
+    </android.support.v7.widget.RecyclerView>
 
 
 </com.zhy.autolayout.AutoLinearLayout>
