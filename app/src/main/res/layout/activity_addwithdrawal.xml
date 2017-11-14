@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_addwithdrawal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/zhifubao_hui"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:textSize="24px"
+            android:gravity="center_vertical"
+            android:textColor="@color/text"
+            android:drawablePadding="10px"
+            android:text="支付宝账号"/>
+
+
+        <EditText
+            android:id="@+id/et_addwithdrawal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_addwithdrawal"
+            android:layout_marginLeft="20px"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:maxLength="30"
+            android:textSize="24px"
+            android:background="@null"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_addwithdrawal_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/shengfenzheng"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:textSize="24px"
+            android:gravity="center_vertical"
+            android:textColor="@color/text"
+            android:drawablePadding="10px"
+            android:text="身份证姓名"/>
+
+
+        <EditText
+            android:id="@+id/et_addwithdrawal_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_addwithdrawal_id"
+            android:layout_marginLeft="20px"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:maxLength="10"
+            android:textSize="24px"
+            android:background="@null"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_addwithdrawal_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/shoujihao"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:textSize="24px"
+            android:gravity="center_vertical"
+            android:textColor="@color/text"
+            android:drawablePadding="10px"
+            android:text="18510169250"/>
+
+
+        <TextView
+            android:id="@+id/tv_phonecode"
+            android:layout_width="150px"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textSize="24px"
+            android:text="获取验证码"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_addwithdrawal_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/shengfenzheng"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:textSize="24px"
+            android:gravity="center_vertical"
+            android:textColor="@color/text"
+            android:drawablePadding="10px"
+            android:text="输入验证码"/>
+
+
+        <EditText
+            android:id="@+id/et_addwithdrawal_pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_addwithdrawal_pass"
+            android:layout_marginLeft="20px"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:maxLength="9"
+            android:textSize="24px"
+            android:background="@null"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_mywithdrawal_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="20px"
+        android:textSize="24px"
+        android:layout_marginLeft="30px"
+        android:text="为了提现成功,请填写通过实名认证的支付宝账号和姓名"/>
+
+    <TextView
+        android:id="@+id/tv_addwithdrawal_save"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:textSize="24px"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="60px"
+        android:textColor="@android:color/white"/>
+
+</com.zhy.autolayout.AutoLinearLayout>

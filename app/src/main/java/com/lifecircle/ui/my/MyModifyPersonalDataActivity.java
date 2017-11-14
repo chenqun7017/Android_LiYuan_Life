@@ -25,7 +25,7 @@ import me.nereo.multi_image_selector.MultiImageSelectorActivity;
  * Created by lenovo on 2017/11/13.
  */
 
-public class ModifyPersonalDataActivity extends BaseActivity implements View.OnClickListener {
+public class MyModifyPersonalDataActivity extends BaseActivity implements View.OnClickListener {
     private TextView toolbar_center_text;
     private ImageView toolbar_iv_back;
 

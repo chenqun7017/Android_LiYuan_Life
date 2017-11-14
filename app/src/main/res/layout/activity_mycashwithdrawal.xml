@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="98px">
+        <TextView
+            android:id="@+id/tv_recharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:textSize="24px"
+            android:text="金额:"/>
+
+        <EditText
+            android:id="@+id/et_recharge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_recharge"
+            android:inputType="number"
+            android:gravity="center_vertical"
+            android:textSize="24px"
+            android:textColor="@color/viewbadger"
+            android:background="@null"
+            android:maxLength="8"
+            android:layout_marginLeft="20px"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_addwithdrawal_phone"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white"
+        android:drawableLeft="@drawable/zhifubao_hui"
+        android:textSize="24px"
+        android:paddingLeft="30px"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:drawablePadding="10px"
+        android:text="18510169250"/>
+
+
+    <TextView
+        android:id="@+id/tv_addwithdrawal_name"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white"
+        android:drawableLeft="@drawable/withuser"
+        android:textSize="24px"
+        android:paddingLeft="30px"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:drawablePadding="10px"
+        android:text="大吹哥"/>
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:focusable="true"
+        android:layout_marginTop="2px"
+        android:focusableInTouchMode="true"
+        android:layout_height="98px">
+        <TextView
+            android:id="@+id/tv_cashwith_btn"
+            android:layout_width="150px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentRight="true"
+            android:textSize="24px"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="全部提现"/>
+
+        <EditText
+            android:id="@+id/et_cashwith"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/tv_cashwith_btn"
+            android:inputType="number"
+            android:gravity="center_vertical"
+            android:textSize="24px"
+            android:hint="提现金额"
+            android:paddingLeft="30px"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:maxLength="8"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:text="提交"
+        android:textSize="24px"
+        android:layout_marginTop="90px"/>
+
+</com.zhy.autolayout.AutoLinearLayout>

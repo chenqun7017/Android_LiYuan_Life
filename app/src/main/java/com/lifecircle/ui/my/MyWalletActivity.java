@@ -20,6 +20,9 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
     private RelativeLayout rl_recharge;
     private RelativeLayout  rl_cashwithdrawal;
 
+    private RelativeLayout rl_withdrawal_in;
+    private RelativeLayout  rl_withdrawal_out;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,11 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
         rl_recharge.setOnClickListener(this);
         rl_cashwithdrawal=findViewById(R.id.rl_cashwithdrawal);
         rl_cashwithdrawal.setOnClickListener(this);
+
+        rl_withdrawal_in=findViewById(R.id.rl_withdrawal_in);
+        rl_withdrawal_in.setOnClickListener(this);
+        rl_withdrawal_out=findViewById(R.id.rl_withdrawal_out);
+        rl_withdrawal_out.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +47,13 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
                 ActivityUtil.startMyRechageActivity(this);
                 break;
             case R.id.rl_cashwithdrawal:
+                ActivityUtil.startWithdrawalActivity(this);
+                break;
+            case R.id.rl_withdrawal_in:
+                ActivityUtil.startRunWaterRecordActivity(this,"1");
+                break;
+            case R.id.rl_withdrawal_out:
+                ActivityUtil.startRunWaterRecordActivity(this,"2");
                 break;
         }
     }

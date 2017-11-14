@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/item_layout"
+    android:layout_height="98px">
+
+    <TextView
+        android:id="@+id/tv_mywithdrawal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/black"
+        android:textSize="24px"
+        android:drawableLeft="@drawable/zhifubao_recharge"
+        android:gravity="center_vertical"
+        android:drawablePadding="10px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30px"
+        android:text="185101692350"/>
+
+
+    <TextView
+        android:id="@+id/item_delete"
+        android:layout_width="100px"
+        android:layout_height="match_parent"
+        android:background="@color/viewbadger"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@android:color/white"
+        android:textSize="24px" />
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -6,19 +6,25 @@ import android.content.Intent;
 import com.lifecircle.ui.SearchActivity;
 import com.lifecircle.ui.guangchang.MainActivity;
 import com.lifecircle.ui.linju.ContactsActivity;
-import com.lifecircle.ui.my.ModifyPersonalDataActivity;
+import com.lifecircle.ui.my.MyModifyPersonalDataActivity;
+import com.lifecircle.ui.my.MyAddWithdrawal;
+import com.lifecircle.ui.my.MyCashWithdrawalActivity;
+import com.lifecircle.ui.my.MyDelWithdrawal;
 import com.lifecircle.ui.my.MyFeedBackActivity;
 import com.lifecircle.ui.my.MyFollowActivity;
+import com.lifecircle.ui.my.MyInfoEditAcitivty;
 import com.lifecircle.ui.my.MyIntegralActivity;
 import com.lifecircle.ui.my.MyOrderActivity;
 import com.lifecircle.ui.my.MyRechargeActivity;
+import com.lifecircle.ui.my.MyRunnWaterRecordActivity;
 import com.lifecircle.ui.my.MySetActivity;
 import com.lifecircle.ui.my.MySingActivity;
 import com.lifecircle.ui.my.MyWalletActivity;
 import com.lifecircle.ui.my.MyTaskActivity;
 import com.lifecircle.ui.my.MyWithLifeCirleActivity;
+import com.lifecircle.ui.my.MyWithdrawalActivity;
 import com.lifecircle.ui.my.MyinvitationActivity;
-import com.lifecircle.ui.my.NotificationSettingsActivity;
+import com.lifecircle.ui.my.MyNotificationSettingsActivity;
 
 public class ActivityUtil {
 
@@ -120,12 +126,12 @@ public class ActivityUtil {
      */
 
     public static void startNotificationSetActivity(Activity _activity) {
-        Intent localIntent = new Intent(_activity, NotificationSettingsActivity.class);
+        Intent localIntent = new Intent(_activity, MyNotificationSettingsActivity.class);
         _activity.startActivity(localIntent);
     }
 
     /**
-     * 跳转到通知设置页面
+     * 跳转到反馈页面
      *
      * @param _activity
      */
@@ -136,13 +142,13 @@ public class ActivityUtil {
     }
 
     /**
-     * 跳转到通知设置页面
+     * 跳转到个人资料修改页面
      *
      * @param _activity
      */
 
     public static void startPersonalDataActivity(Activity _activity) {
-        Intent localIntent = new Intent(_activity, ModifyPersonalDataActivity.class);
+        Intent localIntent = new Intent(_activity, MyModifyPersonalDataActivity.class);
         _activity.startActivity(localIntent);
     }
 
@@ -169,7 +175,7 @@ public class ActivityUtil {
     }
 
     /**
-     * 跳转到我的联系人页面
+     * 跳转到我的签到页面
      *
      * @param _activity
      */
@@ -192,6 +198,18 @@ public class ActivityUtil {
     }
 
     /**
+     * 跳转到流水界面页面
+     *
+     * @param _activity
+     */
+
+    public static void startRunWaterRecordActivity(Activity _activity,String state) {
+        Intent localIntent = new Intent(_activity, MyRunnWaterRecordActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+
+    /**
      * 跳转到我的充值页面
      *
      * @param _activity
@@ -202,8 +220,60 @@ public class ActivityUtil {
         _activity.startActivity(localIntent);
     }
 
+    /**
+     * 跳转到提现列表页面
+     *
+     * @param _activity
+     */
 
+    public static void startWithdrawalActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyWithdrawalActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 跳转到添加账号页面
+     *
+     * @param _activity
+     */
 
+    public static void startAddWithdrawalActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyAddWithdrawal.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到删除账号页面
+     *
+     * @param _activity
+     */
+
+    public static void startDelWithdrawalActivity(Activity _activity,int position) {
+        Intent localIntent = new Intent(_activity, MyDelWithdrawal.class);
+        localIntent.putExtra( "position", position+"" );
+        _activity.startActivityForResult(localIntent, 1);
+    }
+
+    /**
+     * 跳转到提现页面
+     *
+     * @param _activity
+     */
+
+    public static void startCashWithdrawalActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyCashWithdrawalActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到个人料资页面
+     *
+     * @param _activity
+     */
+
+    public static void startMyInfoWditActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyInfoEditAcitivty.class);
+        _activity.startActivity(localIntent);
+    }
 
 /**
      * 跳转到我的积分页面

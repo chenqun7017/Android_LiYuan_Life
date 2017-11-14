@@ -55,14 +55,14 @@ public class MyRechargeActivity extends BaseActivity implements View.OnClickList
             case R.id.iv_recharge_weixi:
                 rv_recharge_submit.setBackgroundResource(R.color.colorPrimary);
                 PAY="1";
-                iv_recharge_weixi.setBackgroundResource(R.drawable.yixuanzhe);
-                iv_recharge_pay.setBackgroundResource(R.drawable.weixuanzhe);
+                iv_recharge_weixi.setImageResource(R.drawable.yixuanzhe);
+                iv_recharge_pay.setImageResource(R.drawable.weixuanzhe);
                 break;
             case R.id.iv_recharge_pay:
                 rv_recharge_submit.setBackgroundResource(R.color.colorPrimary);
                 PAY="2";
-                iv_recharge_weixi.setBackgroundResource(R.drawable.weixuanzhe);
-                iv_recharge_pay.setBackgroundResource(R.drawable.yixuanzhe);
+                iv_recharge_weixi.setImageResource(R.drawable.weixuanzhe);
+                iv_recharge_pay.setImageResource(R.drawable.yixuanzhe);
                 break;
         }
     }

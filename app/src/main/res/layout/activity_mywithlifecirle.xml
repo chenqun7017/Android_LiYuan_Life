@@ -6,6 +6,8 @@
     android:background="@color/activityback"
     android:orientation="vertical">
 
+    <include layout="@layout/include_apptoolbar_b" />
+
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="310px"

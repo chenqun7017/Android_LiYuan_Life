@@ -14,6 +14,7 @@ import com.lifecircle.adapter.ZhoubianfirstAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.SingExchangeBean;
 import com.lifecircle.javaBean.ZhoubianFristBean;
+import com.lifecircle.view.DividerGridItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,8 @@ public class MySingActivity extends BaseActivity implements View.OnClickListener
     private TextView toolbar_right_text;
 
     private List<SingExchangeBean> listDate=new ArrayList<SingExchangeBean>();
+
+   private DividerGridItemDecoration dividerGridItemDecoration;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,13 +50,11 @@ public class MySingActivity extends BaseActivity implements View.OnClickListener
         for (int i=0;i<10;i++){
             listDate.add(new SingExchangeBean());
         }
+
         RecyclerView rc_sing_exchange=findViewById(R.id.rc_sing_exchange);
         GridLayoutManager mg = new GridLayoutManager(this, 3);
         rc_sing_exchange.setLayoutManager(mg);
         rc_sing_exchange.setAdapter(new SingExchangeAdapter(R.layout.item_sing_exchange,listDate));
-
-
-
 
 
     }

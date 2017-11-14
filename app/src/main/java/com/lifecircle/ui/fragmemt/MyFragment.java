@@ -83,6 +83,9 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         LinearLayout ll_my_myinvitation=view.findViewById(R.id.ll_my_myinvitation);
         ll_my_myinvitation.setOnClickListener(this);
 
+        RelativeLayout rl_info=view.findViewById(R.id.rl_info);
+        rl_info.setOnClickListener(this);
+
         return view;
 
     }
@@ -90,6 +93,9 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.rl_info:
+                ActivityUtil.startMyInfoWditActivity(getActivity());
+                break;
             case R.id.rl_my_dynamics:
                 break;
             case R.id.rl_my_comments:

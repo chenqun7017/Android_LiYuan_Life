@@ -33,14 +33,20 @@
         <activity android:name="com.lifecircle.ui.SearchActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyTaskActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyFollowActivity"/>
-        <activity android:name="com.lifecircle.ui.my.NotificationSettingsActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyNotificationSettingsActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyFeedBackActivity"/>
-        <activity android:name="com.lifecircle.ui.my.ModifyPersonalDataActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyModifyPersonalDataActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyinvitationActivity"/>
         <activity android:name="com.lifecircle.ui.linju.ContactsActivity"/>
         <activity android:name="com.lifecircle.ui.my.MySingActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyWithLifeCirleActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyRechargeActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyWithdrawalActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyAddWithdrawal"/>
+        <activity android:name="com.lifecircle.ui.my.MyDelWithdrawal"/>
+        <activity android:name="com.lifecircle.ui.my.MyRunnWaterRecordActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyCashWithdrawalActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyInfoEditAcitivty"/>
 
 
 
