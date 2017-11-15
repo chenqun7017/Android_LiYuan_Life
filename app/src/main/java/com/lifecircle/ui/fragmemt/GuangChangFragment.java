@@ -1,6 +1,10 @@
 package com.lifecircle.ui.fragmemt;
 
 
+import android.content.Context;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,12 +16,12 @@ import android.widget.RelativeLayout;
 import com.lifecircle.R;
 import com.lifecircle.adapter.GuangChangAdapter;
 
+import com.lifecircle.adapter.PublicPageMenusAdapter;
 import com.lifecircle.base.BaseFragment;
 import com.lifecircle.javaBean.GuangChangListBean;
 import com.lifecircle.javaBean.ViewPageMenuBean;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.GlideImageLoader;
-import com.lifecircle.view.PublicViewPageMens;
 import com.youth.banner.Banner;
 
 
@@ -29,23 +33,29 @@ import java.util.List;
  */
 
 public class GuangChangFragment extends BaseFragment implements View.OnClickListener{
-    List<String> list=new ArrayList<String>();
+    //广告位url集合
+    private List<String> list=new ArrayList<String>();
+    //分类集合
     private List<ViewPageMenuBean> viewPageMenuBean = new ArrayList<ViewPageMenuBean>();
-    PublicViewPageMens publicViewPageMens;
-    RecyclerView rc_guangchang_list;
+    private ViewPager viewPageMens;
+    private RecyclerView rc_guangchang_list;
+    private RelativeLayout rl_search;
+    private List<GuangChangListBean> listDate=new ArrayList<GuangChangListBean>();
 
-    RelativeLayout rl_search;
-
-    private  List<GuangChangListBean> listDate=new ArrayList<GuangChangListBean>();
-
+    //RecyclerView集合
+    private   List<View> views = new ArrayList<View>();
+    private  RecyclerView listview;
+    private Context context;
+    private GridLayoutManager mgr;
 
     @Override
     public View initView(LayoutInflater inflater) {
         View view=inflater.inflate(R.layout.fragment_guangchang,null);
+        context=getActivity();
         Banner banner =view.findViewById(R.id.banner);
         rc_guangchang_list =view.findViewById(R.id.rc_guangchang_list);
         rl_search=view.findViewById(R.id.rl_search);
-        publicViewPageMens =view.findViewById(R.id.guangchang_viewpager);
+        viewPageMens =view.findViewById(R.id.guangchang_viewpager);
         rl_search.setOnClickListener(this);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
@@ -54,24 +64,102 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         list.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2599706304,2343100100&fm=11&gp=0.jpg");
         banner.setImages(list);
         banner.start();
+        initViewPageMens();
         initDate();
         return view;
     }
 
     //数据源
     private void initDate() {
-      /*  for (int k=0;k<1;k++){
-            viewPageMenuBean.add(new ViewPageMenuBean());
-        }
-       publicViewPageMens.initViewPageMens(viewPageMenuBean);*/
-
         for (int i=0;i<10;i++){
             listDate.add(new GuangChangListBean());
         }
+
         //创建默认的线性LayoutManager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rc_guangchang_list.setLayoutManager(mLayoutManager);
         rc_guangchang_list.setAdapter(new GuangChangAdapter(R.layout.public_item_list,listDate));
+    }
+
+    public void initViewPageMens() {
+        for (int k=0;k<16;k++){
+            viewPageMenuBean.add(new ViewPageMenuBean());
+        }
+        int size = viewPageMenuBean.size();
+        if (size <=4&&size>0) {
+            initRecyclerView(size,viewPageMenuBean);
+        }
+        if (size >= 5 && size <= 8) {
+            initRecyclerView(4,viewPageMenuBean);
+        }
+        if (size > 8) {
+            if (size % 8 == 0) {
+                int lenght=(size / 8);
+                for (int i = 0; i < lenght; i++) {
+                    List<ViewPageMenuBean> listBean = new ArrayList<ViewPageMenuBean>();
+                    int J=i*8;
+                    for (J=0;J<(8+i*8);J++){
+                        if (J==i*8){
+                            listBean.clear();
+                        }
+                        listBean.add(viewPageMenuBean.get(J));
+                    }
+                    initRecyclerView(4,listBean);
+                }
+            }else {
+                int lenght=(size / 8);
+                int  item=size%8;
+                for (int i = 0; i < lenght+1; i++) {
+                    List<ViewPageMenuBean> listBean = new ArrayList<ViewPageMenuBean>();
+                    int J=i*8;
+                    for (J=0;J<(8+i*8);J++){
+                        if (J==i*8){
+                            listBean.clear();
+                        }
+                        listBean.add(viewPageMenuBean.get(J));
+                        if (size==(J+1)){
+                            break;
+                        }
+                    }
+                    initRecyclerView(4,listBean);
+
+                }
+
+            }
+
+        }
+
+        viewPageMens.setAdapter(new PagerAdapter() {
+            @Override
+            public int getCount() {
+                return views.size();
+            }
+
+            @Override
+            public boolean isViewFromObject(View view, Object object) {
+                return view == object;
+            }
+
+            @Override
+            public Object instantiateItem(ViewGroup container, int position) {
+                container.addView(views.get(position));
+                return views.get(position);
+            }
+
+            @Override
+            public void destroyItem(ViewGroup container, int position, Object object) {
+                super.destroyItem(container, position, object);
+                container.removeView((View) object);
+            }
+        });
+    }
+
+    private void initRecyclerView(int size,List<ViewPageMenuBean> listBean) {
+        listview=new RecyclerView(context);
+        mgr= new GridLayoutManager(getContext(), size);
+        listview.setLayoutManager(mgr);
+        listview.setAdapter(new PublicPageMenusAdapter(R.layout.public_item_pageviewmenu, listBean));
+        views.add(listview);
     }
 
 

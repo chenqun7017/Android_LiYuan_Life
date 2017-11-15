@@ -17,6 +17,7 @@ import com.lifecircle.base.BaseFragment;
 import com.lifecircle.javaBean.GuangChangListBean;
 import com.lifecircle.javaBean.ZhouBianSecondBean;
 import com.lifecircle.javaBean.ZhoubianFristBean;
+import com.lifecircle.utils.ActivityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +55,6 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
             listDate.add(new ZhoubianFristBean());
         }
 
-
-
         RecyclerView rc_zhoubian_first=view.findViewById(R.id.rc_zhoubian_first);
         GridLayoutManager mg = new GridLayoutManager(getActivity(), 5);
         rc_zhoubian_first.setLayoutManager(mg);
@@ -87,6 +86,7 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.rl_xhoubian_search:
+                ActivityUtil.startSearchActivity(getActivity());
                 break;
                 default:
                     break;

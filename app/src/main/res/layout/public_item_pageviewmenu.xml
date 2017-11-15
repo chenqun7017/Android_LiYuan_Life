@@ -16,7 +16,7 @@
         android:id="@+id/tv_item_menu_name"
         android:layout_width="wrap_content"
         android:layout_marginTop="10px"
-        android:layout_below="@+id/iv_item_menu_01tab"
+        android:layout_below="@+id/iv_item_menu_image"
         android:layout_centerHorizontal="true"
         android:text="222"
         android:layout_marginBottom="10px"

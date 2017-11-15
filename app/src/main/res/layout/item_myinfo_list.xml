@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_myinfo_image"
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="30px"
+        android:src="@drawable/userdefaultimage"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="0px"
+        app:layout_auto_basewidth="height" />
+
+        <TextView
+            android:id="@+id/tv_myinfo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:layout_toRightOf="@+id/iv_myinfo_image"
+            android:layout_marginLeft="10px"
+            android:text="大吹哥"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <ImageView
+            android:id="@+id/iv_myinfo_seximage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:layout_toRightOf="@+id/tv_myinfo_name"
+            android:layout_marginLeft="10px"
+            android:src="@drawable/nan_biaoshi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:layout_toRightOf="@+id/iv_myinfo_seximage"
+            android:background="@color/yolle"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:paddingTop="3px"
+            android:paddingBottom="3px"
+            android:gravity="center"
+            android:text="Lv3"
+            android:layout_marginLeft="10px"
+            android:textColor="@android:color/white"
+            android:textSize="19px" />
+
+    <TextView
+        android:id="@+id/tv_myinfo_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23px"
+        android:textColor="@color/text"
+        android:layout_below="@+id/tv_myinfo_name"
+        android:layout_marginTop="20px"
+        android:layout_toRightOf="@+id/iv_myinfo_image"
+        android:layout_marginLeft="10px"
+        android:text="来自"/>
+
+    <TextView
+    android:id="@+id/tv_myinfo_source"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="23px"
+    android:textColor="@color/text_back"
+    android:layout_below="@+id/tv_myinfo_name"
+    android:layout_marginTop="20px"
+    android:layout_toRightOf="@+id/tv_myinfo_tag"
+    android:text="生活服务"/>
+
+    <TextView
+        android:id="@+id/tv_myinfo_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23px"
+        android:textColor="@color/text"
+        android:layout_below="@+id/tv_myinfo_name"
+        android:layout_marginTop="20px"
+        android:layout_toRightOf="@+id/tv_myinfo_source"
+        android:text="|刚刚"/>
+
+    <TextView
+        android:id="@+id/tv_item_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="21px"
+        android:layout_below="@+id/iv_myinfo_image"
+        android:textSize="24px"
+        android:textColor="@color/black"
+        android:text="你在他乡还好吗">
+    </TextView>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginBottom="20px"
+        android:background="@color/activityback"
+        android:layout_below="@+id/tv_item_comments"
+        android:layout_marginTop="20px"
+        android:layout_height="98px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_back"
+            android:layout_marginLeft="20px"
+            android:textSize="24px"
+            android:text=" 巫山老妖 - 博客园"/>
+
+        <ImageView
+            android:layout_width="78px"
+            android:layout_height="78px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20px"
+            android:src="@drawable/net_bitmap"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>
