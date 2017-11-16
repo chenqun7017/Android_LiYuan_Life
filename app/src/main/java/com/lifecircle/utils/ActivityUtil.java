@@ -15,16 +15,20 @@ import com.lifecircle.ui.my.MyFollowActivity;
 import com.lifecircle.ui.my.MyInfoEditAcitivty;
 import com.lifecircle.ui.my.MyIntegralActivity;
 import com.lifecircle.ui.my.MyOrderActivity;
+import com.lifecircle.ui.my.MyPostDetailsActivity;
+import com.lifecircle.ui.my.MyPostsActiivty;
 import com.lifecircle.ui.my.MyRechargeActivity;
 import com.lifecircle.ui.my.MyRunnWaterRecordActivity;
 import com.lifecircle.ui.my.MySetActivity;
 import com.lifecircle.ui.my.MySingActivity;
+import com.lifecircle.ui.my.MyThumbUplistActivity;
 import com.lifecircle.ui.my.MyWalletActivity;
 import com.lifecircle.ui.my.MyTaskActivity;
 import com.lifecircle.ui.my.MyWithLifeCirleActivity;
 import com.lifecircle.ui.my.MyWithdrawalActivity;
 import com.lifecircle.ui.my.MyinvitationActivity;
 import com.lifecircle.ui.my.MyNotificationSettingsActivity;
+import com.lifecircle.ui.my.PersonalInformationStyleActivity;
 
 public class ActivityUtil {
 
@@ -272,6 +276,51 @@ public class ActivityUtil {
 
     public static void startMyInfoWditActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, MyInfoEditAcitivty.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到个人信息样式页面
+     *
+     * @param _activity
+     */
+
+    public static void startInfomationStyleActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, PersonalInformationStyleActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转到个人信息样式页面
+     *
+     * @param _activity
+     */
+
+    public static void startMyPostActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyPostsActiivty.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转贴子详情页面
+     *
+     * @param _activity
+     */
+
+    public static void startPostDetailsActivity(Activity _activity,int position) {
+        Intent localIntent = new Intent(_activity, MyPostDetailsActivity.class);
+        localIntent.putExtra( "position", position+"" );
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转点赞详情页面
+     *
+     * @param _activity
+     */
+
+    public static void startThumbUpActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyThumbUplistActivity.class);
         _activity.startActivity(localIntent);
     }
 

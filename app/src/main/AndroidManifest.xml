@@ -47,6 +47,10 @@
         <activity android:name="com.lifecircle.ui.my.MyRunnWaterRecordActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyCashWithdrawalActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyInfoEditAcitivty"/>
+        <activity android:name="com.lifecircle.ui.my.PersonalInformationStyleActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyPostsActiivty"/>
+        <activity android:name="com.lifecircle.ui.my.MyPostDetailsActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyThumbUplistActivity"/>
 
 
 

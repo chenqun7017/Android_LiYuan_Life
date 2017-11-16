@@ -70,6 +70,33 @@
                 app:civ_border_width="2px"
                 app:layout_auto_basewidth="height" />
 
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="148px"
+                android:layout_height="54px"
+                android:layout_marginTop="66px"
+                android:layout_below="@+id/rl_toolbar"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/xingzhuang">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:src="@drawable/zan_baise"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="30px"
+                    android:text="1"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30px"
+                    android:textColor="@color/white"/>
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoLinearLayout
                 android:id="@+id/ll_name_tag"
                 android:layout_width="wrap_content"
@@ -182,9 +209,11 @@
             android:layout_height="134px">
 
             <TextView
+                android:id="@+id/tv_infostyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:padding="10px"
                 android:drawableLeft="@drawable/tianjia"
                 android:drawablePadding="10px"
                 android:gravity="center_vertical"
@@ -199,6 +228,7 @@
             android:orientation="horizontal">
 
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_myinfo_post"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -227,6 +257,7 @@
             </com.zhy.autolayout.AutoRelativeLayout>
 
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_myinfo_topic"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -255,6 +286,7 @@
             </com.zhy.autolayout.AutoRelativeLayout>
 
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_myinfo_repost"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1">

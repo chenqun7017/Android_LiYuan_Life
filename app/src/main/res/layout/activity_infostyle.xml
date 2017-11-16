@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <ImageView
+        android:id="@+id/iv_infostyle_first"
+        android:layout_width="690px"
+        android:layout_height="146px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/tiezhi_pre"
+        android:layout_marginTop="20px"/>
+
+    <ImageView
+        android:id="@+id/iv_infostyle_sconend"
+        android:layout_width="690px"
+        android:layout_height="146px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/tiezhihui_nor"
+        android:layout_marginTop="20px"/>
+
+</com.zhy.autolayout.AutoLinearLayout>

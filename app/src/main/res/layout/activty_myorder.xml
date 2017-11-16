@@ -37,27 +37,7 @@
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/iv_myorder_nodata"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/zhelishenmedoumeiyou"/>
-
-        <TextView
-           android:layout_below="@+id/iv_myorder_nodata"
-            android:text="这里什么都没有"
-            android:textSize="24px"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15px"
-            android:textColor="@color/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </com.zhy.autolayout.AutoRelativeLayout>
+   <include layout="@layout/inculde_nodate"/>
 
 
 

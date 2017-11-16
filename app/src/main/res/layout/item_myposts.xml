@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="252px">
+
+    <TextView
+        android:id="@+id/tv_mypost_title"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:text="个人信息样式"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="20px"
+        android:lines="1"
+        android:textSize="30px"/>
+
+    <TextView
+        android:id="@+id/tv_mypost_content"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_mypost_title"
+        android:text="95后男子装备换RMB 荣登富豪榜95后男子装备换RMB 荣登富豪榜95后男子装备换RMB 荣登富豪榜95后男子装备换RMB 荣登富豪榜"
+        android:ellipsize="end"
+        android:textColor="@color/text_back"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="20px"
+        android:lines="2"
+        android:textSize="23px"/>
+
+    <TextView
+        android:id="@+id/tv_mypost_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:textSize="23px"
+        android:text="来自  生活服务"
+        android:textColor="@color/text"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="78px"/>
+
+    <ImageView
+        android:id="@+id/iv_mypost_image"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:src="@drawable/net_bitmap"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="20px"/>
+
+    <TextView
+        android:id="@+id/tv_mypost_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_mypost_image"
+        android:layout_marginLeft="20px"
+        android:textColor="@color/text"
+        android:textSize="23px"
+        android:text="1小时前"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="78px"/>
+
+    <TextView
+        android:id="@+id/tv_mypost_integral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23px"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20px"
+        android:paddingTop="5px"
+        android:paddingBottom="5px"
+        android:paddingRight="10px"
+        android:paddingLeft="10px"
+        android:layout_marginRight="30px"
+        android:background="@drawable/shape_mypost_nor"
+        android:text="积分置顶"/>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

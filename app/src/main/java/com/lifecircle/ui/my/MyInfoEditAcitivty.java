@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lifecircle.R;
@@ -14,6 +15,7 @@ import com.lifecircle.adapter.ContacsAdapter;
 import com.lifecircle.adapter.MyInfoAdapter;
 import com.lifecircle.javaBean.MyInfoBean;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
 import com.lifecircle.view.SpinerPopWindow;
 
@@ -41,6 +43,12 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
     private SpinerPopWindow mSpinerPopWindow;
 
     private List<String> nameList = new ArrayList<String>();
+
+    private  TextView tv_infostyle;
+
+    private RelativeLayout rl_myinfo_post;
+    private RelativeLayout rl_myinfo_topic;
+    private RelativeLayout rl_myinfo_repost;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,6 +85,16 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
         myInfoAdapter=new MyInfoAdapter(R.layout.item_myinfo_list,listDate);
         rc_myinfolist.setAdapter(myInfoAdapter);
 
+        tv_infostyle=findViewById(R.id.tv_infostyle);
+        tv_infostyle.setOnClickListener(this);
+
+        rl_myinfo_post=findViewById(R.id.rl_myinfo_post);
+        rl_myinfo_post.setOnClickListener(this);
+        rl_myinfo_topic=findViewById(R.id.rl_myinfo_topic);
+        rl_myinfo_topic.setOnClickListener(this);
+        rl_myinfo_repost=findViewById(R.id.rl_myinfo_repost);
+        rl_myinfo_repost.setOnClickListener(this);
+
     }
 
     @Override
@@ -87,6 +105,18 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
                 break;
             case R.id.tv_myinfo_screen:
                 showSpinWindow();
+                break;
+            case R.id.tv_infostyle:
+                ActivityUtil.startInfomationStyleActivity(this);
+                break;
+            case R.id.rl_myinfo_post:
+                ActivityUtil.startMyPostActivity(this);
+                break;
+            case R.id.rl_myinfo_topic:
+
+                break;
+            case R.id.rl_myinfo_repost:
+
                 break;
         }
 

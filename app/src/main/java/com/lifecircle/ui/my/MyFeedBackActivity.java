@@ -27,7 +27,7 @@ public class MyFeedBackActivity extends BaseActivity implements View.OnClickList
         toolbar_iv_back=findViewById(R.id.toolbar_iv_back);
         toolbar_iv_back.setImageResource(R.drawable.zuo);
         toolbar_iv_back.setOnClickListener(this);
-        toolbar_right_text=findViewById(R.id.toolbar_center_text);
+        toolbar_right_text=findViewById(R.id.toolbar_right_text);
         toolbar_right_text.setText("关于");
         toolbar_right_text.setOnClickListener(this);
     }
