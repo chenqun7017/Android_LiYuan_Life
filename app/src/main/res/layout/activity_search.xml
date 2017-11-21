@@ -7,17 +7,17 @@
     android:orientation="vertical">
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-        android:id="@+id/rl_search"
         android:background="@color/colorPrimary"
         android:layout_height="88px">
 
-        <TextView
+        <EditText
             android:layout_width="614px"
             android:layout_height="64px"
             android:layout_centerVertical="true"
             android:layout_marginLeft="30px"
             android:hint="搜索贴子、服务、店铺或商品"
             android:textSize="24px"
+            android:lines="1"
             android:textColor="@color/text"
             android:drawableLeft="@drawable/sousuo"
             android:paddingLeft="10px"

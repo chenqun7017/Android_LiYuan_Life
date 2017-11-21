@@ -6,6 +6,11 @@ import android.content.Intent;
 import com.lifecircle.ui.SearchActivity;
 import com.lifecircle.ui.guangchang.MainActivity;
 import com.lifecircle.ui.linju.ContactsActivity;
+import com.lifecircle.ui.linju.NewsListActivity;
+import com.lifecircle.ui.my.EditorialShowA;
+import com.lifecircle.ui.my.MyCollection;
+import com.lifecircle.ui.my.MyCommetnsActivity;
+import com.lifecircle.ui.my.MyDynamicsActivity;
 import com.lifecircle.ui.my.MyModifyPersonalDataActivity;
 import com.lifecircle.ui.my.MyAddWithdrawal;
 import com.lifecircle.ui.my.MyCashWithdrawalActivity;
@@ -18,9 +23,11 @@ import com.lifecircle.ui.my.MyOrderActivity;
 import com.lifecircle.ui.my.MyPostDetailsActivity;
 import com.lifecircle.ui.my.MyPostsActiivty;
 import com.lifecircle.ui.my.MyRechargeActivity;
+import com.lifecircle.ui.my.MyRepostActivity;
 import com.lifecircle.ui.my.MyRunnWaterRecordActivity;
 import com.lifecircle.ui.my.MySetActivity;
 import com.lifecircle.ui.my.MySingActivity;
+import com.lifecircle.ui.my.MySingTime;
 import com.lifecircle.ui.my.MyThumbUplistActivity;
 import com.lifecircle.ui.my.MyWalletActivity;
 import com.lifecircle.ui.my.MyTaskActivity;
@@ -29,6 +36,8 @@ import com.lifecircle.ui.my.MyWithdrawalActivity;
 import com.lifecircle.ui.my.MyinvitationActivity;
 import com.lifecircle.ui.my.MyNotificationSettingsActivity;
 import com.lifecircle.ui.my.PersonalInformationStyleActivity;
+import com.lifecircle.ui.my.PointPraiseListActivity;
+import com.lifecircle.ui.my.WithFriendsChatActivity;
 
 public class ActivityUtil {
 
@@ -274,8 +283,9 @@ public class ActivityUtil {
      * @param _activity
      */
 
-    public static void startMyInfoWditActivity(Activity _activity) {
+    public static void startMyInfoWditActivity(Activity _activity,String uid) {
         Intent localIntent = new Intent(_activity, MyInfoEditAcitivty.class);
+        localIntent.putExtra( "uid", uid);
         _activity.startActivity(localIntent);
     }
 
@@ -291,7 +301,7 @@ public class ActivityUtil {
     }
 
     /**
-     * 跳转到个人信息样式页面
+     * 跳转到我的贴子页面
      *
      * @param _activity
      */
@@ -321,6 +331,96 @@ public class ActivityUtil {
 
     public static void startThumbUpActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, MyThumbUplistActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转贴友聊天页面
+     *
+     * @param _activity
+     */
+    public static void startWithFriendsChatActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, WithFriendsChatActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转点赞列表页面
+     *
+     * @param _activity
+     */
+    public static void startPointPraiseListActivity(Activity _activity,String uid) {
+        Intent localIntent = new Intent(_activity, PointPraiseListActivity.class);
+        localIntent.putExtra( "uid", uid);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转个个展示位编缉页面
+     *
+     * @param _activity
+     */
+    public static void startEditorialShowActivity(Activity _activity,String state) {
+        Intent localIntent = new Intent(_activity, EditorialShowA.class);
+        localIntent.putExtra( "state", state);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转我的收藏页面
+     *
+     * @param _activity
+     */
+    public static void startMyCollectionChatActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyCollection.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转我的回贴页面
+     *
+     * @param _activity
+     */
+    public static void startMyRepostActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyRepostActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 跳转我的评论页面
+     *
+     * @param _activity
+     */
+    public static void startMyCommentActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyCommetnsActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转我的动态页面
+     *
+     * @param _activity
+     */
+    public static void startMyDynamicsActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyDynamicsActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 跳转签到记录页面
+     *
+     * @param _activity
+     */
+    public static void startMySingTimeActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MySingTime.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转消息列表页面
+     *
+     * @param _activity
+     */
+    public static void startNewsListActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, NewsListActivity.class);
         _activity.startActivity(localIntent);
     }
 

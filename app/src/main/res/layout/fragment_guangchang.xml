@@ -1,52 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <include layout="@layout/include_search"/>
+    android:layout_height="match_parent"
+    android:background="@color/activityback">
+    <include layout="@layout/include_search" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/rl_search">
 
-<com.zhy.autolayout.AutoRelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:descendantFocusability="blocksDescendants">
-
-
-        <com.youth.banner.Banner
-            android:id="@+id/banner"
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="336px"/>
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="336px">
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-        <ImageView
-            android:layout_below="@+id/rl_search"
-            android:layout_width="match_parent"
-            android:layout_height="100px"
-            android:layout_marginTop="286px"
-            android:background="@drawable/banner_sp">
-        </ImageView>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/guangchang_viewpager"
-        android:layout_width="match_parent"
-        android:background="@android:color/white"
-        android:layout_below="@+id/banner"
-        android:layout_height="262px">
-    </android.support.v4.view.ViewPager>
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/guangchang_viewpager"
-        android:id="@+id/rc_guangchang_list"
-        android:layout_width="match_parent"
-        android:background="@android:color/white"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
-
-</com.zhy.autolayout.AutoRelativeLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bag"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/white"
+                    android:layout_marginRight="3px"
+                    android:layout_marginLeft="2px"
+                    android:layout_alignParentBottom="true"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/guangchang_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="362px"
+                android:background="@android:color/white"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_guangchang_list"
+                android:layout_marginTop="10px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/guangchang_viewpager"
+                android:background="@android:color/white"/>
+        </com.zhy.autolayout.AutoLinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 </com.zhy.autolayout.AutoRelativeLayout>

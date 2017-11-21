@@ -51,7 +51,15 @@
         <activity android:name="com.lifecircle.ui.my.MyPostsActiivty"/>
         <activity android:name="com.lifecircle.ui.my.MyPostDetailsActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyThumbUplistActivity"/>
-
+        <activity android:name="com.lifecircle.ui.my.WithFriendsChatActivity"/>
+        <activity android:name="com.lifecircle.ui.my.PointPraiseListActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyCollection"/>
+        <activity android:name="com.lifecircle.ui.my.EditorialShowA"/>
+        <activity android:name="com.lifecircle.ui.my.MyRepostActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyCommetnsActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyDynamicsActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MySingTime"/>
+        <activity android:name="com.lifecircle.ui.linju.NewsListActivity"/>
 
 
 

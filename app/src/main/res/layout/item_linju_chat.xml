@@ -47,13 +47,4 @@
     android:layout_marginTop="23px"
     android:layout_marginRight="30px"
     android:text="17/2/15"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="3px"
-        android:background="@color/activityback"
-        android:layout_alignParentBottom="true"/>
-
-
-
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -3,11 +3,14 @@ package com.lifecircle.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.javaBean.MyWithdrawalListBean;
-import com.lifecircle.viewholder.MyWithdrawalViewHolder;
+import com.lifecircle.viewholder.MyItemRemoveViewHolder;
 
 import java.util.List;
 
@@ -24,12 +27,12 @@ public class MyWithdrawalAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MyWithdrawalViewHolder(mInflater.inflate(R.layout.item_mywithdrawal, parent, false));
+        return new MyItemRemoveViewHolder(mInflater.inflate(R.layout.item_mywithdrawal, parent, false));
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        //final MyWithdrawalViewHolder viewHolder = (MyWithdrawalViewHolder) holder;
+        //final MyItemRemoveViewHolder viewHolder = (MyItemRemoveViewHolder) holder;
        // viewHolder.content.setText("aa");
     }
 
@@ -42,4 +45,5 @@ public class MyWithdrawalAdapter extends RecyclerView.Adapter {
         listDate.remove(position);
         notifyDataSetChanged();
     }
+
 }

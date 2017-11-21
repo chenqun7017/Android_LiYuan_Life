@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <include layout="@layout/include_apptoolbar_b" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="68px"
+        android:textColor="@color/black"
+        android:textSize="30px"
+        android:text="标题"
+        android:gravity="center_vertical"
+        android:paddingLeft="30px"/>
+
+    <EditText
+        android:id="@+id/tv_edit_addtitle"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:textColor="@color/black"
+        android:textSize="23px"
+        android:lines="1"
+        android:background="@color/white"
+        android:hint="添加标题"
+        android:gravity="center_vertical"
+        android:paddingLeft="30px"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="68px"
+        android:textColor="@color/black"
+        android:textSize="30px"
+        android:text="描述"
+        android:gravity="center_vertical"
+        android:paddingLeft="30px"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="370px"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+        <EditText
+            android:id="@+id/tv_edit_addcontext"
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:textColor="@color/black"
+            android:textSize="23px"
+            android:lines="1"
+            android:background="@color/white"
+            android:hint="添加描述"
+            android:gravity="center_vertical"
+            android:paddingLeft="30px"/>
+
+        <ImageView
+            android:id="@+id/iv_editorialshowa"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_marginTop="10px"
+            android:layout_marginLeft="30px"
+            android:src="@drawable/bigtianjia"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <EditText
+        android:id="@+id/tv_edit_addurl"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_marginTop="10px"
+        android:textColor="@color/black"
+        android:textSize="23px"
+        android:lines="1"
+        android:background="@color/white"
+        android:hint="添加链接"
+        android:gravity="center_vertical"
+        android:paddingLeft="30px"/>
+    <EditText
+        android:id="@+id/tv_edit_addphone"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_marginTop="3px"
+        android:textColor="@color/black"
+        android:textSize="23px"
+        android:lines="1"
+        android:background="@color/white"
+        android:hint="添加手机号"
+        android:gravity="center_vertical"
+        android:paddingLeft="30px"/>
+</com.zhy.autolayout.AutoLinearLayout>

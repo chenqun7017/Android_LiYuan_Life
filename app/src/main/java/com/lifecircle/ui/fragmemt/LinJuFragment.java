@@ -16,6 +16,7 @@ import com.lifecircle.javaBean.ZhouBianSecondBean;
 import com.lifecircle.javaBean.ZhoubianFristBean;
 import com.lifecircle.javaBean.linJuChatBean;
 import com.lifecircle.utils.ActivityUtil;
+import com.lifecircle.view.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
 
         TextView  toolbar_right_text=view.findViewById(R.id.toolbar_right_text);
         toolbar_right_text.setText("消息");
+        toolbar_right_text.setOnClickListener(this);
         rl_contacts=view.findViewById(R.id.rl_contacts);
         rl_contacts.setOnClickListener(this);
 
@@ -49,6 +51,10 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
 
         LinearLayoutManager mg = new LinearLayoutManager(getActivity());
         rc_linju.setLayoutManager(mg);
+        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mg.VERTICAL);
+        dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
+        dividerItemDecoration.setSize(2);
+        rc_linju.addItemDecoration(dividerItemDecoration);
         rc_linju.setAdapter(new linjuAdapter(R.layout.item_linju_chat,listSecondDate));
 
         return view;
@@ -60,6 +66,9 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
         switch (view.getId()){
             case R.id.rl_contacts:
                 ActivityUtil.startContactsActivity(getActivity());
+                break;
+            case R.id.toolbar_right_text:
+                ActivityUtil.startNewsListActivity(getActivity());
                 break;
         }
 

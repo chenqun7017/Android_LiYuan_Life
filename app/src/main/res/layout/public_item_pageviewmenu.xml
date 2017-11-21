@@ -7,7 +7,6 @@
     <ImageView
         android:id="@+id/iv_item_menu_image"
         android:layout_width="wrap_content"
-        android:layout_marginTop="10px"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher"/>
@@ -18,9 +17,7 @@
         android:layout_marginTop="10px"
         android:layout_below="@+id/iv_item_menu_image"
         android:layout_centerHorizontal="true"
-        android:text="222"
-        android:layout_marginBottom="10px"
+        android:text="生活爆料"
+        android:textSize="23px"
         android:layout_height="wrap_content" />
-
-
 </com.zhy.autolayout.AutoRelativeLayout>

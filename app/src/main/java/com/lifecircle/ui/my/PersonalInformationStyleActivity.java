@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.utils.ActivityUtil;
 
 /**
  * Created by lenovo on 2017/11/16.
@@ -28,6 +29,9 @@ public class PersonalInformationStyleActivity extends BaseActivity implements Vi
 
 
     private  boolean isOpen=true;
+
+    //选择标识
+    private String state="";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,21 +60,23 @@ public class PersonalInformationStyleActivity extends BaseActivity implements Vi
                 break;
             case R.id.toolbar_right_text:
                 if (FIRST||SCONEND){
-
+                    ActivityUtil.startEditorialShowActivity(this,state);
                 }
                 break;
             case R.id.iv_infostyle_first:
-                if (isOpen){
+                state="FIRST";
+                if (!isOpen){
                     iv_infostyle_first.setImageResource(R.drawable.tiezhi_pre);
                     iv_infostyle_sconend.setImageResource(R.drawable.tiezhihui_nor);
-                    isOpen=false;
+                    isOpen=true;
                 }
                 break;
             case R.id.iv_infostyle_sconend:
-                if (!isOpen){
+                state="SCONEND";
+                if (isOpen){
                     iv_infostyle_sconend.setImageResource(R.drawable.tiezhihui_pre);
                     iv_infostyle_first.setImageResource(R.drawable.tiezhi_nor);
-                    isOpen=true;
+                    isOpen=false;
                 }
                 break;
         }

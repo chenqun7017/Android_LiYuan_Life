@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseFragment;
+import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.dialog.DialogSign;
 import com.lifecircle.utils.ActivityUtil;
 
@@ -94,13 +95,16 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.rl_info:
-                ActivityUtil.startMyInfoWditActivity(getActivity());
+                ActivityUtil.startMyInfoWditActivity(getActivity(), GlobalVariable.uid);
                 break;
             case R.id.rl_my_dynamics:
+                ActivityUtil.startMyDynamicsActivity(getActivity());
                 break;
             case R.id.rl_my_comments:
+                ActivityUtil.startMyCommentActivity(getActivity());
                 break;
             case R.id.rl_my_collection:
+                ActivityUtil.startMyCollectionChatActivity(getActivity());
                 break;
             case R.id.tv_my_sign:
                 DialogSign dialogSign=new DialogSign();

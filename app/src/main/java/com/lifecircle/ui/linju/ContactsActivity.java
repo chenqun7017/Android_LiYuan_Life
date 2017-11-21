@@ -9,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
 import com.lifecircle.adapter.ContacsAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.ContactsBean;
+import com.lifecircle.ui.my.MyFollowActivity;
+import com.lifecircle.utils.ActivityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +40,8 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
 
 
     private List<ContactsBean> listDate=new ArrayList<ContactsBean>();
+
+    private  ContacsAdapter contacsAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,7 +74,15 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
 
         LinearLayoutManager mg = new LinearLayoutManager(this);
         rc_contacts.setLayoutManager(mg);
-        rc_contacts.setAdapter(new ContacsAdapter(R.layout.item_contacts,listDate));
+        contacsAdapter=new ContacsAdapter(R.layout.item_contacts,listDate);
+        rc_contacts.setAdapter(contacsAdapter);
+        contacsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                String uid="2";
+                ActivityUtil.startMyInfoWditActivity(ContactsActivity.this,uid);
+            }
+        });
 
     }
 

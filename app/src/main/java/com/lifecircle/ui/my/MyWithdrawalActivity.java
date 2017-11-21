@@ -34,7 +34,6 @@ public class MyWithdrawalActivity extends BaseActivity  implements View.OnClickL
     private RelativeLayout rl_add_withdrawal;
 
     private  DividerItemDecoration dividerItemDecoration;
-
     private MyWithdrawalAdapter adapter;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {

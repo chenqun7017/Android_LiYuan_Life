@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/activityback"
     android:orientation="vertical">
     <include layout="@layout/include_apptoolbar_w"/>
-    <include layout="@layout/include3line"/>
-
     <android.support.v4.widget.NestedScrollView
+        android:layout_marginTop="3px"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.zhy.autolayout.AutoLinearLayout
@@ -64,6 +64,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rc_linju"
                 android:layout_width="match_parent"
+                android:background="@color/white"
                 android:layout_height="wrap_content">
 
             </android.support.v7.widget.RecyclerView>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/activityback">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:id="@+id/rl_toolbar"
+        android:layout_height="88px">
+
+
+        <ImageView
+            android:id="@+id/toolbar_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/fanhui"
+            android:layout_marginLeft="30px"/>
+
+        <TextView
+            android:id="@+id/toolbar_center_text"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="35px"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="82px"
+        android:layout_marginTop="2px"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_newsall"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_news_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="全部"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26px" />
+            <TextView
+                android:id="@+id/tv_all_line"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="30px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/activityback" />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_news_received"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="30px"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@color/activityback" />
+            <TextView
+                android:id="@+id/tv_second_line"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:visibility="gone"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+            <TextView
+                android:id="@+id/tv_news_received"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="收到的评论"
+                android:textColor="@color/black"
+                android:textSize="26px" />
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="10px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="#EFEFEF" />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_news_recommend"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="30px"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@color/activityback" />
+
+            <TextView
+                android:id="@+id/tv_third_line"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30px"
+                android:visibility="gone"
+                android:layout_marginRight="30px"
+                android:layout_height="3px"
+                android:background="@color/colorPrimary"/>
+            <TextView
+                android:id="@+id/tv_news_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="热文推荐"
+                android:textColor="@color/black"
+                android:textSize="26px" />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_news"
+        android:layout_marginTop="2px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+    </android.support.v7.widget.RecyclerView>
+
+</com.zhy.autolayout.AutoLinearLayout>

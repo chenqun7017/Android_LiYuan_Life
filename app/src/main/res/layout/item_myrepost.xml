@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="290px">
+
+    <TextView
+        android:id="@+id/tv_repost_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:textColor="@color/black"
+        android:layout_marginTop="20px"
+        android:text="[语音6秒]"
+        android:layout_marginLeft="30px"/>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_below="@+id/tv_repost_content"
+        android:layout_marginTop="20px"
+        android:layout_height="156px"
+        android:background="@color/activityback"
+        >
+        <TextView
+            android:id="@+id/tv_repost_titile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10px"
+            android:layout_centerVertical="true"
+            android:textSize="24px"/>
+
+        <ImageView
+            android:layout_width="130px"
+            android:layout_height="138px"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10px"
+            android:layout_centerVertical="true"
+            android:src="@drawable/net_bitmap"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+ <TextView
+    android:id="@+id/tv_myrepost_source"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentBottom="true"
+     android:layout_marginLeft="30px"
+     android:layout_marginBottom="20px"
+     android:textColor="@color/text"
+    android:textSize="24px"
+    android:text="来自 生活服务"/>
+
+    <TextView
+        android:id="@+id/tv_myrepost_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="30px"
+        android:layout_marginBottom="20px"
+        android:textColor="@color/text"
+        android:textSize="24px"
+        android:text="58分钟前"/>
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

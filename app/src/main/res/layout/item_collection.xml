@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="196px"
+    android:id="@+id/item_layout"
+    android:orientation="horizontal"
+    android:background="@color/activityback">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:ellipsize="end"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="40px"
+            android:layout_marginRight="218px"
+            android:textColor="@color/black"
+            android:text="公司有个需求就是要随着屏幕的改变而加载附近的商户信息那么高德地图获取当前屏幕中心点的经纬度呢"
+            android:textSize="29px"/>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_images"
+            android:layout_width="138px"
+            android:layout_height="100px"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="20px">
+
+            <com.lifecircle.view.RoundImageView
+                android:id="@+id/rv_image"
+                android:layout_width="138px"
+                android:layout_height="100px"
+                android:src="@drawable/net_bitmap" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="23px"
+                android:layout_alignParentBottom="true"
+                android:background="#30000000"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="5张"/>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_line_tag"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@+id/rl_images"
+            android:layout_marginTop="10px"
+            android:background="@drawable/line_shape"/>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_my_userimage"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="30px"
+            android:src="@drawable/userdefaultimage"
+            app:civ_border_color="@android:color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10px"
+            app:civ_border_width="0px"
+            app:layout_auto_basewidth="height" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:layout_toRightOf="@+id/iv_my_userimage"
+            android:textSize="24px"
+            android:layout_marginLeft="20px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15px"
+            android:text="陈大大"/>
+
+        <TextView
+            android:id="@+id/tv_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15px"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:layout_marginRight="30px"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/xiaoxi"
+            android:drawablePadding="10px"
+            android:text="9"/>
+
+        <TextView
+            android:id="@+id/tv_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15px"
+            android:layout_toLeftOf="@+id/tv_comments"
+            android:layout_marginRight="30px"
+            android:textColor="@color/text"
+            android:text="2017-10-21"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:id="@+id/item_delete"
+        android:layout_width="100px"
+        android:layout_height="match_parent"
+        android:background="@color/viewbadger"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@android:color/white"
+        android:textSize="24px" />
+
+
+</com.zhy.autolayout.AutoLinearLayout>

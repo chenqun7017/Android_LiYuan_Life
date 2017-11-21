@@ -95,6 +95,13 @@ public class MyPostDetailsActivity extends BaseActivity implements View.OnClickL
 
             }
         });
+        myPostReplyAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                String uid="2";
+                ActivityUtil.startMyInfoWditActivity(MyPostDetailsActivity.this,uid);
+            }
+        });
 
 
     }

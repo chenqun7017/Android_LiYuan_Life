@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/activityback">
-
+   <android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,6 +74,7 @@
                 app:layout_auto_basewidth="height" />
 
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_thumbup"
                 android:layout_width="148px"
                 android:layout_height="54px"
                 android:layout_marginTop="66px"
@@ -86,6 +90,7 @@
                     android:src="@drawable/zan_baise"/>
 
                 <TextView
+                    android:id="@+id/tv_thumbup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -358,4 +363,47 @@
 
 
     </com.zhy.autolayout.AutoLinearLayout>
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+<com.zhy.autolayout.AutoLinearLayout
+    android:id="@+id/ll_bottom"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="100px"
+    android:layout_alignParentBottom="true"
+    android:orientation="horizontal"
+    android:background="@color/activityback">
+
+   <TextView
+       android:id="@+id/tv_info_follow"
+       android:layout_width="0px"
+       android:layout_weight="1"
+       android:layout_marginTop="2px"
+       android:layout_marginRight="1px"
+       android:background="@color/white"
+       android:layout_height="match_parent"
+       android:text="关注"
+       android:textSize="30px"
+       android:gravity="center"
+       android:textColor="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/tv_info_send"
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_marginTop="2px"
+        android:layout_marginLeft="1px"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:text="发消息"
+        android:textSize="30px"
+        android:gravity="center"
+        android:textColor="@color/black"/>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>

@@ -1,379 +1,382 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/activityback"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/activityback">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="86px">
 
-    <com.zhy.autolayout.AutoLinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="match_parent"
-        android:background="@android:color/white"
-        android:layout_height="88px">
-
-        <ImageView
-            android:id="@+id/toolbar_iv_back"
-            android:layout_width="18px"
-            android:layout_height="34px"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/zou_back"
-            android:layout_marginLeft="30px"/>
-
-
-        <ImageView
-            android:id="@+id/iv_mypostdetails_point"
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:paddingRight="30px"
-            android:paddingTop="5px"
-            android:paddingBottom="5px"
-            android:src="@drawable/gengduo"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_postdetails_share"
-            android:layout_width="wrap_content"
-            android:layout_height="45px"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/iv_mypostdetails_point"
-            android:layout_marginRight="50px"
-            android:text="1"
-            android:gravity="top"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20px"/>
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="88px"
+                android:background="@android:color/white">
 
-        <ImageView
-            android:id="@+id/iv_mypostdetails_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/tv_postdetails_share"
-            android:layout_marginRight="5px"
-            android:src="@drawable/zhuanfa"/>
-        <TextView
-            android:id="@+id/tv_postdetails_fabulous"
-            android:layout_width="wrap_content"
-            android:layout_height="45px"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/iv_mypostdetails_share"
-            android:layout_marginRight="30px"
-            android:text="5"
-            android:gravity="top"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20px"/>
-
-        <ImageView
-            android:id="@+id/iv_mypostdetails_fabulous"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/tv_postdetails_fabulous"
-            android:layout_marginRight="5px"
-            android:src="@drawable/zan_lv"/>
+                <ImageView
+                    android:id="@+id/toolbar_iv_back"
+                    android:layout_width="18px"
+                    android:layout_height="34px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:src="@drawable/zou_back" />
 
 
-    </com.zhy.autolayout.AutoRelativeLayout>
+                <ImageView
+                    android:id="@+id/iv_mypostdetails_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingBottom="5px"
+                    android:paddingRight="30px"
+                    android:paddingTop="5px"
+                    android:src="@drawable/gengduo" />
 
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="2px"
-        android:layout_height="wrap_content"
-        android:background="@color/white">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_mypost_userimage"
-            android:layout_width="90px"
-            android:layout_height="90px"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="30px"
-            android:layout_marginTop="20px"
-            android:src="@drawable/userdefaultimage"
-            app:civ_border_color="@android:color/white"
-            app:civ_border_width="0px"
-            app:layout_auto_basewidth="height" />
-        <TextView
-            android:id="@+id/tv_mypost_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_mypost_userimage"
-            android:textSize="30px"
-            android:layout_marginTop="20px"
-            android:drawablePadding="10px"
-            android:drawableRight="@drawable/nan_biaoshi"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="30px"
-            android:text="汉英大词典"
-            android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:id="@+id/tv_postdetails_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:layout_toLeftOf="@+id/iv_mypostdetails_point"
+                    android:gravity="top"
+                    android:text="1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20px" />
 
-        <TextView
-            android:id="@+id/tv_post_adress"
-            android:layout_width="152px"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="23px"
-            android:lines="1"
-            android:ellipsize="end"
-            android:layout_toRightOf="@+id/iv_mypost_userimage"
-            android:layout_below="@+id/tv_mypost_username"
-            android:layout_marginTop="29px"
-            android:layout_marginLeft="30px"
-            android:text="双语例句语例语例语例"/>
+                <ImageView
+                    android:id="@+id/iv_mypostdetails_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5px"
+                    android:layout_toLeftOf="@+id/tv_postdetails_share"
+                    android:src="@drawable/zhuanfa" />
 
-        <TextView
-            android:id="@+id/tv_line"
-            android:layout_width="3px"
-            android:layout_height="20px"
-            android:background="@color/black"
-            android:layout_toRightOf="@+id/tv_post_adress"
-            android:layout_marginLeft="10px"
-            android:layout_below="@+id/tv_mypost_username"
-            android:layout_marginTop="29px"/>
+                <TextView
+                    android:id="@+id/tv_postdetails_fabulous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/iv_mypostdetails_share"
+                    android:gravity="top"
+                    android:text="5"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20px" />
+
+                <ImageView
+                    android:id="@+id/iv_mypostdetails_fabulous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5px"
+                    android:layout_toLeftOf="@+id/tv_postdetails_fabulous"
+                    android:src="@drawable/zan_lv" />
 
 
-        <TextView
-            android:id="@+id/tv_post_time"
-            android:layout_width="152px"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="23px"
-            android:lines="1"
-            android:ellipsize="end"
-            android:layout_toRightOf="@+id/tv_line"
-            android:layout_below="@+id/tv_mypost_username"
-            android:layout_marginTop="29px"
-            android:layout_marginLeft="30px"
-            android:text="2017-12-05"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2px"
+                android:background="@color/white">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_mypost_userimage"
+                    android:layout_width="90px"
+                    android:layout_height="90px"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="20px"
+                    android:src="@drawable/userdefaultimage"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="0px"
+                    app:layout_auto_basewidth="height" />
+
+                <TextView
+                    android:id="@+id/tv_mypost_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="20px"
+                    android:layout_toRightOf="@+id/iv_mypost_userimage"
+                    android:drawablePadding="10px"
+                    android:drawableRight="@drawable/nan_biaoshi"
+                    android:gravity="center_vertical"
+                    android:text="汉英大词典"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30px" />
+
+                <TextView
+                    android:id="@+id/tv_post_adress"
+                    android:layout_width="152px"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mypost_username"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="29px"
+                    android:layout_toRightOf="@+id/iv_mypost_userimage"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="双语例句语例语例语例"
+                    android:textColor="@color/black"
+                    android:textSize="23px" />
+
+                <TextView
+                    android:id="@+id/tv_line"
+                    android:layout_width="3px"
+                    android:layout_height="20px"
+                    android:layout_below="@+id/tv_mypost_username"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="29px"
+                    android:layout_toRightOf="@+id/tv_post_adress"
+                    android:background="@color/black" />
 
 
-        <TextView
-            android:id="@+id/tv_mypost_follow"
-            android:layout_width="114px"
-            android:layout_height="50px"
-            android:textSize="23px"
-            android:textColor="@color/white"
-             android:gravity="center"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="50px"
-            android:layout_marginRight="30px"
-            android:background="@drawable/shape_mypost_pre"
-            android:text="+关注"/>
-
-        <TextView
-            android:id="@+id/tv_mypost_letter"
-            android:layout_width="94px"
-            android:layout_height="48px"
-            android:textSize="23px"
-            android:textColor="@color/colorPrimary"
-            android:paddingTop="5px"
-            android:paddingBottom="5px"
-            android:paddingRight="15px"
-            android:gravity="center"
-            android:layout_toLeftOf="@+id/tv_mypost_follow"
-            android:layout_marginTop="50px"
-            android:layout_marginRight="10px"
-            android:paddingLeft="15px"
-            android:background="@drawable/shape_mypost_nor"
-            android:text="私信"/>
+                <TextView
+                    android:id="@+id/tv_post_time"
+                    android:layout_width="152px"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mypost_username"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="29px"
+                    android:layout_toRightOf="@+id/tv_line"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="2017-12-05"
+                    android:textColor="@color/black"
+                    android:textSize="23px" />
 
 
-        <TextView
-            android:id="@+id/tv_mypost_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            android:layout_below="@+id/iv_mypost_userimage"
-            android:layout_marginTop="40px"
-            android:textSize="30px"
-            android:text="当你的联系人接受邀请后，你就可以同他私信或群聊了"/>
+                <TextView
+                    android:id="@+id/tv_mypost_follow"
+                    android:layout_width="114px"
+                    android:layout_height="50px"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="50px"
+                    android:background="@drawable/shape_mypost_pre"
+                    android:gravity="center"
+                    android:text="+关注"
+                    android:textColor="@color/white"
+                    android:textSize="23px" />
+
+                <TextView
+                    android:id="@+id/tv_mypost_letter"
+                    android:layout_width="94px"
+                    android:layout_height="48px"
+                    android:layout_marginRight="10px"
+                    android:layout_marginTop="50px"
+                    android:layout_toLeftOf="@+id/tv_mypost_follow"
+                    android:background="@drawable/shape_mypost_nor"
+                    android:gravity="center"
+                    android:paddingBottom="5px"
+                    android:paddingLeft="15px"
+                    android:paddingRight="15px"
+                    android:paddingTop="5px"
+                    android:text="私信"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23px" />
 
 
-        <TextView
-            android:id="@+id/tv_mypost_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            android:layout_below="@+id/tv_mypost_title"
-            android:layout_marginTop="50px"
-            android:textSize="23px"
-            android:text="今年4月，北京市发布了《北京市2017-2021年及2017年度住宅用地供应计划》，计划明确，今后五年，北京将继续加大租赁住房供应，计划供地1300公顷，建设租赁住房50万套。而这50万套租赁住房，其中的大部分将通过集体建设用地安排。"/>
+                <TextView
+                    android:id="@+id/tv_mypost_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_mypost_userimage"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="40px"
+                    android:text="当你的联系人接受邀请后，你就可以同他私信或群聊了"
+                    android:textColor="@color/black"
+                    android:textSize="30px" />
 
 
-
- <TextView
-     android:id="@+id/tv_mypost_tel"
-    android:layout_width="164px"
-    android:layout_height="46px"
-     android:background="@drawable/shape_mypost_pre"
-     android:drawableLeft="@drawable/dianhua"
-     android:layout_below="@+id/tv_mypost_content"
-     android:paddingLeft="20px"
-     android:layout_marginTop="50px"
-     android:layout_marginLeft="30px"
-     android:textSize="23px"
-     android:textColor="@color/white"
-     android:gravity="center"
-     android:text="点击拔打"/>
+                <TextView
+                    android:id="@+id/tv_mypost_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mypost_title"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="50px"
+                    android:text="今年4月，北京市发布了《北京市2017-2021年及2017年度住宅用地供应计划》，计划明确，今后五年，北京将继续加大租赁住房供应，计划供地1300公顷，建设租赁住房50万套。而这50万套租赁住房，其中的大部分将通过集体建设用地安排。"
+                    android:textColor="@color/black"
+                    android:textSize="23px" />
 
 
-        <TextView
-            android:id="@+id/tv_mypost_fabulous"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_mypost_tel"
-            android:layout_marginTop="60px"
-            android:layout_marginLeft="50px"
-            android:layout_marginBottom="20px"
-            android:textSize="23px"
-            android:textColor="@color/colorPrimary"
-            android:text="赞：2"/>
-
-    </com.zhy.autolayout.AutoRelativeLayout>
-
-    <com.zhy.autolayout.AutoRelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_marginTop="2px"
-        android:background="@color/white"
-        android:layout_height="70px">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rc_mypost_fabulous"
-            android:layout_width="1334px"
-            android:layout_height="70px"
-            android:layout_marginLeft="20px"
-            android:background="@color/white">
-        </android.support.v7.widget.RecyclerView>
-
-<com.zhy.autolayout.AutoRelativeLayout
-    android:id="@+id/rl_mypostimagelist"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/transparent">
-</com.zhy.autolayout.AutoRelativeLayout>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="30px"
-            android:layout_centerVertical="true"
-            android:src="@drawable/rightt"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
-
- <com.zhy.autolayout.AutoRelativeLayout
-     android:layout_width="match_parent"
-     android:layout_marginTop="10px"
-     android:background="@color/white"
-     android:layout_height="68px">
-     <TextView
-         android:layout_width="3px"
-         android:layout_height="40px"
-         android:background="@color/colorPrimary"
-         android:layout_centerVertical="true"
-         android:layout_marginLeft="30px"/>
-
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:textColor="@color/colorPrimary"
-         android:textSize="23px"
-         android:text="全部评论"
-         android:layout_centerVertical="true"
-         android:layout_marginLeft="53px"/>
-
-     <TextView
-         android:id="@+id/tv_mypost_choice"
-         android:layout_width="wrap_content"
-         android:layout_height="match_parent"
-         android:layout_alignParentRight="true"
-         android:text="最早"
-         android:textSize="24px"
-         android:gravity="center_vertical"
-         android:textColor="@color/colorPrimary"
-         android:paddingRight="30px"/>
-     <ImageView
-         android:id="@+id/iv_mypost_choice"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_centerVertical="true"
-         android:layout_marginRight="10px"
-         android:layout_toLeftOf="@+id/tv_mypost_choice"
-         android:src="@drawable/saixuan_xia"/>
+                <TextView
+                    android:id="@+id/tv_mypost_tel"
+                    android:layout_width="164px"
+                    android:layout_height="46px"
+                    android:layout_below="@+id/tv_mypost_content"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="50px"
+                    android:background="@drawable/shape_mypost_pre"
+                    android:drawableLeft="@drawable/dianhua"
+                    android:gravity="center"
+                    android:paddingLeft="20px"
+                    android:text="点击拔打"
+                    android:textColor="@color/white"
+                    android:textSize="23px" />
 
 
+                <TextView
+                    android:id="@+id/tv_mypost_fabulous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mypost_tel"
+                    android:layout_marginBottom="20px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginTop="60px"
+                    android:text="赞：2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23px" />
 
- </com.zhy.autolayout.AutoRelativeLayout>
+            </com.zhy.autolayout.AutoRelativeLayout>
 
-  <android.support.v7.widget.RecyclerView
-        android:id="@+id/rc_mypost_reply"
-        android:layout_marginTop="2px"
-        android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="wrap_content">
+            <com.zhy.autolayout.AutoRelativeLayout
 
-    </android.support.v7.widget.RecyclerView>
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_marginTop="2px"
+                android:background="@color/white">
 
-    </com.zhy.autolayout.AutoLinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rc_mypost_fabulous"
+                    android:layout_width="1334px"
+                    android:layout_height="70px"
+                    android:layout_marginLeft="20px"
+                    android:background="@color/white"/>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_mypostimagelist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:src="@drawable/rightt" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="68px"
+                android:layout_marginTop="10px"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="3px"
+                    android:layout_height="40px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="53px"
+                    android:text="全部评论"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23px" />
+
+                <TextView
+                    android:id="@+id/tv_mypost_choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:paddingRight="30px"
+                    android:text="最早"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24px" />
+
+                <ImageView
+                    android:id="@+id/iv_mypost_choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10px"
+                    android:layout_toLeftOf="@+id/tv_mypost_choice"
+                    android:src="@drawable/saixuan_xia" />
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_mypost_reply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2px"
+                android:background="@color/white">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </com.zhy.autolayout.AutoLinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
 
-<com.zhy.autolayout.AutoRelativeLayout
-    android:id="@+id/rl_reply"
-    android:layout_width="match_parent"
-    android:background="@color/white"
-    android:layout_alignParentBottom="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:layout_height="84px">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_reply"
+        android:layout_width="match_parent"
+        android:layout_height="84px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
-    <EditText
-        android:layout_width="516px"
-        android:layout_height="68px"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="30px"
-        android:hint="回复楼主"
-          android:textSize="23px"
-        android:textColor="@color/text"
-        android:paddingLeft="10px"
-        android:background="@drawable/shape_reply_nor"
-        android:gravity="center_vertical"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="23px"
-        android:layout_centerVertical="true"
-        android:textColor="#BCBCBC"
-        android:layout_marginLeft="390px"
-        android:text="已有10回复"/>
+        <EditText
+            android:layout_width="516px"
+            android:layout_height="68px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/shape_reply_nor"
+            android:gravity="center_vertical"
+            android:hint="回复楼主"
+            android:paddingLeft="10px"
+            android:textColor="@color/text"
+            android:textSize="23px" />
 
-
-    <TextView
-        android:layout_width="162px"
-        android:layout_height="68px"
-        android:text="回贴"
-        android:gravity="center"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="30px"
-        android:background="@drawable/shape_mypost_pre"
-        android:textColor="@color/white"
-        android:textSize="23px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="390px"
+            android:text="已有10回复"
+            android:textColor="#BCBCBC"
+            android:textSize="23px" />
 
 
+        <TextView
+            android:layout_width="162px"
+            android:layout_height="68px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/shape_mypost_pre"
+            android:gravity="center"
+            android:text="回贴"
+            android:textColor="@color/white"
+            android:textSize="23px" />
 
-</com.zhy.autolayout.AutoRelativeLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>

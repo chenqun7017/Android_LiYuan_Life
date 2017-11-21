@@ -14,6 +14,7 @@ import com.lifecircle.adapter.ZhoubianfirstAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.SingExchangeBean;
 import com.lifecircle.javaBean.ZhoubianFristBean;
+import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerGridItemDecoration;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class MySingActivity extends BaseActivity implements View.OnClickListener
         toolbar_iv_back.setImageResource(R.drawable.zuo);
         toolbar_iv_back.setOnClickListener(this);
 
-        toolbar_right_text=findViewById(R.id.toolbar_center_text);
+        toolbar_right_text=findViewById(R.id.toolbar_right_text);
         toolbar_right_text.setText("签到记录");
         toolbar_right_text.setOnClickListener(this);
 
@@ -65,7 +66,7 @@ public class MySingActivity extends BaseActivity implements View.OnClickListener
                 finish();
                 break;
             case R.id.toolbar_right_text:
-
+                ActivityUtil.startMySingTimeActivity(this);
                 break;
         }
 

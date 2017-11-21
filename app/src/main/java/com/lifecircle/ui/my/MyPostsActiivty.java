@@ -18,6 +18,8 @@ import com.lifecircle.adapter.linjuAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.MyPostBean;
 import com.lifecircle.javaBean.MyWithdrawalListBean;
+import com.lifecircle.ui.dialog.DialogSign;
+import com.lifecircle.ui.dialog.DialogTop;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
 
@@ -73,8 +75,8 @@ public class MyPostsActiivty extends BaseActivity  implements View.OnClickListen
             myPostAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
                 @Override
                 public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                    Toast.makeText(MyPostsActiivty.this,"222",Toast.LENGTH_SHORT).show();
-
+                    DialogTop dialogTop=new DialogTop();
+                    dialogTop.show(getFragmentManager(),"dialogTop");
                 }
             });
 

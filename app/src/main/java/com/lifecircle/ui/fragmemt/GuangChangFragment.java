@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
 import com.lifecircle.adapter.GuangChangAdapter;
 
@@ -21,6 +23,7 @@ import com.lifecircle.base.BaseFragment;
 import com.lifecircle.javaBean.GuangChangListBean;
 import com.lifecircle.javaBean.ViewPageMenuBean;
 import com.lifecircle.utils.ActivityUtil;
+import com.lifecircle.view.DividerItemDecoration;
 import com.lifecircle.view.GlideImageLoader;
 import com.youth.banner.Banner;
 
@@ -39,7 +42,8 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     private List<ViewPageMenuBean> viewPageMenuBean = new ArrayList<ViewPageMenuBean>();
     private ViewPager viewPageMens;
     private RecyclerView rc_guangchang_list;
-    private RelativeLayout rl_search;
+    private TextView tv_seach;
+    private  TextView tv_right;
     private List<GuangChangListBean> listDate=new ArrayList<GuangChangListBean>();
 
     //RecyclerView集合
@@ -47,6 +51,7 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     private  RecyclerView listview;
     private Context context;
     private GridLayoutManager mgr;
+    private  GuangChangAdapter guangChangAdapter;
 
     @Override
     public View initView(LayoutInflater inflater) {
@@ -54,9 +59,11 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         context=getActivity();
         Banner banner =view.findViewById(R.id.banner);
         rc_guangchang_list =view.findViewById(R.id.rc_guangchang_list);
-        rl_search=view.findViewById(R.id.rl_search);
+        tv_seach=view.findViewById(R.id.tv_seach);
         viewPageMens =view.findViewById(R.id.guangchang_viewpager);
-        rl_search.setOnClickListener(this);
+        tv_seach.setOnClickListener(this);
+        tv_right=view.findViewById(R.id.tv_right);
+        tv_right.setOnClickListener(this);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
         list.add("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3781711747,4277720928&fm=27&gp=0.jpg");
@@ -78,7 +85,18 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         //创建默认的线性LayoutManager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rc_guangchang_list.setLayoutManager(mLayoutManager);
-        rc_guangchang_list.setAdapter(new GuangChangAdapter(R.layout.public_item_list,listDate));
+        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mLayoutManager.VERTICAL);
+        dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
+        dividerItemDecoration.setSize(10);
+        rc_guangchang_list.addItemDecoration(dividerItemDecoration);
+        guangChangAdapter=new GuangChangAdapter(R.layout.public_item_list,listDate);
+        rc_guangchang_list.setAdapter(guangChangAdapter);
+        guangChangAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ActivityUtil.startPostDetailsActivity(getActivity(),position);
+            }
+        });
     }
 
     public void initViewPageMens() {
@@ -166,8 +184,11 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.rl_search:
+            case R.id.tv_seach:
                 ActivityUtil.startSearchActivity(getActivity());
+                break;
+            case R.id.tv_right:
+                ActivityUtil.startNewsListActivity(getActivity());
                 break;
         }
     }

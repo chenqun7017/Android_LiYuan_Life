@@ -69,12 +69,6 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
     private TextView tv_persondata_mailbox;
 
 
-
-
-
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

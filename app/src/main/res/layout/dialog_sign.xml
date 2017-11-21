@@ -6,8 +6,9 @@
 
 
        <com.zhy.autolayout.AutoRelativeLayout
+           android:id="@+id/rl_sign_up"
            android:layout_width="630px"
-           android:layout_height="517px"
+           android:layout_height="717px"
            android:layout_centerInParent="true">
 
               <ImageView

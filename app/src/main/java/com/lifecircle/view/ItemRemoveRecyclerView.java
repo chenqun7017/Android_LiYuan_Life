@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.interfaces.OnItemClickListener;
-import com.lifecircle.viewholder.MyWithdrawalViewHolder;
+import com.lifecircle.viewholder.MyItemRemoveViewHolder;
 
 public class ItemRemoveRecyclerView extends RecyclerView {
     private Context mContext;
@@ -76,7 +76,7 @@ public class ItemRemoveRecyclerView extends RecyclerView {
                         return false;
                     }
 
-                    MyWithdrawalViewHolder viewHolder = (MyWithdrawalViewHolder) getChildViewHolder(view);
+                    MyItemRemoveViewHolder viewHolder = (MyItemRemoveViewHolder) getChildViewHolder(view);
 
                     mItemLayout = viewHolder.layout;
                     mPosition = viewHolder.getAdapterPosition();

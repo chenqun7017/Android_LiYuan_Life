@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="210px">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_my_userimage"
+        android:layout_width="110px"
+        android:layout_height="110px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        android:src="@drawable/userdefaultimage"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="0px"
+        app:layout_auto_basewidth="height" />
+
+    <TextView
+        android:id="@+id/tv_pointlist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_my_userimage"
+        android:layout_marginTop="40px"
+        android:textColor="@color/text_back"
+        android:layout_marginLeft="20px"
+        android:lines="1"
+        android:layout_marginRight="178px"
+        android:ellipsize="end"
+        android:text="详解Android中OkHttp3的例子和在子线程更新UI线程的方法"
+        android:textSize="24px"/>
+
+    <TextView
+        android:id="@+id/tv_pointlist_address"
+        android:layout_width="124px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40px"
+        android:textSize="23px"
+         android:layout_marginRight="30px"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="同步请求的例子"
+        android:textColor="@color/text"/>
+
+    <TextView
+        android:id="@+id/tv_pointlist_01title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_my_userimage"
+        android:layout_below="@+id/tv_pointlist_title"
+        android:layout_marginTop="40px"
+        android:textColor="@color/text_back"
+        android:layout_marginLeft="20px"
+        android:lines="1"
+        android:layout_marginRight="30px"
+        android:ellipsize="end"
+        android:text="详解Android中OkHttp3的例子和在子线程更新UI线程的方法"
+        android:textSize="24px"/>
+
+    <TextView
+        android:id="@+id/tv_pointlist_02title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_my_userimage"
+        android:layout_below="@+id/tv_pointlist_01title"
+        android:layout_marginTop="20px"
+        android:textColor="@color/text"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="30px"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="详解Android中OkHttp3的例子和在子线程更新UI线程的方法"
+        android:textSize="24px"/>
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

@@ -13,6 +13,7 @@ import com.lifecircle.R;
 import com.lifecircle.adapter.ContacsAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.ContactsBean;
+import com.lifecircle.utils.ActivityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,13 +48,20 @@ public class MyFollowActivity extends BaseActivity {
         LinearLayoutManager mg = new LinearLayoutManager(this);
         rc_contacts.setLayoutManager(mg);
         contacsAdapter=new ContacsAdapter(R.layout.item_contacts,listDate);
+        rc_contacts.setAdapter(contacsAdapter);
         contacsAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
 
             }
         });
-        rc_contacts.setAdapter(contacsAdapter);
+        contacsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                String uid="2";
+                ActivityUtil.startMyInfoWditActivity(MyFollowActivity.this,uid);
+            }
+        });
 
 
     }

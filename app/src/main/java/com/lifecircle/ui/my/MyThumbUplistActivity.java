@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
 import com.lifecircle.adapter.MyFabulousListAdapter;
 import com.lifecircle.adapter.MyPostAdapter;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.javaBean.FabulousListBean;
 import com.lifecircle.javaBean.MyPostBean;
+import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
 
 import java.util.ArrayList;
@@ -29,6 +32,7 @@ public class MyThumbUplistActivity extends BaseActivity implements View.OnClickL
     private RecyclerView rc_thumbup;
     private List<FabulousListBean> listDate=new ArrayList<FabulousListBean>();
     private MyFabulousListAdapter myFabulousListAdapter;
+    private  String uid="2";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,13 @@ public class MyThumbUplistActivity extends BaseActivity implements View.OnClickL
         rc_thumbup.addItemDecoration(dividerItemDecoration);
         myFabulousListAdapter=new MyFabulousListAdapter(R.layout.item_postthumblist,listDate);
         rc_thumbup.setAdapter(myFabulousListAdapter);
+        myFabulousListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ActivityUtil.startMyInfoWditActivity(MyThumbUplistActivity.this, uid);
+            }
+        });
+
     }
     @Override
     public void onClick(View view) {
