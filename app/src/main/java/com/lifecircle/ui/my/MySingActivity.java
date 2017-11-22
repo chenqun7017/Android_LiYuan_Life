@@ -10,10 +10,8 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.adapter.SingExchangeAdapter;
-import com.lifecircle.adapter.ZhoubianfirstAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.SingExchangeBean;
-import com.lifecircle.javaBean.ZhoubianFristBean;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerGridItemDecoration;
 

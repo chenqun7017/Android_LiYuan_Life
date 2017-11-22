@@ -10,17 +10,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
-import com.lifecircle.adapter.GuangChangAdapter;
+import com.lifecircle.adapter.PublicListAdapter;
 
 import com.lifecircle.adapter.PublicPageMenusAdapter;
 import com.lifecircle.base.BaseFragment;
-import com.lifecircle.javaBean.GuangChangListBean;
+import com.lifecircle.javaBean.PublicListBean;
 import com.lifecircle.javaBean.ViewPageMenuBean;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
@@ -44,14 +43,16 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     private RecyclerView rc_guangchang_list;
     private TextView tv_seach;
     private  TextView tv_right;
-    private List<GuangChangListBean> listDate=new ArrayList<GuangChangListBean>();
+    private List<PublicListBean> listDate=new ArrayList<PublicListBean>();
 
     //RecyclerView集合
     private   List<View> views = new ArrayList<View>();
     private  RecyclerView listview;
     private Context context;
     private GridLayoutManager mgr;
-    private  GuangChangAdapter guangChangAdapter;
+    private PublicListAdapter publicListAdapter;
+
+    private  PublicPageMenusAdapter publicPageMenusAdapter;
 
     @Override
     public View initView(LayoutInflater inflater) {
@@ -79,7 +80,7 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     //数据源
     private void initDate() {
         for (int i=0;i<10;i++){
-            listDate.add(new GuangChangListBean());
+            listDate.add(new PublicListBean());
         }
 
         //创建默认的线性LayoutManager
@@ -89,9 +90,9 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
         dividerItemDecoration.setSize(10);
         rc_guangchang_list.addItemDecoration(dividerItemDecoration);
-        guangChangAdapter=new GuangChangAdapter(R.layout.public_item_list,listDate);
-        rc_guangchang_list.setAdapter(guangChangAdapter);
-        guangChangAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        publicListAdapter =new PublicListAdapter(R.layout.public_item_list,listDate);
+        rc_guangchang_list.setAdapter(publicListAdapter);
+        publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 ActivityUtil.startPostDetailsActivity(getActivity(),position);
@@ -176,7 +177,14 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         listview=new RecyclerView(context);
         mgr= new GridLayoutManager(getContext(), size);
         listview.setLayoutManager(mgr);
-        listview.setAdapter(new PublicPageMenusAdapter(R.layout.public_item_pageviewmenu, listBean));
+        publicPageMenusAdapter=new PublicPageMenusAdapter(R.layout.public_item_pageviewmenu, listBean);
+        listview.setAdapter(publicPageMenusAdapter);
+        publicPageMenusAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ActivityUtil.startPublicActivity(getActivity());
+            }
+        });
         views.add(listview);
     }
 

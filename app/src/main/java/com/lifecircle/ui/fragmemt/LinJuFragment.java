@@ -1,6 +1,5 @@
 package com.lifecircle.ui.fragmemt;
 
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,12 +7,10 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
-import com.lifecircle.adapter.ZhoubianfirstAdapter;
 import com.lifecircle.adapter.linjuAdapter;
 import com.lifecircle.base.BaseFragment;
-import com.lifecircle.javaBean.ZhouBianSecondBean;
-import com.lifecircle.javaBean.ZhoubianFristBean;
 import com.lifecircle.javaBean.linJuChatBean;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
@@ -30,6 +27,7 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
     private List<linJuChatBean> listSecondDate=new ArrayList<linJuChatBean>();
 
     private RelativeLayout rl_contacts;
+    private  linjuAdapter linjuAdapter;
     @Override
     public View initView(LayoutInflater inflater) {
         View view=inflater.inflate(R.layout.fragment_linju,null);
@@ -55,7 +53,14 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
         dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
         dividerItemDecoration.setSize(2);
         rc_linju.addItemDecoration(dividerItemDecoration);
-        rc_linju.setAdapter(new linjuAdapter(R.layout.item_linju_chat,listSecondDate));
+        linjuAdapter=new linjuAdapter(R.layout.item_linju_chat,listSecondDate);
+        rc_linju.setAdapter(linjuAdapter);
+        linjuAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ActivityUtil.startWithFriendsChatActivity(getActivity());
+            }
+        });
 
         return view;
     }

@@ -3,8 +3,11 @@ package com.lifecircle.utils;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.lifecircle.ui.SearchActivity;
-import com.lifecircle.ui.guangchang.MainActivity;
+import com.lifecircle.ui.guangchang.ReleaseFactActivity;
+import com.lifecircle.ui.my.MyOrderDetails;
+import com.lifecircle.ui.publicui.SearchActivity;
+import com.lifecircle.ui.publicui.MainActivity;
+import com.lifecircle.ui.publicui.PublicActivity;
 import com.lifecircle.ui.linju.ContactsActivity;
 import com.lifecircle.ui.linju.NewsListActivity;
 import com.lifecircle.ui.my.EditorialShowA;
@@ -38,6 +41,8 @@ import com.lifecircle.ui.my.MyNotificationSettingsActivity;
 import com.lifecircle.ui.my.PersonalInformationStyleActivity;
 import com.lifecircle.ui.my.PointPraiseListActivity;
 import com.lifecircle.ui.my.WithFriendsChatActivity;
+import com.lifecircle.ui.publicui.TopicActivity;
+import com.lifecircle.ui.zhoubianservices.ReleaseActivity;
 
 public class ActivityUtil {
 
@@ -424,26 +429,55 @@ public class ActivityUtil {
         _activity.startActivity(localIntent);
     }
 
-/**
-     * 跳转到我的积分页面
+    /**
+     * 跳转发布页面
      *
      * @param _activity
-     * @param phone     电话号码
-     *//*
-
-    public static void startResetPwdActivity(Activity _activity, String phone) {
-        Intent localIntent = new Intent(_activity, ResetPwdActivity.class);
-        localIntent.putExtra(LocalConstant.KEY_PHONE_NUMBER, phone);
+     */
+    public static void startRleaseActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ReleaseActivity.class);
         _activity.startActivity(localIntent);
-        _activity.finish();
     }
-*/
 
+    /**
+     * 跳转公共二级页面
+     *
+     * @param _activity
+     */
+    public static void startPublicActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, PublicActivity.class);
+        _activity.startActivity(localIntent);
+    }
 
+    /**
+     * 跳转公共二级页面
+     *
+     * @param _activity
+     */
+    public static void startReleaseFactActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ReleaseFactActivity.class);
+        _activity.startActivity(localIntent);
+    }
 
+    /**
+     * 跳转公共二级页面
+     *
+     * @param _activity
+     */
+    public static void startMyOrderDerailsActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, MyOrderDetails.class);
+        _activity.startActivity(localIntent);
+    }
 
-
-
+    /**
+     * 跳转话题页面
+     *
+     * @param _activity
+     */
+    public static void startTopicActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, TopicActivity.class);
+        _activity.startActivity(localIntent);
+    }
 
 
 }

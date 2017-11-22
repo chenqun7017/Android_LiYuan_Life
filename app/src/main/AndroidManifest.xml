@@ -24,13 +24,13 @@
         </activity>
 
 
-        <activity android:name="com.lifecircle.ui.guangchang.MainActivity"/>
+        <activity android:name="com.lifecircle.ui.publicui.MainActivity"/>
         <activity android:name="com.lifecircle.ui.my.MySetActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyOrderActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyWalletActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyIntegralActivity"/>
 
-        <activity android:name="com.lifecircle.ui.SearchActivity"/>
+        <activity android:name="com.lifecircle.ui.publicui.SearchActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyTaskActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyFollowActivity"/>
         <activity android:name="com.lifecircle.ui.my.MyNotificationSettingsActivity"/>
@@ -60,6 +60,13 @@
         <activity android:name="com.lifecircle.ui.my.MyDynamicsActivity"/>
         <activity android:name="com.lifecircle.ui.my.MySingTime"/>
         <activity android:name="com.lifecircle.ui.linju.NewsListActivity"/>
+        <activity android:name="com.lifecircle.ui.zhoubianservices.ReleaseActivity"/>
+        <activity android:name="com.lifecircle.ui.publicui.PublicActivity"/>
+        <activity android:name="com.lifecircle.ui.guangchang.WebBannerActivity"/>
+        <activity android:name="com.lifecircle.ui.guangchang.ReleaseFactActivity"/>
+        <activity android:name="com.lifecircle.ui.guangchang.ReaseActivity"/>
+        <activity android:name="com.lifecircle.ui.my.MyOrderDetails"/>
+        <activity android:name="com.lifecircle.ui.publicui.TopicActivity"/>
 
 
 

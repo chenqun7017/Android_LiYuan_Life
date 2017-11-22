@@ -1,4 +1,4 @@
-package com.lifecircle.ui.guangchang;
+package com.lifecircle.ui.publicui;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;

@@ -8,56 +8,52 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
-import com.lifecircle.adapter.MyOrderAdapter;
-import com.lifecircle.adapter.PointPraiseListAdapter;
+import com.lifecircle.adapter.MyOrderDetailsAdapter;
+import com.lifecircle.adapter.MyWithdrawalAdapter;
 import com.lifecircle.base.BaseActivity;
-import com.lifecircle.javaBean.MyOrderBean;
-import com.lifecircle.javaBean.PointPraiseListBean;
-import com.lifecircle.utils.ActivityUtil;
+import com.lifecircle.javaBean.CommodityBean;
 import com.lifecircle.view.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lenovo on 2017/11/9.
+ * Created by lenovo on 2017/11/22.
  */
 
-public class MyOrderActivity extends BaseActivity implements View.OnClickListener{
+public class MyOrderDetails extends BaseActivity  implements View.OnClickListener{
     private TextView toolbar_center_text;
     private ImageView toolbar_iv_back;
-    private RecyclerView rc_myoder;
-    private List<MyOrderBean> listDate=new ArrayList<MyOrderBean>();
-    private MyOrderAdapter myOrderAdapter;
+
+    private RecyclerView rc_orderdetails_list;
+
+    private List<CommodityBean> listDate=new ArrayList<CommodityBean>();
+    private MyOrderDetailsAdapter myOrderDetailsAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activty_myorder);
+        setContentView(R.layout.activity_myorderdetails);
         toolbar_center_text=findViewById(R.id.toolbar_center_text);
-        toolbar_center_text.setText("我的订单");
+        toolbar_center_text.setText("订单详情");
         toolbar_iv_back=findViewById(R.id.toolbar_iv_back);
         toolbar_iv_back.setImageResource(R.drawable.zuo);
         toolbar_iv_back.setOnClickListener(this);
-        rc_myoder=findViewById(R.id.rc_myoder);
+        rc_orderdetails_list=findViewById(R.id.rc_orderdetails_list);
+
         for (int i=0;i<4;i++){
-            listDate.add(new MyOrderBean());
+            listDate.add(new CommodityBean());
         }
         LinearLayoutManager mg = new LinearLayoutManager(this);
-        rc_myoder.setLayoutManager(mg);
+        rc_orderdetails_list.setLayoutManager(mg);
         DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mg.VERTICAL);
         dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
-        dividerItemDecoration.setSize(10);
-        rc_myoder.addItemDecoration(dividerItemDecoration);
-        myOrderAdapter=new MyOrderAdapter(R.layout.item_myorder, listDate);
-        rc_myoder.setAdapter(myOrderAdapter);
-        myOrderAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-           ActivityUtil.startMyOrderDerailsActivity(MyOrderActivity.this);
-            }
-        });
+        dividerItemDecoration.setSize(2);
+        rc_orderdetails_list.addItemDecoration(dividerItemDecoration);
+        myOrderDetailsAdapter = new MyOrderDetailsAdapter(R.layout.item_orderdetails, listDate);
+        rc_orderdetails_list.setAdapter(myOrderDetailsAdapter);
+
+
 
     }
     @Override
@@ -67,6 +63,5 @@ public class MyOrderActivity extends BaseActivity implements View.OnClickListene
                 finish();
                 break;
         }
-
     }
 }

@@ -1,4 +1,4 @@
-package com.lifecircle.ui;
+package com.lifecircle.ui.publicui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import com.lifecircle.base.BaseActivity;
 
 /**
  * Created by lenovo on 2017/11/10.
+ *
  */
 
 public class SearchActivity extends BaseActivity {

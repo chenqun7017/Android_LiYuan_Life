@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_my_userimage"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="20px"
+            android:src="@drawable/userdefaultimage"
+            app:civ_border_color="@android:color/white"
+            app:civ_border_width="0px"
+            app:layout_auto_basewidth="height" />
+
+        <TextView
+            android:id="@+id/tv_dynamics_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="28px"
+            android:layout_toRightOf="@+id/iv_my_userimage"
+            android:text="我是真的爱你"
+            android:textColor="@color/black"
+            android:textSize="23px" />
+
+        <TextView
+            android:id="@+id/tv_dynamics_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dynamics_name"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@+id/iv_my_userimage"
+            android:text="前天"
+            android:textColor="@color/text"
+            android:textSize="23px" />
+
+        <TextView
+            android:id="@+id/tv_mydynamics_connext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="20px"
+            android:layout_below="@+id/tv_dynamics_time"
+            android:text="更小更强大! 网易有道首款智能硬件“翻译蛋“上线更小更强大! 网易有道首款智能硬件“翻译蛋“上线更小更强大! 网易有道首款智能硬件“翻译蛋“上线"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <ImageView
+            android:id="@+id/iv_topic_image"
+            android:layout_width="164px"
+            android:layout_height="172px"
+            android:layout_marginLeft="30px"
+            android:layout_below="@+id/tv_mydynamics_connext"
+            android:layout_marginTop="20px"
+            android:src="@drawable/net_bitmap" />
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="66px"
+        android:background="@color/white"
+        android:layout_below="@+id/iv_topic_image"
+        android:layout_marginTop="2px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60px"
+            android:drawableLeft="@drawable/zan"
+            android:drawablePadding="10px"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="1"
+            android:textColor="@color/text_back"
+            android:textSize="25px" />
+
+        <TextView
+            android:id="@+id/tv_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="60px"
+            android:drawableLeft="@drawable/xiaoxi"
+            android:drawablePadding="10px"
+            android:gravity="center_vertical"
+            android:text="2"
+            android:textColor="@color/text_back"
+            android:textSize="25px" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="60px"
+            android:src="@drawable/fenxiang" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270px"
+            android:layout_marginTop="20px"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/tv_comments_name_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_point"
+                android:textColor="@color/colorPrimary"
+                android:textSize="23px"
+                android:layout_marginLeft="30px"
+                android:text="北京小样"
+                android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/tv_comments_text_fist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_point"
+                android:layout_toRightOf="@+id/tv_comments_name_first"
+                android:textColor="@color/text_back"
+                android:textSize="23px"
+                android:layout_marginLeft="3px"
+                android:text=":你是一个大傻子"
+                android:layout_marginTop="20px"/>
+
+
+            <TextView
+                android:id="@+id/tv_comments_name_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_comments_name_first"
+                android:textColor="@color/colorPrimary"
+                android:textSize="23px"
+                android:layout_marginLeft="30px"
+                android:text="北京小样"
+                android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/tv_comments_text_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_comments_name_first"
+                android:layout_toRightOf="@+id/tv_comments_name_second"
+                android:textColor="@color/text_back"
+                android:textSize="23px"
+                android:layout_marginLeft="3px"
+                android:text=":你是一个大傻子"
+                android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/tv_comments_name_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_comments_name_second"
+                android:textColor="@color/colorPrimary"
+                android:textSize="23px"
+                android:layout_marginLeft="30px"
+                android:text="北京小样"
+                android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/tv_comments_text_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_comments_name_second"
+                android:layout_toRightOf="@+id/tv_comments_name_second"
+                android:textColor="@color/text_back"
+                android:textSize="23px"
+                android:layout_marginLeft="3px"
+                android:text=":你是一个大傻子"
+                android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/tv_item_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23px"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignParentBottom="true"
+                android:text="查看更多>>"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10px"
+                android:layout_marginBottom="20px"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

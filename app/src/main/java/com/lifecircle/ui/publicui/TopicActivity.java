@@ -1,4 +1,4 @@
-package com.lifecircle.ui.my;
+package com.lifecircle.ui.publicui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,63 +8,62 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
-import com.lifecircle.adapter.MyOrderAdapter;
-import com.lifecircle.adapter.PointPraiseListAdapter;
+import com.lifecircle.adapter.MyDynamicsAdapter;
+import com.lifecircle.adapter.TopicListAdapter;
 import com.lifecircle.base.BaseActivity;
-import com.lifecircle.javaBean.MyOrderBean;
-import com.lifecircle.javaBean.PointPraiseListBean;
-import com.lifecircle.utils.ActivityUtil;
+import com.lifecircle.javaBean.MyDynamicsBean;
+import com.lifecircle.javaBean.TopicListBean;
 import com.lifecircle.view.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lenovo on 2017/11/9.
+ * Created by lenovo on 2017/11/22.
  */
 
-public class MyOrderActivity extends BaseActivity implements View.OnClickListener{
+public class TopicActivity extends BaseActivity implements View.OnClickListener{
     private TextView toolbar_center_text;
     private ImageView toolbar_iv_back;
-    private RecyclerView rc_myoder;
-    private List<MyOrderBean> listDate=new ArrayList<MyOrderBean>();
-    private MyOrderAdapter myOrderAdapter;
+    private ImageView toolbar_right_image;
+    private RecyclerView rc_topic_list;
+
+    private List<TopicListBean> listDate=new ArrayList<TopicListBean>();
+    private TopicListAdapter topicListAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activty_myorder);
+        setContentView(R.layout.activity_topic);
         toolbar_center_text=findViewById(R.id.toolbar_center_text);
-        toolbar_center_text.setText("我的订单");
+        toolbar_center_text.setText("话题");
         toolbar_iv_back=findViewById(R.id.toolbar_iv_back);
         toolbar_iv_back.setImageResource(R.drawable.zuo);
         toolbar_iv_back.setOnClickListener(this);
-        rc_myoder=findViewById(R.id.rc_myoder);
+        toolbar_right_image=findViewById(R.id.toolbar_right_image);
+        toolbar_right_image.setImageResource(R.drawable.zhuagnfa_baise);
+        toolbar_right_image.setOnClickListener(this);
+        rc_topic_list=findViewById(R.id.rc_topic_list);
         for (int i=0;i<4;i++){
-            listDate.add(new MyOrderBean());
+            listDate.add(new TopicListBean());
         }
         LinearLayoutManager mg = new LinearLayoutManager(this);
-        rc_myoder.setLayoutManager(mg);
+        rc_topic_list.setLayoutManager(mg);
         DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mg.VERTICAL);
         dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
         dividerItemDecoration.setSize(10);
-        rc_myoder.addItemDecoration(dividerItemDecoration);
-        myOrderAdapter=new MyOrderAdapter(R.layout.item_myorder, listDate);
-        rc_myoder.setAdapter(myOrderAdapter);
-        myOrderAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-           ActivityUtil.startMyOrderDerailsActivity(MyOrderActivity.this);
-            }
-        });
-
+        rc_topic_list.addItemDecoration(dividerItemDecoration);
+        topicListAdapter=new TopicListAdapter(R.layout.item_topic, listDate);
+        rc_topic_list.setAdapter(topicListAdapter);
     }
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.toolbar_iv_back:
                 finish();
+                break;
+            case R.id.toolbar_right_image:
+
                 break;
         }
 

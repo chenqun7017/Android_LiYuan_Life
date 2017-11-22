@@ -1,76 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout
+<com.zhy.autolayout.AutoLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200px">
-
-    <ImageView
-        android:id="@+id/iv_myorder_image"
-        android:layout_width="146px"
-        android:layout_height="146px"
-        android:layout_marginLeft="30px"
-        android:src="@drawable/net_bitmap"
-        android:layout_marginTop="20px"/>
-
-    <TextView
-        android:id="@+id/tv_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="已完成"
-        android:textColor="@color/black"
-        android:textSize="24px"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32px"
-        android:layout_marginRight="30px"/>
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/iv_myorder_image"
-        android:layout_marginRight="39px"
-        android:textSize="23px"
+        android:layout_height="64px"
+        android:gravity="center_vertical"
         android:textColor="@color/text"
-        android:lines="2"
-        android:ellipsize="end"
-        android:text="修改翻译结果修改翻译结果修改翻译结果修改翻译结果"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="20px"
-        android:layout_toLeftOf="@+id/tv_tag"/>
-
+        android:textSize="24px"
+        android:paddingLeft="30px"
+        android:text="2017-12-21"/>
 
     <TextView
-        android:id="@+id/tv_myorder_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/iv_myorder_image"
-        android:layout_marginLeft="20px"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40px"
-        android:textSize="23px"
-        android:textColor="@color/black"
-        android:text="2000元"/>
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/activityback"/>
 
-    <TextView
-        android:id="@+id/tv_myorder_nums"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/tv_myorder_price"
-        android:layout_marginLeft="10px"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40px"
-        android:textSize="23px"
-        android:textColor="@color/text"
-        android:text="x1"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="198px"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tv_myorder_allprice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textSize="23px"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="30px"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40px"
-        android:text="1件商品  共计: 2000"/>
+        <ImageView
+            android:id="@+id/iv_myorder_image"
+            android:layout_width="148px"
+            android:layout_height="148px"
+            android:layout_marginLeft="30px"
+            android:src="@drawable/net_bitmap"
+            android:layout_marginTop="20px"/>
 
-</com.zhy.autolayout.AutoRelativeLayout>
+        <ImageView
+            android:id="@+id/iv_myorder_image01"
+            android:layout_width="148px"
+            android:layout_height="148px"
+            android:layout_marginLeft="10px"
+            android:src="@drawable/net_bitmap"
+            android:layout_marginTop="20px"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+         android:padding="29px"
+            android:src="@drawable/gengduos"/>
+
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已完成"
+                android:textColor="@color/black"
+                android:textSize="24px"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30px"
+                android:layout_marginRight="30px"/>
+
+            <TextView
+                android:id="@+id/tv_myorder_allprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="23px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30px"
+                android:text="共3件商品"/>
+            <TextView
+                android:id="@+id/tv_myorder_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30px"
+                android:layout_below="@+id/tv_myorder_allprice"
+                android:textSize="23px"
+                android:textColor="@color/colorPrimary"
+                android:text="￥2000"/>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

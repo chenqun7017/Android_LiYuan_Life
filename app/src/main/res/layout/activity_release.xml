@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:background="@android:color/white">
+
+
+        <ImageView
+            android:id="@+id/toolbar_iv_back"
+            android:layout_width="18px"
+            android:layout_height="34px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px" />
+
+
+        <TextView
+            android:id="@+id/toolbar_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="35px" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_toolbar">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/et_release_title"
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:hint="您的任务标题不少于15个字"
+                android:paddingLeft="30px"
+                android:paddingRight="30px"
+                android:textColor="@color/black"
+                android:textSize="23px" />
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/tv_release_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginRight="30px"
+                    android:background="@color/white"
+                    android:layout_marginTop="10px"
+                    android:hint="描述一下你的任务"
+                    android:textColor="@color/black"
+                    android:textSize="23px" />
+
+                <ImageView
+                    android:id="@+id/iv_release_image"
+                    android:layout_width="130px"
+                    android:layout_height="134px"
+                    android:layout_marginBottom="10px"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="78px"
+                    android:src="@drawable/bigtianjia" />
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="20px"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:drawableLeft="@drawable/dingwei"
+                    android:drawablePadding="10px"
+                    android:gravity="center_vertical"
+                    android:text="选择地区"
+                    android:textColor="@color/text"
+                    android:textSize="24px" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:src="@drawable/you" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:hint="详细地址"
+                android:lines="1"
+                android:paddingLeft="30px"
+                android:textColor="@color/text"
+                android:textSize="24px" />
+
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="20px"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:text="任务时长(小时):"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30px"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="所需时长"
+                    android:lines="1"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:text="性别要求:"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30px"
+                        android:button="@drawable/radiobutton"
+                        android:paddingLeft="10px"
+                        android:text="不限"
+                        android:textColor="@color/text_back"
+                        android:textSize="23px" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30px"
+                        android:button="@drawable/radiobutton"
+                        android:paddingLeft="10px"
+                        android:text="男"
+                        android:textColor="@color/text_back"
+                        android:textSize="23px" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30px"
+                        android:button="@drawable/radiobutton"
+                        android:paddingLeft="10px"
+                        android:text="女"
+                        android:textColor="@color/text_back"
+                        android:textSize="23px" />
+                </RadioGroup>
+
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:text="限商家:"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="53px"
+                        android:button="@drawable/radiobutton"
+                        android:paddingLeft="10px"
+                        android:text="不限"
+                        android:textColor="@color/text_back"
+                        android:textSize="23px" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30px"
+                        android:button="@drawable/radiobutton"
+                        android:paddingLeft="10px"
+                        android:text="限"
+                        android:textColor="@color/text_back"
+                        android:textSize="23px" />
+
+                </RadioGroup>
+
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:text="悬赏金额"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30px"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="请输入悬赏的金额"
+                    android:lines="1"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+
+            </com.zhy.autolayout.AutoLinearLayout>
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:layout_marginTop="2px"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="30px"
+                    android:text="任务分类"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+                <EditText
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30px"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="请选择作务分类"
+                    android:lines="1"
+                    android:textColor="@color/text_back"
+                    android:textSize="23px" />
+
+                <ImageView
+                    android:layout_width="16px"
+                    android:layout_height="30px"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="30px"
+                    android:src="@drawable/you" />
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="86px"
+        android:textSize="30px"
+        android:textColor="@color/white"
+        android:text="确认发布"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>

@@ -9,7 +9,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lifecircle.R;
-import com.lifecircle.adapter.GuangChangAdapter;
 import com.lifecircle.adapter.MyTaskAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.MyTaskBean;

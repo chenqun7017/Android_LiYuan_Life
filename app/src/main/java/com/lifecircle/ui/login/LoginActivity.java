@@ -68,7 +68,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 break;
 
             case R.id.rl_login_qq:
-
+                ActivityUtil.startReleaseFactActivity(this);
                 break;
             case R.id.rl_login_weixi:
 
