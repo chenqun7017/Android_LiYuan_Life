@@ -45,6 +45,7 @@ import com.lifecircle.ui.my.PointPraiseListActivity;
 import com.lifecircle.ui.my.WithFriendsChatActivity;
 import com.lifecircle.ui.publicui.TopicActivity;
 import com.lifecircle.ui.zhoubianservices.ReleaseActivity;
+import com.lifecircle.ui.guangchang.ShopActivity;
 
 public class ActivityUtil {
 
@@ -498,6 +499,16 @@ public class ActivityUtil {
      */
     public static void startReaseTopicActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, ReaseTopicActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转便利店页面
+     *
+     * @param _activity
+     */
+    public static void startnActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ShopActivity.class);
         _activity.startActivity(localIntent);
     }
 
