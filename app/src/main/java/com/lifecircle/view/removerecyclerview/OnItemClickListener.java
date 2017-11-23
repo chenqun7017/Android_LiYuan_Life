@@ -1,4 +1,4 @@
-package com.lifecircle.interfaces;
+package com.lifecircle.view.removerecyclerview;
 
 import android.view.View;
 

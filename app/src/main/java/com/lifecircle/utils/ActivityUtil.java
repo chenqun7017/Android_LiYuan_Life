@@ -3,8 +3,10 @@ package com.lifecircle.utils;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.lifecircle.ui.publicui.ParticipantsActivity;
 import com.lifecircle.ui.guangchang.ReleaseFactActivity;
 import com.lifecircle.ui.my.MyOrderDetails;
+import com.lifecircle.ui.publicui.ReaseTopicActivity;
 import com.lifecircle.ui.publicui.SearchActivity;
 import com.lifecircle.ui.publicui.MainActivity;
 import com.lifecircle.ui.publicui.PublicActivity;
@@ -476,6 +478,26 @@ public class ActivityUtil {
      */
     public static void startTopicActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, TopicActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转话题参与者页面
+     *
+     * @param _activity
+     */
+    public static void startParticpantsActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ParticipantsActivity.class);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转话题发布页面
+     *
+     * @param _activity
+     */
+    public static void startReaseTopicActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ReaseTopicActivity.class);
         _activity.startActivity(localIntent);
     }
 

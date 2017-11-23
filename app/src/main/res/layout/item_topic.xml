@@ -113,8 +113,8 @@
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="270px"
-            android:layout_marginTop="20px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
             android:background="@color/white">
             <TextView
                 android:id="@+id/tv_comments_name_first"
@@ -192,11 +192,11 @@
                 android:layout_height="wrap_content"
                 android:textSize="23px"
                 android:textColor="@color/colorPrimary"
-                android:layout_alignParentBottom="true"
+               android:layout_below="@+id/tv_comments_text_third"
                 android:text="查看更多>>"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10px"
-                android:layout_marginBottom="20px"/>
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"/>
         </com.zhy.autolayout.AutoRelativeLayout>
 
 

@@ -6,12 +6,12 @@
     android:background="@color/activityback"
     android:orientation="vertical">
     <include layout="@layout/include_apptoolbar_b" />
-
-    <com.lifecircle.view.removerecyclerview.ItemRemoveRecyclerView
-        android:id="@+id/rc_mycollection"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_particpants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"/>
+        android:background="@color/white"
+        android:layout_height="wrap_content">
 
+    </android.support.v7.widget.RecyclerView>
 
 </com.zhy.autolayout.AutoLinearLayout>

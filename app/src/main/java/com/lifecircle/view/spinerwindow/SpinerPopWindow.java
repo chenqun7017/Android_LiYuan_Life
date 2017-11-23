@@ -1,4 +1,4 @@
-package com.lifecircle.view;
+package com.lifecircle.view.spinerwindow;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -9,11 +9,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 
 import com.lifecircle.R;
-import com.lifecircle.adapter.AbstractSpinerAdapter;
-import com.lifecircle.adapter.NormalSpinerAdapter;
 import com.lifecircle.global.GlobalVariable;
 
 import java.util.List;

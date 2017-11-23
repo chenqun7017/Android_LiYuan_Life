@@ -1,4 +1,4 @@
-package com.lifecircle.view;
+package com.lifecircle.view.removerecyclerview;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -13,8 +13,6 @@ import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.lifecircle.R;
-import com.lifecircle.interfaces.OnItemClickListener;
-import com.lifecircle.viewholder.MyItemRemoveViewHolder;
 
 public class ItemRemoveRecyclerView extends RecyclerView {
     private Context mContext;
@@ -76,7 +74,7 @@ public class ItemRemoveRecyclerView extends RecyclerView {
                         return false;
                     }
 
-                    MyItemRemoveViewHolder viewHolder = (MyItemRemoveViewHolder) getChildViewHolder(view);
+                    ItemRemoveViewHolder viewHolder = (ItemRemoveViewHolder) getChildViewHolder(view);
 
                     mItemLayout = viewHolder.layout;
                     mPosition = viewHolder.getAdapterPosition();

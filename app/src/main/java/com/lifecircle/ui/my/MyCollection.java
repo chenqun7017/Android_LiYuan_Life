@@ -1,6 +1,5 @@
 package com.lifecircle.ui.my;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,14 +9,11 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.adapter.MyCollectionAdapter;
-import com.lifecircle.adapter.MyWithdrawalAdapter;
 import com.lifecircle.base.BaseActivity;
-import com.lifecircle.interfaces.OnItemClickListener;
+import com.lifecircle.view.removerecyclerview.OnItemClickListener;
 import com.lifecircle.javaBean.MyCollectionBean;
-import com.lifecircle.javaBean.MyWithdrawalListBean;
-import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
-import com.lifecircle.view.ItemRemoveRecyclerView;
+import com.lifecircle.view.removerecyclerview.ItemRemoveRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;

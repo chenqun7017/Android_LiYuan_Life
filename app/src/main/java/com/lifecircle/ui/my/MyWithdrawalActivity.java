@@ -16,8 +16,8 @@ import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.MyWithdrawalListBean;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
-import com.lifecircle.view.ItemRemoveRecyclerView;
-import com.lifecircle.interfaces.OnItemClickListener;
+import com.lifecircle.view.removerecyclerview.ItemRemoveRecyclerView;
+import com.lifecircle.view.removerecyclerview.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

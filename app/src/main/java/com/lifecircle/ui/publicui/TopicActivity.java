@@ -5,15 +5,18 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lifecircle.R;
 import com.lifecircle.adapter.MyDynamicsAdapter;
 import com.lifecircle.adapter.TopicListAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.javaBean.MyDynamicsBean;
 import com.lifecircle.javaBean.TopicListBean;
+import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
 
 import java.util.ArrayList;
@@ -28,6 +31,8 @@ public class TopicActivity extends BaseActivity implements View.OnClickListener{
     private ImageView toolbar_iv_back;
     private ImageView toolbar_right_image;
     private RecyclerView rc_topic_list;
+
+    private FrameLayout fl_topic_image;
 
     private List<TopicListBean> listDate=new ArrayList<TopicListBean>();
     private TopicListAdapter topicListAdapter;
@@ -55,6 +60,22 @@ public class TopicActivity extends BaseActivity implements View.OnClickListener{
         rc_topic_list.addItemDecoration(dividerItemDecoration);
         topicListAdapter=new TopicListAdapter(R.layout.item_topic, listDate);
         rc_topic_list.setAdapter(topicListAdapter);
+        topicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                ActivityUtil.startPostDetailsActivity(TopicActivity.this,position);
+            }
+        });
+        topicListAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                ActivityUtil.startPostDetailsActivity(TopicActivity.this,position);
+            }
+        });
+
+        fl_topic_image=findViewById(R.id.fl_topic_image);
+        fl_topic_image.setOnClickListener(this);
+
     }
     @Override
     public void onClick(View view) {
@@ -63,6 +84,10 @@ public class TopicActivity extends BaseActivity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.toolbar_right_image:
+ActivityUtil.startReaseTopicActivity(TopicActivity.this);
+                break;
+            case R.id.fl_topic_image:
+                ActivityUtil.startParticpantsActivity(this);
 
                 break;
         }

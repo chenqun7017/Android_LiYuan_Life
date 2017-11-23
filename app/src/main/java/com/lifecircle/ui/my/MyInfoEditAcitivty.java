@@ -12,15 +12,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lifecircle.R;
-import com.lifecircle.adapter.AbstractSpinerAdapter;
-import com.lifecircle.adapter.ContacsAdapter;
+import com.lifecircle.view.spinerwindow.AbstractSpinerAdapter;
 import com.lifecircle.adapter.MyInfoAdapter;
 import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.javaBean.MyInfoBean;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.view.DividerItemDecoration;
-import com.lifecircle.view.SpinerPopWindow;
+import com.lifecircle.view.spinerwindow.SpinerPopWindow;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.lifecircle.R;
 import com.lifecircle.javaBean.TopicListBean;
 
 import java.util.List;
@@ -19,6 +20,8 @@ public class TopicListAdapter extends BaseQuickAdapter<TopicListBean,BaseViewHol
 
     @Override
     protected void convert(BaseViewHolder helper, TopicListBean item) {
+        helper.addOnClickListener(R.id.tv_comments);
+        helper.addOnClickListener(R.id.tv_item_more);
 
     }
 }

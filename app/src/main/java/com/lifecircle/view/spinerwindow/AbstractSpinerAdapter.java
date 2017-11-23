@@ -1,4 +1,4 @@
-package com.lifecircle.adapter;
+package com.lifecircle.view.spinerwindow;
 
 import android.content.Context;
 import android.util.Log;

@@ -44,6 +44,7 @@
             android:textSize="34px" />
 
 <com.zhy.autolayout.AutoFrameLayout
+    android:id="@+id/fl_topic_image"
     android:layout_width="wrap_content"
     android:layout_toRightOf="@+id/iv_topic_image"
     android:layout_marginLeft="20px"

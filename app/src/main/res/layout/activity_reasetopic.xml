@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityback"
+    android:orientation="vertical">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_marginBottom="2px">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="456px">
+                <jp.wasabeef.richeditor.RichEditor
+                    android:id="@+id/editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="124px"
+                android:background="@color/white">
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/shape_address"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_back"
+                        android:padding="10px"
+                        android:drawableLeft="@drawable/dingweis"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="10px"
+                        android:text="我的位置"/>
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5px"
+                        android:layout_marginBottom="5px"
+                        android:layout_marginLeft="10px"
+                        android:background="#D7D7D7"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="X"
+                        android:layout_marginLeft="10px"
+                        android:layout_marginRight="10px"
+                        android:gravity="center"
+                        android:textSize="30px"
+                        android:textColor="@color/viewbadger"/>
+                </com.zhy.autolayout.AutoLinearLayout>
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10px"
+                android:background="@color/white"
+                android:layout_height="86px"
+                android:orientation="horizontal">
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/xiangji"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="10px"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="24px"
+                        android:text="相册"/>
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <TextView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/activityback"
+                    />
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/lianjie"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="10px"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="24px"
+                        android:text="链接"/>
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="88px">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:textColor="@color/black"
+                    android:text="#选择话题"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24px"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30px"
+                    android:textColor="@color/text"
+                    android:text="更多话题>"/>
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.lifecircle.view.tagview.TagCloudLayout
+                android:id="@+id/tab_reasetopic"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:paddingLeft="30px"
+                android:paddingRight="30px"
+                android:paddingTop="20px"
+                android:paddingBottom="20px"
+                android:layout_height="wrap_content"
+                app:tagSpacing="20px"
+                app:lineSpacing="20px">
+
+            </com.lifecircle.view.tagview.TagCloudLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="86px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_back"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:text="分享"/>
+
+<ImageView
+    android:id="@+id/iv_weixinr"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="30px"
+    android:src="@drawable/weixinr"/>
+        <ImageView
+            android:id="@+id/iv_pengyouquan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/iv_weixinr"
+            android:layout_marginRight="30px"
+            android:src="@drawable/pengyouquan"/>
+
+        <ImageView
+            android:id="@+id/iv_qqkongjian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_pengyouquan"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/qqkongjian"/>
+
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
