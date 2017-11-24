@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:splitMotionEvents="false"
     android:orientation="vertical">
 
     <include layout="@layout/include_apptoolbar_b" />
@@ -46,7 +47,6 @@
             android:id="@+id/et_login_phone"
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:lines="1"
             android:layout_weight="1"
             android:layout_marginLeft="10px"
             android:textSize="26px"
