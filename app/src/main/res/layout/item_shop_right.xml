@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="182px">
+
+    <ImageView
+        android:id="@+id/iv_shop_image"
+        android:layout_width="160px"
+        android:layout_height="142px"
+        android:layout_centerVertical="true"
+        android:src="@drawable/net_bitmap"
+        android:layout_marginLeft="30px"/>
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:layout_toRightOf="@+id/iv_shop_image"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        android:textColor="@color/black"
+        android:text="好吃哇"/>
+
+    <TextView
+        android:id="@+id/tv_shop_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:layout_toRightOf="@+id/iv_shop_image"
+        android:layout_below="@+id/tv_shop_name"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="10px"
+        android:textColor="@color/text_back"
+        android:text="小号"/>
+
+    <TextView
+        android:id="@+id/tv_shop_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:layout_toRightOf="@+id/iv_shop_image"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16px"
+        android:layout_marginLeft="40px"
+        android:textColor="@color/black"
+        android:text="￥122"/>
+
+
+ <TextView
+     android:id="@+id/tv_add_shop"
+    android:layout_width="30px"
+    android:layout_height="30px"
+     app:layout_auto_basewidth="height"
+     android:textColor="@color/white"
+     android:layout_alignParentBottom="true"
+     android:layout_alignParentRight="true"
+     android:layout_marginRight="30px"
+     android:layout_marginBottom="16px"
+     android:textSize="29px"
+     android:gravity="center"
+     android:text="+"
+     android:background="@drawable/oval_shop"/>
+
+    <TextView
+        android:id="@+id/tv_shop_numss"
+        android:layout_width="50px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="23px"
+        android:textColor="@color/black"
+        android:text="123"
+        android:gravity="center"
+        android:layout_toLeftOf="@+id/tv_add_shop"
+        android:layout_marginRight="10px"
+        android:layout_marginBottom="16px"/>
+
+    <TextView
+        android:id="@+id/tv_shop_del"
+        android:layout_width="30px"
+        android:layout_height="30px"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:layout_toLeftOf="@+id/tv_shop_numss"
+        android:layout_marginRight="10px"
+        android:layout_marginBottom="16px"
+        android:textSize="29px"
+        android:gravity="center"
+        android:text="-"
+        android:background="@drawable/oval_shop"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>

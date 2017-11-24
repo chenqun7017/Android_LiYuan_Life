@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.lifecircle.R;
@@ -45,7 +44,7 @@ public class TagBaseAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.tagview, null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_tab, null);
             holder = new ViewHolder();
             holder.tagBtn = convertView.findViewById(R.id.tag_btn);
             convertView.setTag(holder);

@@ -3,6 +3,8 @@ package com.lifecircle.utils;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.lifecircle.ui.guangchang.ShopOrderActivity;
+import com.lifecircle.ui.guangchang.ShoppingCartActivity;
 import com.lifecircle.ui.publicui.ParticipantsActivity;
 import com.lifecircle.ui.guangchang.ReleaseFactActivity;
 import com.lifecircle.ui.my.MyOrderDetails;
@@ -511,6 +513,23 @@ public class ActivityUtil {
         Intent localIntent = new Intent(_activity, ShopActivity.class);
         _activity.startActivity(localIntent);
     }
-
+    /**
+     * 跳转购物车页面
+     *
+     * @param _activity
+     */
+    public static void startShopCartActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ShoppingCartActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 跳转商品订单页面
+     *
+     * @param _activity
+     */
+    public static void startShopOrderActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ShopOrderActivity.class);
+        _activity.startActivity(localIntent);
+    }
 
 }

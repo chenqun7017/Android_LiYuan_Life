@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="190px">
+
+    <ImageView
+        android:id="@+id/iv_shop_image"
+        android:layout_width="134px"
+        android:layout_height="146px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30px"
+        android:src="@drawable/net_bitmap" />
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="30px"
+        android:layout_toRightOf="@+id/iv_shop_image"
+        android:text="好吃哇"
+        android:textColor="@color/black"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/tv_shop_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_shop_name"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="20px"
+        android:layout_toRightOf="@+id/iv_shop_image"
+        android:text="单价:￥122"
+        android:textColor="@color/text_back"
+        android:textSize="24px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23px"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px"
+        android:textColor="@color/colorPrimary"
+        android:text="待送贷"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23px"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="90px"
+        android:textColor="@color/black"
+        android:text="x1"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>

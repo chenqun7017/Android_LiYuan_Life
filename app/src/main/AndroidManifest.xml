@@ -70,6 +70,8 @@
         <activity android:name="com.lifecircle.ui.publicui.ParticipantsActivity"/>
         <activity android:name="com.lifecircle.ui.publicui.ReaseTopicActivity"/>
         <activity android:name="com.lifecircle.ui.guangchang.ShopActivity"/>
+        <activity android:name="com.lifecircle.ui.guangchang.ShoppingCartActivity"/>
+        <activity android:name="com.lifecircle.ui.guangchang.ShopOrderActivity"/>
 
 
 
