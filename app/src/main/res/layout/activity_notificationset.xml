@@ -55,7 +55,7 @@
             android:layout_marginLeft="30px"
             android:text="系统通知"/>
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -81,7 +81,7 @@
             android:layout_marginLeft="30px"
             android:text="新消息"/>
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -106,7 +106,7 @@
             android:layout_marginLeft="30px"
             android:text="评论回复"/>
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -138,7 +138,7 @@
             android:layout_marginLeft="30px"
             android:text="声音"/>
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -161,7 +161,7 @@
             android:layout_marginLeft="30px"
             android:text="震动"/>
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -185,7 +185,7 @@
             android:layout_marginLeft="30px"
             android:text="桌面图标提示"/>
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -223,7 +223,7 @@
 
 
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:layout_width="110px"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"

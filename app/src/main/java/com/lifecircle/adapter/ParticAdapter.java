@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.javaBean.ParticBean;
+import com.lifecircle.mvp.model.ParticBean;
 
 import java.util.List;
 

@@ -33,7 +33,7 @@
             android:textColor="@color/text"
             android:textSize="24px" />
 
-        <com.lifecircle.view.SwitchView
+        <com.lifecircle.widget.SwitchView
             android:id="@+id/sv_mysing"
             android:layout_width="90px"
             android:layout_height="40px"

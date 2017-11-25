@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.javaBean.RepostOrCommentBean;
+import com.lifecircle.mvp.model.RepostOrCommentBean;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ package com.lifecircle.adapter;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.javaBean.ViewPageMenuBean;
+import com.lifecircle.mvp.model.ViewPageMenuBean;
 
 import java.util.List;
 

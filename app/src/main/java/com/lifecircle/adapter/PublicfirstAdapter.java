@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.javaBean.PublicFristBean;
+import com.lifecircle.mvp.model.PublicFristBean;
 
 import java.util.List;
 

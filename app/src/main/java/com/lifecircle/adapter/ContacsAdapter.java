@@ -1,12 +1,11 @@
 package com.lifecircle.adapter;
 
 import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lifecircle.R;
-import com.lifecircle.javaBean.ContactsBean;
+import com.lifecircle.mvp.model.ContactsBean;
 
 import java.util.List;
 

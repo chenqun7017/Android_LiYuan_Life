@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.lifecircle.R;
-import com.lifecircle.javaBean.ShopRightBean;
-import com.lifecircle.view.removerecyclerview.ItemRemoveViewHolder;
+import com.lifecircle.mvp.model.ShopRightBean;
+import com.lifecircle.widget.removerecyclerview.ItemRemoveViewHolder;
 
 import java.util.List;
 

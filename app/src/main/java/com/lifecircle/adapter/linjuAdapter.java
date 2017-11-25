@@ -1,12 +1,8 @@
 package com.lifecircle.adapter;
 
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.R;
-import com.lifecircle.javaBean.linJuChatBean;
+import com.lifecircle.mvp.model.linJuChatBean;
 
 import java.util.List;
 

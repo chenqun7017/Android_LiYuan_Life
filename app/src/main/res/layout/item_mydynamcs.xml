@@ -100,7 +100,7 @@
             android:textColor="@color/text_back"
             android:textSize="24px" />
 
-        <com.lifecircle.view.RoundImageView
+        <com.lifecircle.widget.RoundImageView
             android:layout_width="170px"
             android:layout_height="198px"
             android:layout_marginLeft="30px"

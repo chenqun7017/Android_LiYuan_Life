@@ -144,7 +144,7 @@
 
             </com.zhy.autolayout.AutoRelativeLayout>
 
-            <com.lifecircle.view.tagview.TagCloudLayout
+            <com.lifecircle.widget.tagview.TagCloudLayout
                 android:id="@+id/tab_reasetopic"
                 android:layout_width="match_parent"
                 android:background="@color/white"
@@ -156,7 +156,7 @@
                 app:tagSpacing="20px"
                 app:lineSpacing="20px">
 
-            </com.lifecircle.view.tagview.TagCloudLayout>
+            </com.lifecircle.widget.tagview.TagCloudLayout>
         </com.zhy.autolayout.AutoLinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lifecircle.R;
-import com.lifecircle.javaBean.MyPostBean;
+import com.lifecircle.mvp.model.MyPostBean;
 
 import java.util.List;
 
