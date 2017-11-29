@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
-import com.lifecircle.mvp.model.MyInfoBean;
+import com.lifecircle.ui.model.MyInfoBean;
 import java.util.List;
 
 /**

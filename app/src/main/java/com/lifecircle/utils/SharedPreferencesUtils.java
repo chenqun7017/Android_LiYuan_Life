@@ -13,7 +13,7 @@ public class SharedPreferencesUtils {
     /**
      * 保存在手机里面的文件名
      */
-    private static final String FILE_NAME = "share_date";
+    private static final String FILE_NAME = "lifecirle";
 
 
     /**
@@ -23,7 +23,6 @@ public class SharedPreferencesUtils {
      * @param object
      */
     public static void setParam(Context context , String key, Object object){
-
         String type = object.getClass().getSimpleName();
         SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

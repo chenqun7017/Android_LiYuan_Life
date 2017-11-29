@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.lifecircle.R;
-import com.lifecircle.mvp.model.MyWithdrawalListBean;
+import com.lifecircle.ui.model.MyWithdrawalListBean;
 import com.lifecircle.widget.removerecyclerview.ItemRemoveViewHolder;
 
 import java.util.List;

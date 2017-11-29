@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.mvp.model.FabulousListBean;
+import com.lifecircle.ui.model.FabulousListBean;
 
 import java.util.List;
 

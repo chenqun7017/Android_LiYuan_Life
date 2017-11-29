@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lifecircle.mvp.model.ShopLiftBean;
+import com.lifecircle.ui.model.ShopLiftBean;
 
 import java.util.List;
 

@@ -32,10 +32,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="19px"
-            android:layout_marginTop="50px"
+            android:layout_marginTop="45px"
             android:layout_toRightOf="@+id/iv_my_userimage"
             android:textColor="@color/black"
             android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/tv_my_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_my_username"
+            android:layout_toRightOf="@+id/iv_my_userimage"
+            android:layout_marginLeft="19px"
+            android:layout_marginTop="10px"
+            android:textColor="@color/text"
+            android:textSize="23px" />
+
 
         <TextView
             android:id="@+id/tv_my_address"

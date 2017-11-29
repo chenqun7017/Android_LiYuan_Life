@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 
 import com.lifecircle.R;
-import com.lifecircle.mvp.model.MyCollectionBean;
+import com.lifecircle.ui.model.MyCollectionBean;
 
 import com.lifecircle.widget.removerecyclerview.ItemRemoveViewHolder;
 

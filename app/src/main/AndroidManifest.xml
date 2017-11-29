@@ -15,7 +15,7 @@
         <meta-data android:name="design_width" android:value="750"/>
         <meta-data android:name="design_height" android:value="1334"/>
 
-        <activity android:name=".mvp.view.login.LoginActivity">
+        <activity android:name=".ui.view.login.v.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,54 +24,54 @@
         </activity>
 
 
-        <activity android:name=".mvp.view.publicui.MainActivity"/>
-        <activity android:name=".mvp.view.my.MySetActivity"/>
-        <activity android:name=".mvp.view.my.MyOrderActivity"/>
-        <activity android:name=".mvp.view.my.MyWalletActivity"/>
-        <activity android:name=".mvp.view.my.MyIntegralActivity"/>
+        <activity android:name=".ui.view.publicui.MainActivity"/>
+        <activity android:name=".ui.view.my.MySetActivity"/>
+        <activity android:name=".ui.view.my.MyOrderActivity"/>
+        <activity android:name=".ui.view.my.MyWalletActivity"/>
+        <activity android:name=".ui.view.my.MyIntegralActivity"/>
 
-        <activity android:name=".mvp.view.publicui.SearchActivity"/>
-        <activity android:name=".mvp.view.my.MyTaskActivity"/>
-        <activity android:name=".mvp.view.my.MyFollowActivity"/>
-        <activity android:name=".mvp.view.my.MyNotificationSettingsActivity"/>
-        <activity android:name=".mvp.view.my.MyFeedBackActivity"/>
-        <activity android:name=".mvp.view.my.MyModifyPersonalDataActivity"/>
-        <activity android:name=".mvp.view.my.MyinvitationActivity"/>
-        <activity android:name=".mvp.view.linju.ContactsActivity"/>
-        <activity android:name=".mvp.view.my.MySingActivity"/>
-        <activity android:name=".mvp.view.my.MyWithLifeCirleActivity"/>
-        <activity android:name=".mvp.view.my.MyRechargeActivity"/>
-        <activity android:name=".mvp.view.my.MyWithdrawalActivity"/>
-        <activity android:name=".mvp.view.my.MyAddWithdrawal"/>
-        <activity android:name=".mvp.view.my.MyDelWithdrawal"/>
-        <activity android:name=".mvp.view.my.MyRunnWaterRecordActivity"/>
-        <activity android:name=".mvp.view.my.MyCashWithdrawalActivity"/>
-        <activity android:name=".mvp.view.my.MyInfoEditAcitivty"/>
-        <activity android:name=".mvp.view.my.PersonalInformationStyleActivity"/>
-        <activity android:name=".mvp.view.my.MyPostsActiivty"/>
-        <activity android:name=".mvp.view.my.MyPostDetailsActivity"/>
-        <activity android:name=".mvp.view.my.MyThumbUplistActivity"/>
-        <activity android:name=".mvp.view.my.WithFriendsChatActivity"/>
-        <activity android:name=".mvp.view.my.PointPraiseListActivity"/>
-        <activity android:name=".mvp.view.my.MyCollection"/>
-        <activity android:name=".mvp.view.my.EditorialShowA"/>
-        <activity android:name=".mvp.view.my.MyRepostActivity"/>
-        <activity android:name=".mvp.view.my.MyCommetnsActivity"/>
-        <activity android:name=".mvp.view.my.MyDynamicsActivity"/>
-        <activity android:name=".mvp.view.my.MySingTime"/>
-        <activity android:name=".mvp.view.linju.NewsListActivity"/>
-        <activity android:name=".mvp.view.zhoubianservices.ReleaseActivity"/>
-        <activity android:name=".mvp.view.publicui.PublicActivity"/>
-        <activity android:name=".mvp.view.guangchang.WebBannerActivity"/>
-        <activity android:name=".mvp.view.guangchang.ReleaseFactActivity"/>
-        <activity android:name=".mvp.view.guangchang.ReaseActivity"/>
-        <activity android:name=".mvp.view.my.MyOrderDetails"/>
-        <activity android:name=".mvp.view.publicui.TopicActivity"/>
-        <activity android:name=".mvp.view.publicui.ParticipantsActivity"/>
-        <activity android:name=".mvp.view.publicui.ReaseTopicActivity"/>
-        <activity android:name=".mvp.view.guangchang.ShopActivity"/>
-        <activity android:name=".mvp.view.guangchang.ShoppingCartActivity"/>
-        <activity android:name=".mvp.view.guangchang.ShopOrderActivity"/>
+        <activity android:name=".ui.view.publicui.SearchActivity"/>
+        <activity android:name=".ui.view.my.MyTaskActivity"/>
+        <activity android:name=".ui.view.my.MyFollowActivity"/>
+        <activity android:name=".ui.view.my.MyNotificationSettingsActivity"/>
+        <activity android:name=".ui.view.my.MyFeedBackActivity"/>
+        <activity android:name=".ui.view.my.MyModifyPersonalDataActivity"/>
+        <activity android:name=".ui.view.my.MyinvitationActivity"/>
+        <activity android:name=".ui.view.linju.ContactsActivity"/>
+        <activity android:name=".ui.view.my.MySingActivity"/>
+        <activity android:name=".ui.view.my.MyWithLifeCirleActivity"/>
+        <activity android:name=".ui.view.my.MyRechargeActivity"/>
+        <activity android:name=".ui.view.my.MyWithdrawalActivity"/>
+        <activity android:name=".ui.view.my.MyAddWithdrawal"/>
+        <activity android:name=".ui.view.my.MyDelWithdrawal"/>
+        <activity android:name=".ui.view.my.MyRunnWaterRecordActivity"/>
+        <activity android:name=".ui.view.my.MyCashWithdrawalActivity"/>
+        <activity android:name=".ui.view.my.MyInfoEditAcitivty"/>
+        <activity android:name=".ui.view.my.PersonalInformationStyleActivity"/>
+        <activity android:name=".ui.view.my.MyPostsActiivty"/>
+        <activity android:name=".ui.view.my.MyPostDetailsActivity"/>
+        <activity android:name=".ui.view.my.MyThumbUplistActivity"/>
+        <activity android:name=".ui.view.my.WithFriendsChatActivity"/>
+        <activity android:name=".ui.view.my.PointPraiseListActivity"/>
+        <activity android:name=".ui.view.my.MyCollection"/>
+        <activity android:name=".ui.view.my.EditorialShowA"/>
+        <activity android:name=".ui.view.my.MyRepostActivity"/>
+        <activity android:name=".ui.view.my.MyCommetnsActivity"/>
+        <activity android:name=".ui.view.my.MyDynamicsActivity"/>
+        <activity android:name=".ui.view.my.MySingTime"/>
+        <activity android:name=".ui.view.linju.NewsListActivity"/>
+        <activity android:name=".ui.view.zhoubianservices.ReleaseActivity"/>
+        <activity android:name=".ui.view.publicui.PublicActivity"/>
+        <activity android:name=".ui.view.guangchang.WebBannerActivity"/>
+        <activity android:name=".ui.view.guangchang.ReleaseFactActivity"/>
+        <activity android:name=".ui.view.guangchang.ReaseActivity"/>
+        <activity android:name=".ui.view.my.MyOrderDetails"/>
+        <activity android:name=".ui.view.publicui.TopicActivity"/>
+        <activity android:name=".ui.view.publicui.ParticipantsActivity"/>
+        <activity android:name=".ui.view.publicui.ReaseTopicActivity"/>
+        <activity android:name=".ui.view.guangchang.ShopActivity"/>
+        <activity android:name=".ui.view.guangchang.ShoppingCartActivity"/>
+        <activity android:name=".ui.view.guangchang.ShopOrderActivity"/>
 
 
 

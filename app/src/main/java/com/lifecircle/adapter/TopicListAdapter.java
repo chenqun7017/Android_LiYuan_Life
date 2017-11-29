@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lifecircle.R;
-import com.lifecircle.mvp.model.TopicListBean;
+import com.lifecircle.ui.model.TopicListBean;
 
 import java.util.List;
 

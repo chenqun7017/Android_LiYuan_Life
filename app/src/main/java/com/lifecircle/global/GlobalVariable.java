@@ -9,4 +9,7 @@ public class GlobalVariable {
     public   static  String uid="1";
 
     public static   int pop=0;
+
+
+
 }

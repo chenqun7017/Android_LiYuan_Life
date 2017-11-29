@@ -8,9 +8,6 @@ package com.lifecircle.utils;
 
 
 public class EditViewUtil {
-
-
-
 	/**
 	 * 判断 一个字段的值否为空
 	 *
@@ -24,9 +21,6 @@ public class EditViewUtil {
 
 		return false;
 	}
-
-
-
 
 	/**
 	 * 验证呢称
