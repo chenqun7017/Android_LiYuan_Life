@@ -1,5 +1,6 @@
 package com.lifecircle.ui.view.dialog;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +14,22 @@ import com.lifecircle.utils.ActivityUtil;
  * Created by lenovo on 2017/11/8.
  */
 
+@SuppressLint("ValidFragment")
 public class DialogSign extends BaseDialog {
+    private  String stata;
+
+    public DialogSign(String stata) {
+        super();
+        this.stata=stata;
+
+    }
 
     @Override
     public View initView(LayoutInflater inflater) {
-     View  view=inflater.inflate(R.layout.dialog_sign,null);
+        View  view=inflater.inflate(R.layout.dialog_sign,null);
         TextView tv_cancle=view.findViewById(R.id.tv_cancle);
+        TextView tv_mysing_nums=view.findViewById(R.id.tv_mysing_nums);
+        tv_mysing_nums.setText("+"+stata+"金币");
         tv_cancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

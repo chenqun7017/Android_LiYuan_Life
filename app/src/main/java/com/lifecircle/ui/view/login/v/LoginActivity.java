@@ -3,6 +3,7 @@ package com.lifecircle.ui.view.login.v;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -10,11 +11,13 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.view.login.p.LoginPresenter;
 import com.lifecircle.ui.view.login.p.LoginPresenterCompl;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.EditViewUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
+import com.lifecircle.utils.TimeDataUtils;
 import com.lifecircle.widget.CountTimer;
 
 
@@ -50,8 +53,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Log.d("LoginActivity", TimeDataUtils.getNowDayOffset(0));
         String id= (String) SharedPreferencesUtils.getParam(LoginActivity.this, "id", "");
         if (!EditViewUtil.isNull(id)){
+            GlobalVariable.uid=id;
             ActivityUtil.startMainActivity(LoginActivity.this);
         }else {
             toolbar_center_text=findViewById(R.id.toolbar_center_text);

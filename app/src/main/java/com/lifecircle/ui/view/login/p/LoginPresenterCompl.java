@@ -8,6 +8,7 @@ import android.view.Window;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.view.login.m.LoginBean;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.EditViewUtil;
@@ -103,6 +104,7 @@ public class LoginPresenterCompl implements LoginPresenter{
                         Type type = new TypeToken<LoginBean>(){}.getType();
                         LoginBean loginBean=gson.fromJson(str, type);
                         if ((loginBean.getResult()).equals("200")){
+                            GlobalVariable.uid=loginBean.getData().getId();
                             SharedPreferencesUtils.setParam(context, "id", loginBean.getData().getId());
                             SharedPreferencesUtils.setParam(context, "name", loginBean.getData().getName());
                             SharedPreferencesUtils.setParam(context, "img", loginBean.getData().getImg());
@@ -113,6 +115,7 @@ public class LoginPresenterCompl implements LoginPresenter{
                             SharedPreferencesUtils.setParam(context, "email", loginBean.getData().getEmail());
                             SharedPreferencesUtils.setParam(context, "points", loginBean.getData().getPoints());
                             SharedPreferencesUtils.setParam(context, "time", loginBean.getData().getTime());
+                            SharedPreferencesUtils.setParam(context, "code", loginBean.getData().getCode());
                             SharedPreferencesUtils.setParam(context, "sign", loginBean.getData().getSign());
                             SharedPreferencesUtils.setParam(context, "desc", loginBean.getData().getDesc());
                             SharedPreferencesUtils.setParam(context, "address", loginBean.getData().getAddress());

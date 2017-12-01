@@ -6,7 +6,7 @@ package com.lifecircle.global;
 
 public class GlobalVariable {
 
-    public   static  String uid="1";
+    public   static  String uid="";
 
     public static   int pop=0;
 

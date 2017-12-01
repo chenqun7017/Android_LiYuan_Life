@@ -33,7 +33,7 @@ import com.lifecircle.ui.view.my.MyRechargeActivity;
 import com.lifecircle.ui.view.my.MyRepostActivity;
 import com.lifecircle.ui.view.my.MyRunnWaterRecordActivity;
 import com.lifecircle.ui.view.my.MySetActivity;
-import com.lifecircle.ui.view.my.MySingActivity;
+import com.lifecircle.ui.view.my.v.MySingActivity;
 import com.lifecircle.ui.view.my.MySingTime;
 import com.lifecircle.ui.view.my.MyThumbUplistActivity;
 import com.lifecircle.ui.view.my.MyWalletActivity;

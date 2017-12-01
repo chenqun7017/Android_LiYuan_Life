@@ -15,7 +15,17 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.utils.SharedPreferencesUtils;
+import com.lifecircle.utils.ToastUtils;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
 import java.util.List;
 
 import me.nereo.multi_image_selector.MultiImageSelector;
@@ -164,8 +174,29 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
         //获取图片路径
         if (requestCode == 1) {
             if(resultCode == RESULT_OK){
+                String id= SharedPreferencesUtils.getParam(this, "id", "")+"";
                 // 获取返回的图片列表
                 List<String> path = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
+                File file=new File(path.get(0));
+                OkGo.<String>post(GlobalHttpUrl.UPDATA)
+                        .tag(this)
+                        .params("uid",id)
+                        .params("file",file)
+                        .execute(new StringCallback() {
+                            @Override
+                            public void onSuccess(Response<String> response) {
+                                String str=response.body().toString();
+                                try {
+                                    JSONObject jsonObject=new JSONObject(response.body().toString()) ;
+                                    if (jsonObject.getString("result").equals("200")){
+
+                                    }
+                                    ToastUtils.showToast(jsonObject.getString("msg"));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                 if (path!=null){
                     Bitmap bm = BitmapFactory.decodeFile(path.get(0));
                     iv_persondata_imag.setImageBitmap(bm);

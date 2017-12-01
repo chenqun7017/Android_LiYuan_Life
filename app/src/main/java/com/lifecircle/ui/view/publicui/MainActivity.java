@@ -47,7 +47,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         initView();
         initTab();
     }
-
     private void initView() {
         iv_guangchang= findViewById(R.id.iv_guangchang);
         iv_zhoubianservices= findViewById(R.id.iv_zhoubianservices);

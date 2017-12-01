@@ -71,12 +71,13 @@
                 android:background="#AF7F24" />
 
             <TextView
+                android:id="@+id/tv_sign_nums"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_mysing_center_line"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10px"
-                android:text="连续21天"
+                android:text=""
                 android:textColor="#AF7F24"
                 android:textSize="23px" />
 
@@ -89,14 +90,14 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="24px"
             android:layout_marginLeft="48px"
-            android:layout_marginRight="48px">
+            android:layout_marginRight="42px">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="5px"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="22px"
-                android:layout_marginRight="22px"
+                android:layout_marginRight="25px"
                 android:background="#AF7F24" />
 
             <com.zhy.autolayout.AutoRelativeLayout
@@ -106,6 +107,7 @@
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_marginBottom="5px"
                 android:layout_marginLeft="3px"
+                android:visibility="gone"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -114,7 +116,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+20"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -144,10 +145,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_onmonday"
                 android:layout_marginTop="7px"
-                android:text="4.10"
                 android:textColor="#A97416"
                 android:textSize="23px" />
-
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/rl_top_tuesday"
@@ -155,8 +154,8 @@
                 android:layout_height="47px"
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_marginBottom="5px"
-                android:layout_marginLeft="60px"
-                android:layout_toRightOf="@+id/rl_top_onmonday"
+                android:visibility="gone"
+                android:layout_marginLeft="106px"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -165,7 +164,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+21"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -186,10 +184,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_tuesday"
-                android:layout_marginLeft="57px"
+                android:layout_marginLeft="98px"
                 android:layout_marginTop="7px"
-                android:layout_toRightOf="@+id/tv_onmonday"
-                android:text="4.11"
                 android:textColor="#A97416"
                 android:textSize="24px" />
 
@@ -199,8 +195,8 @@
                 android:layout_height="47px"
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_marginBottom="5px"
-                android:layout_marginLeft="60px"
-                android:layout_toRightOf="@+id/rl_top_tuesday"
+                android:layout_marginLeft="209px"
+                android:visibility="gone"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -209,7 +205,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+22"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -223,7 +218,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="82px"
                 android:layout_toRightOf="@+id/iv_tuesday"
-                android:background="@drawable/oval_mysing_b"
+                android:background="@drawable/oval_mysing_a"
                 app:layout_auto_basewidth="height" />
 
             <TextView
@@ -231,10 +226,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_wednesday"
-                android:layout_marginLeft="57px"
+                android:layout_marginLeft="200px"
                 android:layout_marginTop="7px"
-                android:layout_toRightOf="@+id/tv_tuesday"
-                android:text="4.12"
                 android:textColor="#A97416"
                 android:textSize="24px" />
 
@@ -244,8 +237,8 @@
                 android:layout_height="47px"
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_marginBottom="5px"
-                android:layout_marginLeft="60px"
-                android:layout_toRightOf="@+id/rl_top_wednesday"
+                android:layout_marginLeft="313px"
+                android:visibility="gone"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -254,7 +247,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+23"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -276,10 +268,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_thursdays"
-                android:layout_marginLeft="57px"
+                android:layout_marginLeft="300px"
                 android:layout_marginTop="7px"
-                android:layout_toRightOf="@+id/tv_wednesday"
-                android:text="4.13"
                 android:textColor="#A97416"
                 android:textSize="24px" />
 
@@ -289,8 +279,8 @@
                 android:layout_height="47px"
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_marginBottom="5px"
-                android:layout_marginLeft="60px"
-                android:layout_toRightOf="@+id/rl_top_thursdays"
+                android:layout_marginLeft="416px"
+                android:visibility="gone"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -299,7 +289,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+24"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -321,10 +310,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_fridays"
-                android:layout_marginLeft="57px"
+                android:layout_marginLeft="405px"
                 android:layout_marginTop="7px"
-                android:layout_toRightOf="@+id/tv_thursdays"
-                android:text="4.14"
                 android:textColor="#A97416"
                 android:textSize="24px" />
 
@@ -332,10 +319,11 @@
                 android:id="@+id/rl_top_saturday"
                 android:layout_width="42px"
                 android:layout_height="47px"
+                android:visibility="gone"
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_marginBottom="5px"
-                android:layout_marginLeft="60px"
-                android:layout_toRightOf="@+id/rl_top_fridays"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="95px"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -344,7 +332,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+25"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -365,10 +352,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_saturday"
-                android:layout_marginLeft="57px"
+                android:layout_alignParentRight="true"
                 android:layout_marginTop="7px"
-                android:layout_toRightOf="@+id/tv_fridays"
-                android:text="4.15"
+                android:layout_marginRight="90px"
                 android:textColor="#A97416"
                 android:textSize="24px" />
 
@@ -379,7 +365,8 @@
                 android:layout_above="@+id/rl_onmonday"
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="5px"
-                android:layout_marginRight="2px"
+                android:layout_marginRight="5px"
+                android:visibility="gone"
                 android:background="@drawable/sing_img">
 
                 <TextView
@@ -388,7 +375,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2px"
                     android:layout_marginTop="5px"
-                    android:text="+25"
                     android:textColor="@android:color/white"
                     android:textSize="20px" />
 
@@ -400,8 +386,7 @@
                 android:layout_height="20px"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="82px"
-                android:layout_marginRight="12px"
+                android:layout_marginRight="15px"
                 android:background="@drawable/oval_mysing_a"
                 app:layout_auto_basewidth="height" />
 
@@ -412,7 +397,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/iv_sunday"
                 android:layout_marginTop="7px"
-                android:text="4.16"
                 android:textColor="#A97416"
                 android:textSize="24px" />
 
@@ -437,12 +421,12 @@
 
 
         <TextView
+            android:id="@+id/tv_all_singprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:text="总积分  10"
             android:textColor="@color/black"
             android:textSize="24px" />
 

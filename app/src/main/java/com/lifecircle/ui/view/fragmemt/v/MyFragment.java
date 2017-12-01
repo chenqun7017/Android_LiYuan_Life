@@ -1,8 +1,10 @@
 package com.lifecircle.ui.view.fragmemt.v;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -16,6 +18,15 @@ import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.view.dialog.DialogSign;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
+import com.lifecircle.utils.TimeDataUtils;
+import com.lifecircle.utils.ToastUtils;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
+import com.lzy.okgo.request.base.Request;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by lenovo on 2017/11/7.
@@ -29,6 +40,9 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
     private  TextView tv_my_desc;
     private  TextView tv_my_integral;
     private  TextView tv_my_sign;
+    public   ProgressDialog dialog;
+
+    int  state=0;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -77,13 +91,29 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         ll_my_myinvitation.setOnClickListener(this);
         RelativeLayout rl_info=view.findViewById(R.id.rl_info);
         rl_info.setOnClickListener(this);
+
+        initDialog();
         return view;
 
+    }
+    public  void initDialog(){
+        dialog=new ProgressDialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        dialog.setMessage("签到中...");
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        String oldtt=SharedPreferencesUtils.getParam(getActivity(), "singtime", "")+"";
+        if (!oldtt.equals("")){
+            if (!oldtt.equals(TimeDataUtils.getNowDayOffset(0))){
+                state=0;
+                SharedPreferencesUtils.setParam(getActivity(), "sign", 0);
+            }
+        }
         String url=SharedPreferencesUtils.getParam(getActivity(), "img", "")+"";
         if (!url.equals("")){
             Glide.with(getActivity())
@@ -101,13 +131,13 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         tv_my_desc.setText(SharedPreferencesUtils.getParam(getActivity(), "desc", "")+"");
 
         tv_my_integral.setText(SharedPreferencesUtils.getParam(getActivity(), "points", "")+"分");
-        int  state= (int) SharedPreferencesUtils.getParam(getActivity(), "sign", 0);
+        state= (int) SharedPreferencesUtils.getParam(getActivity(), "sign", 0);
         if (state==1){
             tv_my_sign.setText("今天已签到");
         }else {
             tv_my_sign.setText("签到送积分");
-            tv_my_sign.setOnClickListener(this);
         }
+        tv_my_sign.setOnClickListener(this);
     }
 
     @Override
@@ -126,9 +156,12 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 ActivityUtil.startMyCollectionChatActivity(getActivity());
                 break;
             case R.id.tv_my_sign:
+                if (state==0){
+                    sing();
+                }else {
+                    ActivityUtil.startMySingActivity(getActivity());
+                }
 
-                DialogSign dialogSign=new DialogSign();
-                dialogSign.show(getActivity().getFragmentManager(),"dialogSign");
                 break;
             case R.id.tv_my_integral_tag:
                 ActivityUtil.startIntegralActivity(getActivity());
@@ -166,5 +199,51 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
 
         }
 
+    }
+
+    private void sing() {
+        String id=SharedPreferencesUtils.getParam(getActivity(), "id", "")+"";
+        OkGo.<String>post(GlobalHttpUrl.SING)
+                .tag(getActivity())
+                .params("uid",id)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        try {
+                            JSONObject jsonObject=new JSONObject(response.body().toString()) ;
+                            if (jsonObject.getString("result").equals("200")){
+                                tv_my_sign.setText("今天已签到");
+                                state=0;
+                                SharedPreferencesUtils.setParam(getActivity(), "sign", 1);
+                                String data=jsonObject.getJSONObject("data").getString("sign");
+                                String points=jsonObject.getJSONObject("data").getString("points");
+                                SharedPreferencesUtils.setParam(getActivity(), "points", points);
+                                SharedPreferencesUtils.setParam(getActivity(), "singtime", TimeDataUtils.getNowDayOffset(0));
+
+                                DialogSign dialogSign=new DialogSign(data);
+                                dialogSign.show(getActivity().getFragmentManager(),"dialogSign");
+                            }
+                            ToastUtils.showToast(jsonObject.getString("msg"));
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    @Override
+                    public void onStart(Request<String, ? extends Request> request) {
+                        super.onStart(request);
+                        if (dialog!=null&&!dialog.isShowing()){
+                            dialog.show();
+                        }
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        if (dialog!=null&&dialog.isShowing()){
+                            dialog.dismiss();
+                        }
+                    }
+                });
     }
 }

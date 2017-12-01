@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/iv_item_sing_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="62px"
+        android:layout_height="68px"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46px"
         android:src="@drawable/jifen_lan"/>
@@ -19,8 +19,7 @@
         android:layout_marginTop="20px"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/iv_item_sing_img"
-        android:textSize="24px"
-        android:text="积分顶贴"/>
+        android:textSize="24px"/>
 
     <TextView
         android:id="@+id/tv_item_sing_nums"
@@ -30,8 +29,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tv_item_sing_title"
         android:textSize="23px"
+        android:textColor="@color/yolle"
         android:drawablePadding="10px"
-        android:drawableLeft="@drawable/jifen"
-        android:text="10"/>
+        android:drawableLeft="@drawable/jifen"/>
 
 </com.zhy.autolayout.AutoRelativeLayout>
