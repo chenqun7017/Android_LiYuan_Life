@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,11 +7,12 @@
     android:orientation="vertical">
 
     <include layout="@layout/include_apptoolbar_b" />
+
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_persondata_img"
         android:layout_width="match_parent"
-        android:background="@android:color/white"
-        android:layout_height="128px">
+        android:layout_height="128px"
+        android:background="@android:color/white">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_persondata_imag"
@@ -30,21 +30,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
             android:layout_centerVertical="true"
-            android:textSize="24px"
-            android:textColor="@color/text"
+            android:layout_marginLeft="20px"
             android:layout_toRightOf="@+id/iv_persondata_imag"
-            android:text="修改头像"/>
+            android:text="修改头像"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -52,36 +52,36 @@
         android:id="@+id/rl_persondata_nickname"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="10px">
+        android:layout_marginTop="10px"
+        android:background="@android:color/white">
 
-<TextView
-    android:layout_width="200px"
-    android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
-    android:textColor="@color/black"
-    android:textSize="24px"
-    android:gravity="right"
-    android:text="昵称"/>
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:text="昵称"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
-<TextView
-    android:id="@+id/tv_persondata_nickname"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="24px"
-    android:textColor="@color/text"
-    android:layout_centerVertical="true"
-    android:text="小气鬼"
-    android:layout_marginLeft="230px"/>
+        <TextView
+            android:id="@+id/tv_persondata_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"
+            android:text="小气鬼"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -89,69 +89,69 @@
         android:id="@+id/rl_persondata_profile"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="个人简介"/>
+            android:text="个人简介"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
-            android:textColor="@color/text"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="性别"/>
+            android:text="性别"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <ImageView
             android:id="@+id/iv_persondata_nanimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:src="@drawable/nan"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:src="@drawable/nan" />
 
         <ImageView
             android:id="@+id/iv_persondata_nvimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_persondata_nanimg"
             android:layout_centerVertical="true"
-            android:src="@drawable/nv"
-            android:layout_marginLeft="40px"/>
+            android:layout_marginLeft="40px"
+            android:layout_toRightOf="@+id/iv_persondata_nanimg"
+            android:src="@drawable/nv" />
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
@@ -160,36 +160,36 @@
         android:id="@+id/rl_perdondata_birthday"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="生日"/>
+            android:text="生日"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_birthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
-            android:textColor="@color/text"
-            android:text="请输入你的生日"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:text="请输入你的生日"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -197,35 +197,35 @@
         android:id="@+id/rl_persondata_location"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="所在地"/>
+            android:text="所在地"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
-            android:textColor="@color/text"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -233,35 +233,35 @@
         android:id="@+id/rl_persondata_thatbuild"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="我在那栋楼"/>
+            android:text="我在那栋楼"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_thatbuild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
-            android:textColor="@color/text"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -269,35 +269,26 @@
         android:id="@+id/rl_persondata_grade"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="等级"/>
+            android:text="等级"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_grade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"
             android:textColor="@color/text"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:textSize="24px" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -305,35 +296,35 @@
         android:id="@+id/rl_persondata_phonenumber"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="手机号码"/>
+            android:text="手机号码"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_phonenumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
-            android:textColor="@color/text"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -341,39 +332,76 @@
         android:id="@+id/rl_persondata_mailbox"
         android:layout_width="match_parent"
         android:layout_height="98px"
-        android:background="@android:color/white"
-        android:layout_marginTop="3px">
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
 
         <TextView
             android:layout_width="200px"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:textSize="24px"
             android:gravity="right"
-            android:text="邮箱"/>
+            android:text="邮箱"
+            android:textColor="@color/black"
+            android:textSize="24px" />
 
         <TextView
             android:id="@+id/tv_persondata_mailbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24px"
-            android:textColor="@color/text"
-            android:text="请添加邮箱，用来登陆找回"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="230px"/>
+            android:layout_marginLeft="230px"
+            android:text="请添加邮箱，用来登陆找回"
+            android:textColor="@color/text"
+            android:textSize="24px" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:src="@drawable/xiangyou"/>
+            android:src="@drawable/xiangyou" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_persondata_code"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_marginTop="3px"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:text="邀请码"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <TextView
+            android:id="@+id/tv_persondata_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="230px"
+            android:text="填写邀请码"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+
+        <ImageView
+            android:id="@+id/iv_persondata_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@drawable/xiangyou" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
 
 
 </com.zhy.autolayout.AutoLinearLayout>

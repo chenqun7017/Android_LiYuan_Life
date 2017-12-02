@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/activityback">
+    <include layout="@layout/include_apptoolbar_b" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="昵称"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_nickname"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:maxLength="16"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="输入昵称"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_profile"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="个人简介"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_profile"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="简单介绍自已"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_location"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="所在地"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_location"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="居住地址"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_thatbuild"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="我在那栋楼"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_thatbuild"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="详细地址"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_phone"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="手机号码"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_phone"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:lines="1"
+            android:inputType="phone"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="输入手机号"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_mail"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="邮箱"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_mail"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="添加邮箱"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/rl_persondata_code"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="right|center_vertical"
+            android:text="邀请码"
+            android:textColor="@color/black"
+            android:textSize="24px" />
+
+        <EditText
+            android:id="@+id/tv_persondata_code"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="20px"
+            android:inputType="number"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:hint="输入邀请码"
+            android:textColor="@color/text"
+            android:textSize="24px" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

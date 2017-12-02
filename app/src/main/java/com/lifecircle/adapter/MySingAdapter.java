@@ -109,6 +109,8 @@ public class MySingAdapter extends BaseQuickAdapter<Integer,BaseViewHolder> {
                                                                 if (jsonObject.getString("result").equals("200")){
                                                                     String points=jsonObject.getJSONObject("data").getString("points");
                                                                     SharedPreferencesUtils.setParam(context, "points", points);
+                                                                    helper.setVisible(R.id.text_oval, true);
+                                                                    helper.setTextColor(R.id.text,context.getColor(R.color.white));
                                                                 }
                                                                 ToastUtils.showToast(jsonObject.getString("msg"));
                                                             } catch (JSONException e) {

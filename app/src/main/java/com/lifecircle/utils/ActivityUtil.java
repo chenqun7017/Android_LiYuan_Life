@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.lifecircle.ui.view.guangchang.ShopOrderActivity;
 import com.lifecircle.ui.view.guangchang.ShoppingCartActivity;
+import com.lifecircle.ui.view.my.MyEditDataActivity;
 import com.lifecircle.ui.view.publicui.ParticipantsActivity;
 import com.lifecircle.ui.view.guangchang.ReleaseFactActivity;
 import com.lifecircle.ui.view.my.MyOrderDetails;
@@ -529,6 +530,17 @@ public class ActivityUtil {
      */
     public static void startShopOrderActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, ShopOrderActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 跳转用户资料编辑界面
+     *
+     * @param _activity
+     */
+    public static void startMyEditDataActivity(Activity _activity,String tag,String text) {
+        Intent localIntent = new Intent(_activity, MyEditDataActivity.class);
+        localIntent.putExtra("tag",tag);
+        localIntent.putExtra("text",text);
         _activity.startActivity(localIntent);
     }
 

@@ -72,6 +72,7 @@
         <activity android:name=".ui.view.guangchang.ShopActivity"/>
         <activity android:name=".ui.view.guangchang.ShoppingCartActivity"/>
         <activity android:name=".ui.view.guangchang.ShopOrderActivity"/>
+        <activity android:name=".ui.view.my.MyEditDataActivity"/>
 
 
 

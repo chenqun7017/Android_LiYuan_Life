@@ -8,12 +8,14 @@
     <include layout="@layout/include_apptoolbar_b" />
 
     <EditText
+        android:id="@+id/et_back_content"
         android:layout_width="match_parent"
         android:layout_height="306px"
         android:gravity="top"
         android:background="@android:color/white"/>
 
 <com.zhy.autolayout.AutoRelativeLayout
+    android:id="@+id/rl_back"
     android:layout_width="match_parent"
     android:layout_height="84px"
     android:layout_marginTop="3px"
@@ -29,16 +31,18 @@
         android:textColor="@color/black"
         android:text="您的邮箱:"/>
 
-    <TextView
+    <EditText
         android:id="@+id/tv_my_feedback_center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/tv_my_feedback_zou"
         android:textSize="24px"
+        android:focusable="false"
+        android:background="@color/white"
         android:layout_marginLeft="44px"
         android:layout_centerVertical="true"
         android:textColor="@color/text"
-        android:text="以便我们及时回复你的反馈"/>
+        android:hint="以便我们及时回复你的反馈"/>
 
 <ImageView
     android:layout_width="wrap_content"
@@ -53,6 +57,7 @@
 
 
     <TextView
+        android:id="@+id/tv_submit"
         android:layout_width="match_parent"
         android:layout_height="82px"
         android:layout_marginLeft="30px"

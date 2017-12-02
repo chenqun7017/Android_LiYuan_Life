@@ -53,7 +53,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Log.d("LoginActivity", TimeDataUtils.getNowDayOffset(0));
         String id= (String) SharedPreferencesUtils.getParam(LoginActivity.this, "id", "");
         if (!EditViewUtil.isNull(id)){
             GlobalVariable.uid=id;

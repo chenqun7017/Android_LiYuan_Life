@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
-import com.lifecircle.ui.view.fragmemt.v.GuangChangFragment;
-import com.lifecircle.ui.view.fragmemt.v.LinJuFragment;
-import com.lifecircle.ui.view.fragmemt.v.MyFragment;
-import com.lifecircle.ui.view.fragmemt.v.ZhouBianServiceFragment;
+import com.lifecircle.ui.view.fragmemt.GuangChangFragment;
+import com.lifecircle.ui.view.fragmemt.LinJuFragment;
+import com.lifecircle.ui.view.fragmemt.MyFragment;
+import com.lifecircle.ui.view.fragmemt.ZhouBianServiceFragment;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{

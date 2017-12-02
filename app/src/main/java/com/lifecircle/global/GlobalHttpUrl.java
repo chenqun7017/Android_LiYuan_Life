@@ -29,5 +29,11 @@ public class GlobalHttpUrl {
     //补签到
     public  static  String SING_UP=BASE_URL+"/home/signin/etroactive";
 
+    //意见反馈页面接口
+    public  static  String MY_BACK=BASE_URL+"/home/Back/insert";
+
+    //我的关注 与我的粉丝
+    public  static  String MY_FOLLOWER=BASE_URL+"/home/follower/followerlist";
+
 
 }

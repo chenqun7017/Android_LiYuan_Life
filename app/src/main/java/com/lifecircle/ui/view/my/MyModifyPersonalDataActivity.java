@@ -13,9 +13,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
 import com.lifecircle.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
@@ -67,7 +69,6 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
     private TextView tv_persondata_thatbuild;
 
     //等级
-    private RelativeLayout rl_persondata_grade;
     private TextView tv_persondata_grade;
 
     //手机号
@@ -77,6 +78,22 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
     //邮箱
     private RelativeLayout rl_persondata_mailbox;
     private TextView tv_persondata_mailbox;
+
+    //邀请码
+    private RelativeLayout rl_persondata_code;
+    private TextView tv_persondata_code;
+    private  ImageView iv_persondata_code;
+
+    private  String tag="";
+
+
+    private    String nickname;
+    private    String profile;
+    private    String location;
+    private    String thatbuild;
+    private    String phone;
+    private    String mail;
+    private    String code;
 
 
     @Override
@@ -92,52 +109,94 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
         rl_persondata_img=findViewById(R.id.rl_persondata_img);
         rl_persondata_img.setOnClickListener(this);
         iv_persondata_imag=findViewById(R.id.iv_persondata_imag);
+        String url=SharedPreferencesUtils.getParam(this, "img", "")+"";
+        if (!url.equals("")){
+            Glide.with(this)
+                    .load(GlobalHttpUrl.BASE_URL+url)
+                    .into(iv_persondata_imag);
+        }
+
         //用户昵称
         rl_persondata_nickname=findViewById(R.id.rl_persondata_nickname);
         rl_persondata_nickname.setOnClickListener(this);
         tv_persondata_nickname=findViewById(R.id.tv_persondata_nickname);
+        nickname=SharedPreferencesUtils.getParam(this, "name", "")+"";
+        tv_persondata_nickname.setText(nickname);
+
         //个人简个
         rl_persondata_profile=findViewById(R.id.rl_persondata_profile);
         rl_persondata_profile.setOnClickListener(this);
         tv_persondata_profile=findViewById(R.id.tv_persondata_profile);
+        profile=SharedPreferencesUtils.getParam(this, "desc", "")+"";
+        tv_persondata_profile.setText(profile);
+
         //性别
         iv_persondata_nanimg=findViewById(R.id.iv_persondata_nanimg);
         iv_persondata_nvimg=findViewById(R.id.iv_persondata_nvimg);
+        iv_persondata_nanimg.setOnClickListener(this);
+        iv_persondata_nvimg.setOnClickListener(this);
+
+
         //生日
         rl_perdondata_birthday=findViewById(R.id.rl_perdondata_birthday);
         rl_perdondata_birthday.setOnClickListener(this);
         tv_persondata_birthday=findViewById(R.id.tv_persondata_birthday);
+        tv_persondata_birthday.setText(SharedPreferencesUtils.getParam(this, "birthday", "")+"");
         //所在地
         rl_persondata_location=findViewById(R.id.rl_persondata_location);
         rl_persondata_location.setOnClickListener(this);
         tv_persondata_location=findViewById(R.id.tv_persondata_location);
+        location=SharedPreferencesUtils.getParam(this, "address", "")+"";
+        tv_persondata_location.setText(location);
 
         //那栋楼
         rl_persondata_thatbuild=findViewById(R.id.rl_persondata_thatbuild);
         rl_persondata_thatbuild.setOnClickListener(this);
         tv_persondata_thatbuild=findViewById(R.id.tv_persondata_thatbuild);
+        thatbuild=SharedPreferencesUtils.getParam(this, "flooraddress", "")+"";
+        tv_persondata_thatbuild.setText(thatbuild);
+
         //等级
-        rl_persondata_grade=findViewById(R.id.rl_persondata_grade);
-        rl_persondata_grade.setOnClickListener(this);
         tv_persondata_grade=findViewById(R.id.tv_persondata_grade);
+        tv_persondata_grade.setText(SharedPreferencesUtils.getParam(this, "level", "")+"");
 
         //手机号
         rl_persondata_phonenumber=findViewById(R.id.rl_persondata_phonenumber);
         rl_persondata_phonenumber.setOnClickListener(this);
         tv_persondata_phonenumber=findViewById(R.id.tv_persondata_phonenumber);
+        phone=SharedPreferencesUtils.getParam(this, "phone", "")+"";
+        tv_persondata_phonenumber.setText(phone);
 
         //邮箱
         rl_persondata_mailbox=findViewById(R.id.rl_persondata_mailbox);
         rl_persondata_mailbox.setOnClickListener(this);
         tv_persondata_mailbox=findViewById(R.id.tv_persondata_mailbox);
+        mail=SharedPreferencesUtils.getParam(this, "email", "")+"";
+        tv_persondata_mailbox.setText(mail);
+
+        //邀请码
+        rl_persondata_code=findViewById(R.id.rl_persondata_code);
+        iv_persondata_code=findViewById(R.id.iv_persondata_code);
+        tv_persondata_code=findViewById(R.id.tv_persondata_code);
+        code=SharedPreferencesUtils.getParam(this, "code", "")+"";
+        tv_persondata_code.setText(code);
+        if (code.equals("")){
+            rl_persondata_code.setOnClickListener(this);
+            iv_persondata_code.setVisibility(View.VISIBLE);
+        }else {
+            iv_persondata_code.setVisibility(View.GONE);
+        }
 
     }
+
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.toolbar_iv_back:
                 finish();
                 break;
+                //选相册
             case R.id.rl_persondata_img:
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED) {
@@ -147,25 +206,51 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
                             .start(this, 1);
                 }
                 break;
+                //昵称
             case R.id.rl_persondata_nickname:
+                tag="nickname";
+                ActivityUtil.startMyEditDataActivity(this,tag,nickname);
                 break;
+                //个人简介
             case R.id.rl_persondata_profile:
+                tag="profile";
+                ActivityUtil.startMyEditDataActivity(this,tag,profile);
                 break;
+                //男
+            case R.id.iv_persondata_nanimg:
+                break;
+                //女
+            case R.id.iv_persondata_nvimg:
+                break;
+
+                //生日
             case R.id.rl_perdondata_birthday:
                 break;
+                //地址
             case R.id.rl_persondata_location:
+                tag="location";
+                ActivityUtil.startMyEditDataActivity(this,tag,location);
                 break;
-            case R.id.rl_persondata_thatbuild:
-                break;
-            case R.id.rl_persondata_grade:
-                break;
-            case R.id.rl_persondata_phonenumber:
-                break;
-            case R.id.rl_persondata_mailbox:
-                break;
-                default:
-                    break;
 
+                //那栋楼
+            case R.id.rl_persondata_thatbuild:
+                tag="thatbuild";
+                ActivityUtil.startMyEditDataActivity(this,tag,thatbuild);
+                break;
+                //电话号码
+            case R.id.rl_persondata_phonenumber:
+                tag="phone";
+                ActivityUtil.startMyEditDataActivity(this,tag,phone);
+                break;
+                //邮箱
+            case R.id.rl_persondata_mailbox:
+                tag="mail";
+                ActivityUtil.startMyEditDataActivity(this,tag,mail);
+                break;
+            case R.id.rl_persondata_code:
+                tag="code";
+                ActivityUtil.startMyEditDataActivity(this,tag,code);
+                break;
         }
     }
     @Override
@@ -189,7 +274,8 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
                                 try {
                                     JSONObject jsonObject=new JSONObject(response.body().toString()) ;
                                     if (jsonObject.getString("result").equals("200")){
-
+                                    String strimag=jsonObject.getJSONObject("data").getString("img");
+                                    SharedPreferencesUtils.setParam(MyModifyPersonalDataActivity.this, "img", strimag);
                                     }
                                     ToastUtils.showToast(jsonObject.getString("msg"));
                                 } catch (JSONException e) {

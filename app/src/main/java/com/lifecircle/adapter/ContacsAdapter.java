@@ -13,17 +13,15 @@ import java.util.List;
  * Created by lenovo on 2017/11/13.
  */
 
-public class ContacsAdapter extends BaseQuickAdapter<ContactsBean,BaseViewHolder> {
+public class ContacsAdapter extends BaseQuickAdapter<ContactsBean.DataBean,BaseViewHolder> {
 
 
-
-    public ContacsAdapter(int layoutResId, @Nullable List<ContactsBean> data) {
+    public ContacsAdapter(int layoutResId, @Nullable List<ContactsBean.DataBean> data) {
         super(layoutResId, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, ContactsBean item) {
+    protected void convert(BaseViewHolder helper, ContactsBean.DataBean item) {
         helper.addOnClickListener(R.id.iv_contacts_image);
-
     }
 }
