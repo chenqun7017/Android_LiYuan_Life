@@ -112,6 +112,7 @@ public class MySingActivity extends BaseActivity implements View.OnClickListener
             tv_saturday.setText(list.get(5));
             tv_sunday.setText(list.get(6));
             tv_all_singprice.setText("总积分  "+weekBean.getData().getPoints());
+            SharedPreferencesUtils.setParam(MySingActivity.this, "points", weekBean.getData().getPoints());
          for (int i=0;i<list.size();i++){
              String text="+"+weekBean.getData().getSign();
              if (weekBean.getData().getNow().equals(list.get(i))){
@@ -205,10 +206,16 @@ public class MySingActivity extends BaseActivity implements View.OnClickListener
         rc_sing_exchange.setLayoutManager(mg);
         rc_sing_exchange.addItemDecoration(dividerGridItemDecoration);
         initDialog();
-        initData();
         initViweList();
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initData();
+    }
+
     public  void initDialog(){
         dialog=new ProgressDialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

@@ -91,7 +91,6 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         ll_my_myinvitation.setOnClickListener(this);
         RelativeLayout rl_info=view.findViewById(R.id.rl_info);
         rl_info.setOnClickListener(this);
-
         initDialog();
         return view;
 
@@ -109,7 +108,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         super.onResume();
         String oldtt=SharedPreferencesUtils.getParam(getActivity(), "singtime", "")+"";
         if (!oldtt.equals("")){
-            if (!oldtt.equals(TimeDataUtils.getNowDayOffset(0))){
+            if (!oldtt.equals(TimeDataUtils.getTodayDateTimes())){
                 state=0;
                 SharedPreferencesUtils.setParam(getActivity(), "sign", 0);
             }
@@ -218,7 +217,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                                 String data=jsonObject.getJSONObject("data").getString("sign");
                                 String points=jsonObject.getJSONObject("data").getString("points");
                                 SharedPreferencesUtils.setParam(getActivity(), "points", points);
-                                SharedPreferencesUtils.setParam(getActivity(), "singtime", TimeDataUtils.getNowDayOffset(0));
+                                SharedPreferencesUtils.setParam(getActivity(), "singtime", TimeDataUtils.getTodayDateTimes());
 
                                 DialogSign dialogSign=new DialogSign(data);
                                 dialogSign.show(getActivity().getFragmentManager(),"dialogSign");

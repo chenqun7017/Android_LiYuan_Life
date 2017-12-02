@@ -26,4 +26,8 @@ public class GlobalHttpUrl {
     //获取签到记录
     public  static  String SING_TIME=BASE_URL+"/home/signin/listlog";
 
+    //补签到
+    public  static  String SING_UP=BASE_URL+"/home/signin/etroactive";
+
+
 }
