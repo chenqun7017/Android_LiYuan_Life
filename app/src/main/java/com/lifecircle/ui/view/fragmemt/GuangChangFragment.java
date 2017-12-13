@@ -10,23 +10,35 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
 import com.lifecircle.adapter.PublicListAdapter;
 
-import com.lifecircle.adapter.PublicPageMenusAdapter;
+import com.lifecircle.adapter.HomePageMenusAdapter;
 import com.lifecircle.base.BaseFragment;
-import com.lifecircle.ui.model.PublicListBean;
+import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.ui.model.HomeBean;
 import com.lifecircle.ui.model.ViewPageMenuBean;
+import com.lifecircle.ui.view.my.MyInfoEditAcitivty;
 import com.lifecircle.utils.ActivityUtil;
+import com.lifecircle.utils.ToastUtils;
 import com.lifecircle.widget.DividerItemDecoration;
 import com.lifecircle.widget.GlideImageLoader;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 import com.youth.banner.Banner;
 
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,15 +47,14 @@ import java.util.List;
  */
 
 public class GuangChangFragment extends BaseFragment implements View.OnClickListener{
-    //广告位url集合
-    private List<String> list=new ArrayList<String>();
     //分类集合
     private List<ViewPageMenuBean> viewPageMenuBean = new ArrayList<ViewPageMenuBean>();
+
     private ViewPager viewPageMens;
     private RecyclerView rc_guangchang_list;
     private TextView tv_seach;
     private  TextView tv_right;
-    private List<PublicListBean> listDate=new ArrayList<PublicListBean>();
+    private List<HomeBean> listDate=new ArrayList<HomeBean>();
 
     //RecyclerView集合
     private   List<View> views = new ArrayList<View>();
@@ -52,37 +63,70 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     private GridLayoutManager mgr;
     private PublicListAdapter publicListAdapter;
 
-    private  PublicPageMenusAdapter publicPageMenusAdapter;
+    private HomePageMenusAdapter publicPageMenusAdapter;
+
+    //广告位
+    private  Banner banner;
+    //url集合
+    private List<String> list=new ArrayList<String>();
+    //栏目
+    List<HomeBean.DataBean.InfoBean> infoList=new ArrayList<HomeBean.DataBean.InfoBean>();
 
     @Override
     public View initView(LayoutInflater inflater) {
         View view=inflater.inflate(R.layout.fragment_guangchang,null);
         context=getActivity();
-        Banner banner =view.findViewById(R.id.banner);
+        banner=view.findViewById(R.id.banner);
         rc_guangchang_list =view.findViewById(R.id.rc_guangchang_list);
         tv_seach=view.findViewById(R.id.tv_seach);
         viewPageMens =view.findViewById(R.id.guangchang_viewpager);
         tv_seach.setOnClickListener(this);
         tv_right=view.findViewById(R.id.tv_right);
         tv_right.setOnClickListener(this);
-        //设置图片加载器
-        banner.setImageLoader(new GlideImageLoader());
-        list.add("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3781711747,4277720928&fm=27&gp=0.jpg");
-        list.add("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3136010452,308385565&fm=27&gp=0.jpg");
-        list.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2599706304,2343100100&fm=11&gp=0.jpg");
-        banner.setImages(list);
-        banner.start();
-        initViewPageMens();
+        //获取数据
+        initNetDate();
+        //贴子
         initDate();
         return view;
+    }
+
+    private void initNetDate() {
+        OkGo.<String>post(GlobalHttpUrl.MY_HOME)
+                .tag(context)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Gson gson=new Gson();
+                        String str=response.body().toString();
+                        Type type = new TypeToken<HomeBean>(){}.getType();
+                        HomeBean homeBean=gson.fromJson(str, type);
+                        if ((homeBean.getResult()).equals("200")){
+                            //设置图片加载器
+                            banner.setImageLoader(new GlideImageLoader());
+                       if (homeBean.getData().getCarousel().size()>0){
+                           for (int i=0;i<homeBean.getData().getCarousel().size();i++){
+                               list.add(GlobalHttpUrl.BASE_URL+homeBean.getData().getCarousel().get(i).getCarousel_img());
+                           }
+                           banner.setImages(list);
+                           banner.start();
+                       }
+                       //栏目
+                           infoList=homeBean.getData().getInfo();
+                           initViewPageMens();
+
+                        }else {
+                            ToastUtils.showToast(homeBean.getMsg());
+                        }
+                    }
+
+                });
     }
 
     //数据源
     private void initDate() {
         for (int i=0;i<10;i++){
-            listDate.add(new PublicListBean());
+            listDate.add(new HomeBean());
         }
-
         //创建默认的线性LayoutManager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rc_guangchang_list.setLayoutManager(mLayoutManager);
@@ -101,27 +145,42 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
     }
 
     public void initViewPageMens() {
-        for (int k=0;k<16;k++){
-            viewPageMenuBean.add(new ViewPageMenuBean());
-        }
-        int size = viewPageMenuBean.size();
+        int size = infoList.size();
         if (size <=4&&size>0) {
-            initRecyclerView(size,viewPageMenuBean);
+            initRecyclerView(size,infoList);
+            //根据数据源设置高度
+            WindowManager wm = getActivity().getWindowManager();
+            int height = (int) (wm.getDefaultDisplay().getHeight() * 0.0982);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) viewPageMens.getLayoutParams();
+            params.height = height;//设置当前控件布局的高度
+            viewPageMens.setLayoutParams(params);
         }
         if (size >= 5 && size <= 8) {
-            initRecyclerView(4,viewPageMenuBean);
+            initRecyclerView(4,infoList);
+            //根据数据源设置高度
+            WindowManager wm = getActivity().getWindowManager();
+            int height = (int) (wm.getDefaultDisplay().getHeight() * 0.1964);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) viewPageMens.getLayoutParams();
+            params.height = height;//设置当前控件布局的高度
+            viewPageMens.setLayoutParams(params);
         }
         if (size > 8) {
+            //根据数据源设置高度
+            WindowManager wm = getActivity().getWindowManager();
+            int height = (int) (wm.getDefaultDisplay().getHeight() * 0.1964);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) viewPageMens.getLayoutParams();
+            params.height = height;//设置当前控件布局的高度
+            viewPageMens.setLayoutParams(params);
             if (size % 8 == 0) {
                 int lenght=(size / 8);
                 for (int i = 0; i < lenght; i++) {
-                    List<ViewPageMenuBean> listBean = new ArrayList<ViewPageMenuBean>();
+                    List<HomeBean.DataBean.InfoBean> listBean = new ArrayList<HomeBean.DataBean.InfoBean>();
                     int J=i*8;
                     for (J=0;J<(8+i*8);J++){
                         if (J==i*8){
                             listBean.clear();
                         }
-                        listBean.add(viewPageMenuBean.get(J));
+                        listBean.add(infoList.get(J));
                     }
                     initRecyclerView(4,listBean);
                 }
@@ -129,13 +188,13 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
                 int lenght=(size / 8);
                 int  item=size%8;
                 for (int i = 0; i < lenght+1; i++) {
-                    List<ViewPageMenuBean> listBean = new ArrayList<ViewPageMenuBean>();
+                    List<HomeBean.DataBean.InfoBean> listBean = new ArrayList<HomeBean.DataBean.InfoBean>();
                     int J=i*8;
                     for (J=0;J<(8+i*8);J++){
                         if (J==i*8){
                             listBean.clear();
                         }
-                        listBean.add(viewPageMenuBean.get(J));
+                        listBean.add(infoList.get(J));
                         if (size==(J+1)){
                             break;
                         }
@@ -173,16 +232,16 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         });
     }
 
-    private void initRecyclerView(int size,List<ViewPageMenuBean> listBean) {
+    private void initRecyclerView(int size, final List<HomeBean.DataBean.InfoBean> infoList) {
         listview=new RecyclerView(context);
         mgr= new GridLayoutManager(getContext(), size);
         listview.setLayoutManager(mgr);
-        publicPageMenusAdapter=new PublicPageMenusAdapter(R.layout.public_item_pageviewmenu, listBean);
+        publicPageMenusAdapter=new HomePageMenusAdapter(R.layout.public_item_pageviewmenu, infoList,getActivity());
         listview.setAdapter(publicPageMenusAdapter);
         publicPageMenusAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ActivityUtil.startPublicActivity(getActivity());
+               ActivityUtil.startPublicActivity(getActivity(),infoList.get(position).getId(),infoList.get(position).getColumn_name());
             }
         });
         views.add(listview);

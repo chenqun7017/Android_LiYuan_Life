@@ -14,6 +14,7 @@ import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.global.GlobalVariable;
+import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
 import com.lifecircle.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
@@ -44,6 +45,9 @@ public class MyFeedBackActivity extends BaseActivity implements View.OnClickList
 
     public ProgressDialog dialog;
 
+    //邮箱
+    private  String     mail;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,6 +67,7 @@ public class MyFeedBackActivity extends BaseActivity implements View.OnClickList
         tv_submit.setOnClickListener(this);
         et_back_content=findViewById(R.id.et_back_content);
         tv_my_feedback_center=findViewById(R.id.tv_my_feedback_center);
+
         initDialog();
     }
 
@@ -75,18 +80,36 @@ public class MyFeedBackActivity extends BaseActivity implements View.OnClickList
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        mail=SharedPreferencesUtils.getParam(this,"email","")+"";
+        tv_my_feedback_center.setText(mail);
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.toolbar_iv_back:
                 finish();
                 break;
+            case R.id.toolbar_right_text:
+                ActivityUtil.startWithLifeCirleActivity(this);
+
+                break;
 
             case R.id.rl_back:
-
+               String  tag = "mail";
+                ActivityUtil.startMyEditDataActivity(this, tag, mail);
                 break;
             case R.id.tv_submit:
                 back_content=et_back_content.getText().toString().trim();
                 emails=tv_my_feedback_center.getText().toString().trim();
+                if (back_content.equals("")){
+                    return;
+                }
+                if (emails.equals("")){
+                    return;
+                }
                 OkGo.<String>post(GlobalHttpUrl.MY_BACK)
                         .tag(this)
                         .params("back_uid", GlobalVariable.uid)

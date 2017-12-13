@@ -47,7 +47,7 @@ public class MyFollowActivity extends BaseActivity {
 
         LinearLayoutManager mg = new LinearLayoutManager(this);
         rc_contacts.setLayoutManager(mg);
-        contacsAdapter=new ContacsAdapter(R.layout.item_contacts,listDate);
+       // contacsAdapter=new ContacsAdapter(R.layout.item_contacts,listDate);
         rc_contacts.setAdapter(contacsAdapter);
         contacsAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override

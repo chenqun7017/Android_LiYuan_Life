@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
-                android:text="广场"
+                android:text="首页"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10px"
                 android:textSize="25px"/>
@@ -78,7 +78,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10px"
                 android:textColor="@color/black"
-                android:text="周边服务"
+                android:text="生活服务"
                 android:textSize="25px" />
             <TextView
                 android:id="@+id/tv_badge_zhoubianservices"

@@ -450,8 +450,10 @@ public class ActivityUtil {
      *
      * @param _activity
      */
-    public static void startPublicActivity(Activity _activity) {
+    public static void startPublicActivity(Activity _activity,String id,String name) {
         Intent localIntent = new Intent(_activity, PublicActivity.class);
+        localIntent.putExtra("id",id);
+        localIntent.putExtra("name",name);
         _activity.startActivity(localIntent);
     }
 
@@ -466,12 +468,13 @@ public class ActivityUtil {
     }
 
     /**
-     * 跳转公共二级页面
+     * 跳转订单详情
      *
      * @param _activity
      */
-    public static void startMyOrderDerailsActivity(Activity _activity) {
+    public static void startMyOrderDerailsActivity(Activity _activity,String orderNumber) {
         Intent localIntent = new Intent(_activity, MyOrderDetails.class);
+        localIntent.putExtra("orderNumber",orderNumber);
         _activity.startActivity(localIntent);
     }
 

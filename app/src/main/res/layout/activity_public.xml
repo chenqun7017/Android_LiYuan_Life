@@ -75,15 +75,15 @@
                     android:background="@drawable/shape_public_search"/>
 
             </com.zhy.autolayout.AutoRelativeLayout>
-          <!--一级分类-->
+          <!--栏目-->
             <android.support.v4.view.ViewPager
                 android:id="@+id/public_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="360px"
                 android:background="@android:color/white"/>
-            <!--二级分类-->
+            <!--热门分类-->
             <com.zhy.autolayout.AutoLinearLayout
-                android:id="@+id/ll_public_second"
+                android:id="@+id/ll_public_hot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10px"
@@ -128,16 +128,16 @@
 
                 </com.zhy.autolayout.AutoRelativeLayout>
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rc_public_first"
+                    android:id="@+id/rc_public_hot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
                     android:layout_marginTop="3px">
                 </android.support.v7.widget.RecyclerView>
             </com.zhy.autolayout.AutoLinearLayout>
-            <!--三级分类-->
+            <!--热门话题-->
             <com.zhy.autolayout.AutoLinearLayout
-                android:id="@+id/ll_public_third"
+                android:id="@+id/ll_public_topic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10px"
@@ -145,7 +145,6 @@
                 android:orientation="vertical">
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:layout_width="match_parent"
-
                     android:layout_height="62px">
 
                     <TextView
@@ -167,7 +166,7 @@
                         android:layout_height="wrap_content"  />
                 </com.zhy.autolayout.AutoRelativeLayout>
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rc_public_second"
+                    android:id="@+id/rc_public_topic"
                     android:background="@android:color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">

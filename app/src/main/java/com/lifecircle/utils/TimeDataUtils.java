@@ -1,5 +1,6 @@
 package com.lifecircle.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,6 +12,11 @@ import java.util.Locale;
  */
 
 public class TimeDataUtils {
+    private static final long ONE_MINUTE = 60;
+    private static final long ONE_HOUR = 3600;
+    private static final long ONE_DAY = 86400;
+    private static final long ONE_MONTH = 2592000;
+    private static final long ONE_YEAR = 31104000;
     private static Calendar m_Calendar = Calendar.getInstance();
     private static SimpleDateFormat momeny = new SimpleDateFormat("yyyy年MM月dd日");
     private static SimpleDateFormat day = new SimpleDateFormat("dd");
@@ -117,7 +123,7 @@ public class TimeDataUtils {
     /**
      * 通过时间秒毫秒数判断两个时间的间隔
      * @param date1
-     * @param date2
+     * @param
      * @return
      */
     public static int differentDaysByMillisecond(Date date,Date date1)
@@ -136,5 +142,62 @@ public class TimeDataUtils {
     String second=calendar.get(Calendar.SECOND)+"";
     String time=year+month+day+hour+minute+second;*/
 
+    public static String DateTime(Date date) {
+        SimpleDateFormat sdr = new SimpleDateFormat("yyyy年MM月dd日");
+        String times = sdr.format(date);
+        return times;
+    }
+    public static String fromToday(String timestr){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date date = null;
+        try {
+            date = df.parse(timestr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "未知时间";
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        long time = date.getTime() / 1000;
+        long now = new Date().getTime() / 1000;
+        long ago = now - time;
+        if(ago <= ONE_HOUR){
+            return ago / ONE_MINUTE + "分钟前";
+        }
+        else if(ago <= ONE_DAY){
+            return ago / ONE_HOUR + "小时" + (ago % ONE_HOUR / ONE_MINUTE)+ "分钟前";
+        }
+        else if(ago <= ONE_DAY * 2){
+            return "昨天" + calendar.get(Calendar.HOUR_OF_DAY) + "点"+ calendar.get(Calendar.MINUTE) + "分";
+        }
+        else if (ago <= ONE_DAY * 3){
+            return "前天" + calendar.get(Calendar.HOUR_OF_DAY) + "点" + calendar.get(Calendar.MINUTE) + "分";
+        }
+        else if (ago <= ONE_MONTH){
+            long day = ago / ONE_DAY;
+            if(day < 7)
+                return day + "天前" ;
+            else if (day >= 7 && day <14)
+                return "1周前";
+            else if (day >=14 && day <21)
+                return "2周前";
+            else if (day >= 21 && day <28)
+                return "3周前";
+            else
+                return "4周前";
+        }
+        else if (ago <= ONE_YEAR){
+            long month = ago / ONE_MONTH;
+            long day = ago % ONE_MONTH / ONE_DAY;
+            return month + "个月" + day + "天前";
+        }
+        else {
+            long year = ago / ONE_YEAR;
+            int month = calendar.get(Calendar.MONTH) + 1;// JANUARY which is 0 so month+1
+            return year + "年前" + month + "月" + calendar.get(Calendar.DATE)
+                    + "日";
+        }
+    }
 }
 

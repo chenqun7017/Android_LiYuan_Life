@@ -32,7 +32,6 @@
             android:layout_marginLeft="30px"
             android:textColor="@color/text"/>
 
-
         <TextView
             android:id="@+id/tv_orderdetails_anme"
             android:layout_width="wrap_content"
@@ -41,7 +40,6 @@
             android:textSize="23px"
             android:textColor="@color/black"
             android:layout_marginLeft="10px"
-            android:text="大吹哥"
             android:layout_toRightOf="@+id/tv_tag"/>
 
         <TextView
@@ -52,18 +50,17 @@
             android:layout_below="@+id/tv_tag"
             android:layout_marginLeft="30px"
             android:textSize="23px"
-            android:textColor="@color/text"
-            android:text="北京大望路4号楼2505"/>
+            android:textColor="@color/text"/>
 
         <TextView
+            android:id="@+id/tv_myorderdetails_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="30px"
             android:layout_marginTop="20px"
             android:textColor="@color/black"
-            android:textSize="23px"
-            android:text="18510169250"/>
+            android:textSize="23px"/>
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
@@ -110,8 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="23px"
-            android:textColor="@color/text"
-            android:text="商品数量:3"/>
+            android:textColor="@color/text"/>
         <TextView
             android:id="@+id/tv_orderdetails_allprice"
             android:layout_marginTop="10px"
@@ -120,8 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="23px"
-            android:textColor="@color/text"
-            android:text="商品总金额:255"/>
+            android:textColor="@color/text"/>
         <TextView
             android:id="@+id/tv_orderdetails_ransport"
             android:layout_marginTop="10px"
@@ -131,7 +126,7 @@
             android:layout_height="wrap_content"
             android:textSize="23px"
             android:textColor="@color/text"
-            android:text="总用费:322"/>
+            android:text="总运费:  ￥0.0"/>
 
         <TextView
             android:id="@+id/tv_tag01"
@@ -139,9 +134,9 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="30px"
-            android:layout_alignParentRight="true"
+           android:layout_toLeftOf="@+id/tv_orderdetails_all"
             android:layout_centerVertical="true"
-            android:layout_marginRight="160px"
+            android:layout_marginRight="20px"
             android:text="应付款:"/>
         <TextView
             android:id="@+id/tv_orderdetails_all"
@@ -151,8 +146,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
-            android:textColor="@color/colorPrimary"
-            android:text="125556"/>
+            android:textColor="@color/colorPrimary"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -163,21 +157,21 @@
         android:background="@color/white"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/tv_myorder_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30px"
             android:textColor="@color/text"
             android:textSize="23px"
-            android:layout_marginLeft="30px"
-           />
+            android:layout_marginLeft="30px" />
         <TextView
+            android:id="@+id/tv_myorder_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10px"
             android:textColor="@color/text"
             android:textSize="23px"
-            android:layout_marginLeft="30px"
-           />
+            android:layout_marginLeft="30px" />
 
     </com.zhy.autolayout.AutoLinearLayout>
 
@@ -192,6 +186,7 @@
         android:layout_height="86px">
 
         <TextView
+            android:id="@+id/tv_myorder_del"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10px"
@@ -210,7 +205,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
             android:textColor="@color/text"
-            android:text="完成"/>
+            android:text="已完成"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 

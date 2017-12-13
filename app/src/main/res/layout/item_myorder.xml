@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
+        android:id="@+id/tv_my_order_time"
         android:layout_width="match_parent"
         android:layout_height="64px"
         android:gravity="center_vertical"
         android:textColor="@color/text"
         android:textSize="24px"
-        android:paddingLeft="30px"
-        android:text="2017-12-21"/>
+        android:paddingLeft="30px"/>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -40,10 +41,11 @@
             android:layout_marginTop="20px"/>
 
         <ImageView
+            android:id="@+id/iv_myorder_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-         android:padding="29px"
+            android:padding="29px"
             android:src="@drawable/gengduos"/>
 
 
@@ -52,9 +54,9 @@
             android:layout_weight="1"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/tv_item_myorder_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="已完成"
                 android:textColor="@color/black"
                 android:textSize="24px"
                 android:layout_alignParentRight="true"
@@ -62,25 +64,24 @@
                 android:layout_marginRight="30px"/>
 
             <TextView
-                android:id="@+id/tv_myorder_allprice"
+                android:id="@+id/tv_myorder_allnums"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:textSize="23px"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="30px"
-                android:text="共3件商品"/>
+                android:layout_marginRight="30px"/>
             <TextView
                 android:id="@+id/tv_myorder_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30px"
-                android:layout_below="@+id/tv_myorder_allprice"
+                android:layout_below="@+id/tv_myorder_allnums"
                 android:textSize="23px"
-                android:textColor="@color/colorPrimary"
-                android:text="￥2000"/>
+                android:layout_marginTop="10px"
+                android:textColor="@color/colorPrimary"/>
 
         </com.zhy.autolayout.AutoRelativeLayout>
 

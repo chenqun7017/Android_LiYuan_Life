@@ -3,13 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="69px">
     <TextView
         android:id="@+id/tv_item_zhoubianfirst_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10px"
-        android:text="下拉刷新"/>
+        android:layout_marginTop="10px"/>
     <TextView
         android:id="@+id/tv_item_zhoubianfirst_line"
         android:layout_width="100px"
@@ -18,5 +20,5 @@
         android:layout_centerHorizontal="true"
         android:layout_height="3px" />
 
-
+    </com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoRelativeLayout>

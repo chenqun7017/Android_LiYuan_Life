@@ -19,6 +19,7 @@
             android:text="2017年11月"/>
 
         <ImageView
+            android:id="@+id/iv_myseleced"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -26,5 +27,14 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/time"/>
     </com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_record_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+    </android.support.v7.widget.RecyclerView>
+
 
 </com.zhy.autolayout.AutoLinearLayout>

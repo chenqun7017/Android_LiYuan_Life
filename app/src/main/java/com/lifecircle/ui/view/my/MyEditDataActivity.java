@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.utils.EditViewUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
 import com.lifecircle.utils.ToastUtils;
@@ -26,6 +28,8 @@ import com.lzy.okgo.request.base.Request;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.File;
 
 /**
  * Created by lenovo on 2017/12/2.
@@ -153,6 +157,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                 break;
 
             case R.id.toolbar_right_text:
+                String uid = GlobalVariable.uid;
+                String name=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"name","")+"";
+                String sex=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"sex","")+"";
+                String birthday=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"birthday","")+"";
+                String phone=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"phone","")+"";
+                String email=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"email","")+"";
+                String code=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"code","")+"";
+                String abstracts=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"desc","")+"";
+                String address1=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"address","")+"";
+                String address2=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"flooraddress","")+"";
+                String img=SharedPreferencesUtils.getParam(MyEditDataActivity.this,"img","")+"";
                 if (tag.equals("nickname")) {
                     inputStr=tv_persondata_nickname.getText().toString().trim();
                     if (inputStr.equals("")){
@@ -164,7 +179,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                         return;
                     }
                     HttpParams params=new HttpParams();
+                    params.put("uid",uid);
                     params.put("name",inputStr);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
+                    params.put("phone",phone);
+                    params.put("email",email);
+                    params.put("code",code);
+                    params.put("abstract",abstracts);
+                    params.put("address1",address1);
+                    params.put("address2",address2);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 if (tag.equals("profile")) {
@@ -178,7 +203,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                         return;
                     }
                     HttpParams params=new HttpParams();
-                    params.put("desc",inputStr);
+                    params.put("uid",uid);
+                    params.put("name",name);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
+                    params.put("phone",phone);
+                    params.put("email",email);
+                    params.put("code",code);
+                    params.put("abstract",inputStr);
+                    params.put("address1",address1);
+                    params.put("address2",address2);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 if (tag.equals("location")) {
@@ -192,7 +227,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                         return;
                     }
                     HttpParams params=new HttpParams();
-                    params.put("address",inputStr);
+                    params.put("uid",uid);
+                    params.put("name",name);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
+                    params.put("phone",phone);
+                    params.put("email",email);
+                    params.put("code",code);
+                    params.put("abstract",abstracts);
+                    params.put("address1",inputStr);
+                    params.put("address2",address2);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 if (tag.equals("thatbuild")) {
@@ -206,7 +251,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                         return;
                     }
                     HttpParams params=new HttpParams();
-                    params.put("flooraddress",inputStr);
+                    params.put("uid",uid);
+                    params.put("name",name);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
+                    params.put("phone",phone);
+                    params.put("email",email);
+                    params.put("code",code);
+                    params.put("abstract",abstracts);
+                    params.put("address1",address1);
+                    params.put("address2",inputStr);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 if (tag.equals("phone")) {
@@ -220,7 +275,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                         return;
                     }
                     HttpParams params=new HttpParams();
+                    params.put("uid",uid);
+                    params.put("name",name);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
                     params.put("phone",inputStr);
+                    params.put("email",email);
+                    params.put("code",code);
+                    params.put("abstract",abstracts);
+                    params.put("address1",address1);
+                    params.put("address2",address2);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 if (tag.equals("mail")) {
@@ -238,7 +303,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                        return;
                     }
                     HttpParams params=new HttpParams();
+                    params.put("uid",uid);
+                    params.put("name",name);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
+                    params.put("phone",phone);
                     params.put("email",inputStr);
+                    params.put("code",code);
+                    params.put("abstract",abstracts);
+                    params.put("address1",address1);
+                    params.put("address2",address2);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 if (tag.equals("code")) {
@@ -252,7 +327,17 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
                         return;
                     }
                     HttpParams params=new HttpParams();
+                    params.put("uid",uid);
+                    params.put("name",name);
+                    params.put("sex",sex);
+                    params.put("birthday",birthday);
+                    params.put("phone",phone);
+                    params.put("email",email);
                     params.put("code",inputStr);
+                    params.put("abstract",abstracts);
+                    params.put("address1",address1);
+                    params.put("address2",address2);
+                    params.put("img",img);
                     postPersonalData(params);
                 }
                 break;
@@ -261,11 +346,9 @@ public class MyEditDataActivity extends BaseActivity implements View.OnClickList
     }
 
     private void postPersonalData( HttpParams params) {
-        String id = SharedPreferencesUtils.getParam(this, "id", "") + "";
         OkGo.<String>post(GlobalHttpUrl.UPDATA)
                 .tag(this)
                 .params(params)
-                .params("uid",id)
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {

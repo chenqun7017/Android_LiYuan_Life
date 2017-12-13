@@ -16,6 +16,8 @@ public abstract class BaseDialog extends DialogFragment {
 	public View view;
 	public Context mContext;
 
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

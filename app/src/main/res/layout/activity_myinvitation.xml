@@ -3,35 +3,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/activityback">
+    android:background="#F8D96D">
     <include layout="@layout/include_apptoolbar_b" />
 
  <ImageView
      android:layout_width="match_parent"
      android:layout_height="match_parent"
-     android:layout_marginTop="30px"
      android:layout_below="@+id/rl_toolbar"
      android:background="@drawable/myinvit"/>
 
-    <ImageView
-        android:id="@+id/iv_myinivation_zxing"
-        android:layout_width="240px"
-        android:layout_height="240px"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350px"
-        android:src="@drawable/net_bitmap"/>
+    <TextView
+        android:id="@+id/tv_myinit"
+        android:layout_width="450px"
+        android:layout_height="90px"
+        android:layout_marginTop="600px"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:layout_width="496px"
-        android:layout_height="82px"
-        android:text="点击邀请你的好友"
+        android:id="@+id/tv_myinit_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_myinit"
+        android:layout_marginTop="40px"
         android:textSize="36px"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/iv_myinivation_zxing"
-        android:layout_marginTop="76px"
-        android:background="@drawable/shape_colorprimary_pre"/>
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
 
 
 
