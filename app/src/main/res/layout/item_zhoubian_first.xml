@@ -2,6 +2,7 @@
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/rl_zhoubian_hot_item"
     android:layout_height="wrap_content">
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -10,11 +11,15 @@
         android:id="@+id/tv_item_zhoubianfirst_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/text_back"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10px"/>
     <TextView
         android:id="@+id/tv_item_zhoubianfirst_line"
-        android:layout_width="100px"
+        android:layout_width="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignLeft="@+id/tv_item_zhoubianfirst_name"
+        android:layout_alignRight="@+id/tv_item_zhoubianfirst_name"
         android:layout_below="@+id/tv_item_zhoubianfirst_name"
         android:layout_marginTop="10px"
         android:layout_centerHorizontal="true"

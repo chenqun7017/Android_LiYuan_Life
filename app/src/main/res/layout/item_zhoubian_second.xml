@@ -7,10 +7,11 @@
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="84px">
+
      <ImageView
         android:id="@+id/iv_item_zhoubian_second"
         android:layout_width="54px"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="10px"
         android:layout_marginLeft="30px"
         android:layout_height="54px"/>
 
@@ -23,7 +24,7 @@
         android:layout_toRightOf="@+id/iv_item_zhoubian_second"
         android:layout_marginLeft="20px"
         android:textSize="24px"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="10px"
         android:textColor="@color/black"/>
 
     <TextView

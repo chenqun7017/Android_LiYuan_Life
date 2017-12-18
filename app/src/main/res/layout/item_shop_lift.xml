@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_shop_left_item"
     android:layout_width="match_parent"
-    android:layout_height="98px">
+    android:layout_height="wrap_content">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/tv_shop_left_name"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
         android:textColor="@color/black"
+        android:gravity="center"
         android:layout_centerInParent="true"
-        android:textSize="24px"
-        android:text="www"/>
+        android:textSize="24px"/>
 
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -7,7 +7,7 @@ import com.lifecircle.ui.view.guangchang.ShopOrderActivity;
 import com.lifecircle.ui.view.guangchang.ShoppingCartActivity;
 import com.lifecircle.ui.view.my.MyEditDataActivity;
 import com.lifecircle.ui.view.publicui.ParticipantsActivity;
-import com.lifecircle.ui.view.guangchang.ReleaseFactActivity;
+import com.lifecircle.ui.view.publicui.ReleasePublicActivity;
 import com.lifecircle.ui.view.my.MyOrderDetails;
 import com.lifecircle.ui.view.publicui.ReaseTopicActivity;
 import com.lifecircle.ui.view.publicui.SearchActivity;
@@ -458,12 +458,12 @@ public class ActivityUtil {
     }
 
     /**
-     * 跳转公共二级页面
+     * 跳转公共发布
      *
      * @param _activity
      */
     public static void startReleaseFactActivity(Activity _activity) {
-        Intent localIntent = new Intent(_activity, ReleaseFactActivity.class);
+        Intent localIntent = new Intent(_activity, ReleasePublicActivity.class);
         _activity.startActivity(localIntent);
     }
 

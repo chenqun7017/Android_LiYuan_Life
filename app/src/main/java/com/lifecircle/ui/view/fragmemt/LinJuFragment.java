@@ -43,7 +43,7 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
         rl_contacts.setOnClickListener(this);
 
         RecyclerView rc_linju=view.findViewById(R.id.rc_linju);
-        for (int i=0;i<10;i++){
+        for (int i=0;i<2;i++){
             listSecondDate.add(new linJuChatBean());
         }
 

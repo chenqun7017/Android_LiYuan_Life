@@ -65,4 +65,11 @@ public class GlobalHttpUrl {
     //遍历前台各栏目对应的轮播图，栏目，热门分类，话题
     public   static  String  MY_HOME_LIFE=BASE_URL+"/home/carousel/two_select?id=";
 
+    //前台获取栏目对应帖子接口
+    public   static  String  MY_HOME_PUBLIC_NOTE=BASE_URL+"/home/note/select?id=";
+
+    //查询便利店商品类型
+    public   static  String  MY_SHOP_TYPE=BASE_URL+"/home/Store/select_type";
+    //查询便利店商品接口
+    public   static  String  MY_SHOP_CONTENT=BASE_URL+"/home/store/select_store";
 }

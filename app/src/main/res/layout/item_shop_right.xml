@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="182px">
+    android:layout_height="wrap_content">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="182px">
 
     <ImageView
         android:id="@+id/iv_shop_image"
@@ -21,8 +24,7 @@
         android:layout_toRightOf="@+id/iv_shop_image"
         android:layout_marginLeft="30px"
         android:layout_marginTop="30px"
-        android:textColor="@color/black"
-        android:text="好吃哇"/>
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/tv_shop_tag"
@@ -33,8 +35,7 @@
         android:layout_below="@+id/tv_shop_name"
         android:layout_marginLeft="30px"
         android:layout_marginTop="10px"
-        android:textColor="@color/text_back"
-        android:text="小号"/>
+        android:textColor="@color/text_back"/>
 
     <TextView
         android:id="@+id/tv_shop_price"
@@ -44,9 +45,8 @@
         android:layout_toRightOf="@+id/iv_shop_image"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16px"
-        android:layout_marginLeft="40px"
-        android:textColor="@color/black"
-        android:text="￥122"/>
+        android:layout_marginLeft="30px"
+        android:textColor="@color/viewbadger"/>
 
 
  <TextView
@@ -71,7 +71,7 @@
         android:layout_alignParentBottom="true"
         android:textSize="23px"
         android:textColor="@color/black"
-        android:text="123"
+        android:text="0"
         android:gravity="center"
         android:layout_toLeftOf="@+id/tv_add_shop"
         android:layout_marginRight="10px"
@@ -88,7 +88,7 @@
         android:layout_marginBottom="16px"
         android:textSize="29px"
         android:gravity="center"
-        android:text="-"
+        android:text="—"
         android:background="@drawable/oval_shop"/>
-
+    </com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -1,4 +1,4 @@
-package com.lifecircle.ui.view.guangchang;
+package com.lifecircle.ui.view.publicui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

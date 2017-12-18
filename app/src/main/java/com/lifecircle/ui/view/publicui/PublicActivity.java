@@ -27,6 +27,7 @@ import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.ui.model.PublicBean;
 import com.lifecircle.ui.model.HomeBean;
+import com.lifecircle.ui.model.PublicNote;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.ToastUtils;
 import com.lifecircle.widget.DividerItemDecoration;
@@ -72,7 +73,8 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
     private  RecyclerView rc_public_list;
     private  PublicListAdapter publicListAdapter;
 
-
+    //获取上个界面数据
+    private String id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -90,15 +92,15 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
         rc_public_list=findViewById(R.id.rc_public_list);
         //头部
         initHead();
+        String id=getIntent().getStringExtra("id");
         //获取数据
         initNetDate();
         //列表
-        //initList();
+       initList();
 
     }
 
     private void initNetDate() {
-        String id=getIntent().getStringExtra("id");
         OkGo.<String>get(GlobalHttpUrl.MY_HOME_LIFE+id)
                 .tag(this)
                 .execute(new StringCallback() {
@@ -135,7 +137,7 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                             if (!publicBean.getData().getHot_type().toString().equals("[]")){
                                 GridLayoutManager mg = new GridLayoutManager(PublicActivity.this, 5);
                                 rc_public_hot.setLayoutManager(mg);
-                                rc_public_hot.setAdapter(new PublicHotAdapter(R.layout.item_zhoubian_first,publicBean.getData().getHot_type()));
+                                rc_public_hot.setAdapter(new PublicHotAdapter(R.layout.item_zhoubian_first,publicBean.getData().getHot_type(),PublicActivity.this));
                             }else {
                                 ll_public_hot.setVisibility(View.GONE);
 
@@ -175,27 +177,41 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
 
 
 
-   /* private void initList() {
-        rc_public_list=findViewById(R.id.rc_public_list);
-        for (int i=0;i<10;i++){
-            listDate.add(new HomeBean());
-        }
-        //创建默认的线性LayoutManager
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-        rc_public_list.setLayoutManager(mLayoutManager);
-        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mLayoutManager.VERTICAL);
-        dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
-        dividerItemDecoration.setSize(10);
-        rc_public_list.addItemDecoration(dividerItemDecoration);
-        publicListAdapter=new PublicListAdapter(R.layout.public_item_list,listDate);
-        rc_public_list.setAdapter(publicListAdapter);
-        publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ActivityUtil.startPostDetailsActivity(PublicActivity.this,position);
-            }
-        });
-    }*/
+    private void initList() {
+        OkGo.<String>post(GlobalHttpUrl.MY_HOME_PUBLIC_NOTE+id)
+                .tag(this)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Gson gson=new Gson();
+                        String str=response.body().toString();
+                        Type type = new TypeToken<PublicNote>(){}.getType();
+                        PublicNote publicNote=gson.fromJson(str, type);
+                        if ((publicNote.getResult()).equals("200")){
+                            //创建默认的线性LayoutManager
+                            LinearLayoutManager mLayoutManager = new LinearLayoutManager(PublicActivity.this);
+                            rc_public_list.setLayoutManager(mLayoutManager);
+                            DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mLayoutManager.VERTICAL);
+                            dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
+                            dividerItemDecoration.setSize(10);
+                            rc_public_list.addItemDecoration(dividerItemDecoration);
+                            List<PublicNote.DataBean> list=publicNote.getData();
+                            publicListAdapter =new PublicListAdapter(R.layout.public_item_list,list,PublicActivity.this);
+                            rc_public_list.setAdapter(publicListAdapter);
+                            publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                                    ActivityUtil.startPostDetailsActivity(PublicActivity.this,position);
+                                }
+                            });
+
+                        }else {
+                            ToastUtils.showToast(publicNote.getMsg());
+                        }
+                    }
+
+                });
+    }
 
     private void initHead() {
         String name=getIntent().getStringExtra("name");
@@ -319,7 +335,7 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                 finish();
                 break;
             case R.id.toolbar_right_image:
-                ActivityUtil.startRleaseActivity(this);
+                ActivityUtil.startReleaseFactActivity(this);
                 break;
             case R.id.tv_public_search:
                 ActivityUtil.startSearchActivity(this);

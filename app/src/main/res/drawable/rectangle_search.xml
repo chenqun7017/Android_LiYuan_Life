@@ -8,6 +8,6 @@
         android:width="1px"
         android:color="@color/search" />
 
-    <solid android:color="@color/search" />
+    <solid android:color="@color/white" />
 
 </shape>

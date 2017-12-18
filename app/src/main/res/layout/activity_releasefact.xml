@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:splitMotionEvents="false"
     android:background="@color/activityback">
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -39,20 +42,34 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:textSize="23px"
+            android:text="发布"
             android:padding="20px"
             android:textColor="@color/text_back"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10px"/>
     </com.zhy.autolayout.AutoRelativeLayout>
 
+    <EditText
+        android:id="@+id/et_release_title"
+        android:layout_width="match_parent"
+        android:layout_height="86px"
+        android:background="@color/white"
+        android:hint="请输入标题"
+        android:textColor="@color/black"
+        android:layout_below="@+id/rl_toolbar"
+        android:textSize="24px"
+        android:paddingLeft="30px"
+        android:layout_marginTop="2px"
+        android:gravity="center_vertical"/>
+
     <jp.wasabeef.richeditor.RichEditor
         android:id="@+id/editor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:layout_marginTop="2px"
+        android:layout_marginTop="10px"
         android:layout_marginBottom="2px"
-        android:layout_below="@+id/rl_toolbar"
+        android:layout_below="@+id/et_release_title"
         android:layout_above="@+id/ll_bottom"/>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -63,6 +80,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_release_tab01"
             android:layout_width="0px"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -73,6 +91,7 @@
                 android:src="@drawable/jianpan"/>
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_release_tab02"
             android:layout_width="0px"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -83,6 +102,7 @@
                 android:src="@drawable/tupian"/>
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_release_tab03"
             android:layout_width="0px"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -93,6 +113,7 @@
                 android:src="@drawable/biaoqing"/>
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_release_tab04"
             android:layout_width="0px"
             android:layout_weight="1"
             android:layout_height="match_parent">
@@ -103,6 +124,7 @@
                 android:src="@drawable/lianjie"/>
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_release_tab05"
             android:layout_width="0px"
             android:layout_weight="1"
             android:layout_height="match_parent">

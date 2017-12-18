@@ -26,6 +26,7 @@ import com.lifecircle.adapter.HomePageMenusAdapter;
 import com.lifecircle.base.BaseFragment;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.ui.model.HomeBean;
+import com.lifecircle.ui.model.PublicNote;
 import com.lifecircle.ui.model.ViewPageMenuBean;
 import com.lifecircle.ui.view.my.MyInfoEditAcitivty;
 import com.lifecircle.utils.ActivityUtil;
@@ -47,14 +48,10 @@ import java.util.List;
  */
 
 public class GuangChangFragment extends BaseFragment implements View.OnClickListener{
-    //分类集合
-    private List<ViewPageMenuBean> viewPageMenuBean = new ArrayList<ViewPageMenuBean>();
-
     private ViewPager viewPageMens;
     private RecyclerView rc_guangchang_list;
     private TextView tv_seach;
     private  TextView tv_right;
-    private List<HomeBean> listDate=new ArrayList<HomeBean>();
 
     //RecyclerView集合
     private   List<View> views = new ArrayList<View>();
@@ -86,7 +83,7 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         //获取数据
         initNetDate();
         //贴子
-        initDate();
+       initDate();
         return view;
     }
 
@@ -124,24 +121,42 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
 
     //数据源
     private void initDate() {
-        for (int i=0;i<10;i++){
-            listDate.add(new HomeBean());
-        }
-        //创建默认的线性LayoutManager
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-        rc_guangchang_list.setLayoutManager(mLayoutManager);
-        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mLayoutManager.VERTICAL);
-        dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
-        dividerItemDecoration.setSize(10);
-        rc_guangchang_list.addItemDecoration(dividerItemDecoration);
-        publicListAdapter =new PublicListAdapter(R.layout.public_item_list,listDate);
-        rc_guangchang_list.setAdapter(publicListAdapter);
-        publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ActivityUtil.startPostDetailsActivity(getActivity(),position);
-            }
-        });
+        OkGo.<String>post(GlobalHttpUrl.MY_HOME_NOTE)
+                .tag(context)
+                .params("page","1")
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Gson gson=new Gson();
+                        String str=response.body().toString();
+                        Type type = new TypeToken<PublicNote>(){}.getType();
+                        PublicNote publicNote=gson.fromJson(str, type);
+                        if ((publicNote.getResult()).equals("200")){
+                            //创建默认的线性LayoutManager
+                            LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+                            rc_guangchang_list.setLayoutManager(mLayoutManager);
+                            DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(mLayoutManager.VERTICAL);
+                            dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
+                            dividerItemDecoration.setSize(10);
+                            rc_guangchang_list.addItemDecoration(dividerItemDecoration);
+                            List<PublicNote.DataBean> list=publicNote.getData();
+                            publicListAdapter =new PublicListAdapter(R.layout.public_item_list,list,getActivity());
+                            rc_guangchang_list.setAdapter(publicListAdapter);
+                            publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                                    ActivityUtil.startPostDetailsActivity(getActivity(),position);
+
+
+                                }
+                            });
+
+                        }else {
+                            ToastUtils.showToast(publicNote.getMsg());
+                        }
+                    }
+
+                });
     }
 
     public void initViewPageMens() {
@@ -241,7 +256,14 @@ public class GuangChangFragment extends BaseFragment implements View.OnClickList
         publicPageMenusAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-               ActivityUtil.startPublicActivity(getActivity(),infoList.get(position).getId(),infoList.get(position).getColumn_name());
+             String   columId= infoList.get(position).getId();
+                if (columId.equals("17")){    //便利店
+                    ActivityUtil.startnActivity(getActivity());
+                }else if (columId.equals("20")){//任务
+
+                }else {
+                    ActivityUtil.startPublicActivity(getActivity(),infoList.get(position).getId(),infoList.get(position).getColumn_name());
+                }
             }
         });
         views.add(listview);

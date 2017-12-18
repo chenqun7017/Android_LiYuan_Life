@@ -349,7 +349,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10px"
             android:layout_weight="1"
-            android:text="店铺收藏"
+            android:text="积分商城"
             android:textColor="@color/text"
             android:textSize="26px" />
 
