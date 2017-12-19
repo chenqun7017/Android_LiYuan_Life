@@ -177,7 +177,7 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.rl_xhoubian_search:
-                ActivityUtil.startSearchActivity(getActivity());
+                ActivityUtil.startSearchActivity(getActivity(),"-1");
                 break;
             case R.id.toolbar_right_image:
                 ActivityUtil.startReleaseFactActivity(getActivity());

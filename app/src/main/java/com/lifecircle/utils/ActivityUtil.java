@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.lifecircle.ui.view.guangchang.ShopOrderActivity;
 import com.lifecircle.ui.view.guangchang.ShoppingCartActivity;
+import com.lifecircle.ui.view.my.CodeShopActivity;
 import com.lifecircle.ui.view.my.MyEditDataActivity;
 import com.lifecircle.ui.view.publicui.ParticipantsActivity;
 import com.lifecircle.ui.view.publicui.ReleasePublicActivity;
@@ -546,6 +547,16 @@ public class ActivityUtil {
         Intent localIntent = new Intent(_activity, MyEditDataActivity.class);
         localIntent.putExtra("tag",tag);
         localIntent.putExtra("text",text);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     * 跳转积分商城
+     *
+     * @param _activity
+     */
+    public static void startCodeShopActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, CodeShopActivity.class);
         _activity.startActivity(localIntent);
     }
 

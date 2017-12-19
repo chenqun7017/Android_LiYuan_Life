@@ -20,7 +20,6 @@ import java.util.List;
 public class ContacsAdapter extends BaseQuickAdapter<ContactsBean.DataBean,BaseViewHolder> {
     private Context context;
 
-
     public ContacsAdapter(int layoutResId, @Nullable List<ContactsBean.DataBean> data,Context context) {
         super(layoutResId, data);
         this.context=context;
@@ -33,10 +32,7 @@ public class ContacsAdapter extends BaseQuickAdapter<ContactsBean.DataBean,BaseV
                 .load(GlobalHttpUrl.BASE_URL+item.getImg())
                 .into((ImageView) helper.getView(R.id.iv_linju_img));
         helper.setText(R.id.tv_linju_title,item.getName())
-                .setText(R.id.tv_linju_abstracts,item.getAbstractX())
-        ;
-
-
+                .setText(R.id.tv_linju_abstracts,item.getAbstractX());
 
     }
 }
