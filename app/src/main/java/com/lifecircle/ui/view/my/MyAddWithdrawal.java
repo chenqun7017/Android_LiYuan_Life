@@ -6,9 +6,23 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
+import com.lifecircle.adapter.MyWithdrawalAdapter;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.global.GlobalVariable;
+import com.lifecircle.ui.model.MyWithdrawalListBean;
 import com.lifecircle.widget.CountTimer;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
 
 /**
  * Created by lenovo on 2017/11/14.
@@ -20,7 +34,7 @@ public class MyAddWithdrawal extends BaseActivity implements View.OnClickListene
 
     private  TextView tv_phonecode;
 
-    private   TextView tv_addwithdrawal_save;
+    private  TextView tv_addwithdrawal_save;
 
     //计时器
     CountTimer countTimer;
@@ -51,9 +65,31 @@ public class MyAddWithdrawal extends BaseActivity implements View.OnClickListene
                 countTimer.start();
                 break;
             case R.id.tv_addwithdrawal_save:
-
+                submitData();
                 break;
         }
+    }
 
+
+    private void submitData() {
+        OkGo.<String>post(GlobalHttpUrl.MY_MONEY_LIST)
+                .tag(this)
+                .params("uid", GlobalVariable.uid)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        try {
+                            JSONObject jsonObject=new JSONObject(response.body().toString()) ;
+                            if (jsonObject.getString("result").equals("200")){
+                                Gson gson = new Gson();
+                                String str = response.body().toString();
+                                Type type = new TypeToken<MyWithdrawalListBean>() {}.getType();
+                                MyWithdrawalListBean myWithdrawalListBean = gson.fromJson(str, type);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
     }
 }

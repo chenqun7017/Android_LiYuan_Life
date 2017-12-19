@@ -83,7 +83,6 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
 
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){

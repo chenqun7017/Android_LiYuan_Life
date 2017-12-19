@@ -117,8 +117,9 @@ public class ActivityUtil {
      * @param _activity
      */
 
-    public static void startSearchActivity(Activity _activity) {
+    public static void startSearchActivity(Activity _activity,String id) {
         Intent localIntent = new Intent(_activity, SearchActivity.class);
+        localIntent.putExtra("column_id",id);
         _activity.startActivity(localIntent);
     }
     /**
@@ -222,13 +223,14 @@ public class ActivityUtil {
     }
 
     /**
-     * 跳转到流水界面页面
+     * 跳转到收入支出页面
      *
      * @param _activity
      */
 
     public static void startRunWaterRecordActivity(Activity _activity,String state) {
         Intent localIntent = new Intent(_activity, MyRunnWaterRecordActivity.class);
+        localIntent.putExtra("state",state);
         _activity.startActivity(localIntent);
     }
 

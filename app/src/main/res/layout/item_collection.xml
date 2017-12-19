@@ -14,6 +14,7 @@
         android:background="@color/white"
         android:layout_height="196px">
         <TextView
+            android:id="@+id/tv_collection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="2"
@@ -22,7 +23,6 @@
             android:layout_marginTop="40px"
             android:layout_marginRight="218px"
             android:textColor="@color/black"
-            android:text="公司有个需求就是要随着屏幕的改变而加载附近的商户信息那么高德地图获取当前屏幕中心点的经纬度呢"
             android:textSize="29px"/>
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -40,14 +40,14 @@
                 android:src="@drawable/net_bitmap" />
 
             <TextView
+                android:id="@+id/tv_image_nums"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="23px"
                 android:layout_alignParentBottom="true"
                 android:background="#30000000"
                 android:textColor="@color/white"
-                android:gravity="center"
-                android:text="5张"/>
+                android:gravity="center"/>
 
         </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -74,6 +74,7 @@
             app:layout_auto_basewidth="height" />
 
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text"
@@ -81,8 +82,7 @@
             android:textSize="24px"
             android:layout_marginLeft="20px"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15px"
-            android:text="陈大大"/>
+            android:layout_marginBottom="15px"/>
 
         <TextView
             android:id="@+id/tv_comments"
@@ -95,8 +95,7 @@
             android:layout_marginRight="30px"
             android:textColor="@color/text"
             android:drawableLeft="@drawable/xiaoxi"
-            android:drawablePadding="10px"
-            android:text="9"/>
+            android:drawablePadding="10px"/>
 
         <TextView
             android:id="@+id/tv_times"
@@ -106,8 +105,7 @@
             android:layout_marginBottom="15px"
             android:layout_toLeftOf="@+id/tv_comments"
             android:layout_marginRight="30px"
-            android:textColor="@color/text"
-            android:text="2017-10-21"/>
+            android:textColor="@color/text"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 

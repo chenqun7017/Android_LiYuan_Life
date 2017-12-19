@@ -11,6 +11,7 @@
         android:layout_height="88px">
 
         <EditText
+            android:id="@+id/et_search"
             android:layout_width="614px"
             android:layout_height="64px"
             android:layout_centerVertical="true"

@@ -72,4 +72,30 @@ public class GlobalHttpUrl {
     public   static  String  MY_SHOP_TYPE=BASE_URL+"/home/Store/select_type";
     //查询便利店商品接口
     public   static  String  MY_SHOP_CONTENT=BASE_URL+"/home/store/select_store";
+
+    //关注 与取消
+    public   static  String  MY_SHOP_CHANGEFOLLOWER=BASE_URL+"/home/follower/followerchange";
+
+    //钱包模块收入支出列表接口
+
+    public   static  String  MY_MONEY_CAR=BASE_URL+"/home/Address/income";
+
+    //获取用户账号列表
+    public   static  String  MY_MONEY_LIST=BASE_URL+"/home/chat/myaccount";
+
+    //提现账号删除
+    public   static  String  MY_MONEY_DEL=BASE_URL+"/home/chat/delaccount";
+
+    //添加提现账号
+    public   static  String  MY_MONEY_ADD=BASE_URL+"/home/chat/addaccount";
+
+    //我的回帖页面接口
+    public   static  String  MY_REPOSTS=BASE_URL+"/home/Back/selfComment";
+
+    //我的收藏页面接口
+    public   static  String  MY_COLLECTION =BASE_URL+"/home/Back/selfComment";
+
+    //搜索接口
+    public   static  String  MY_SEARCH =BASE_URL+"/home/Back/search";
+
 }

@@ -22,6 +22,7 @@ import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.model.ContactsBean;
 import com.lifecircle.ui.view.login.m.LoginBean;
+import com.lifecircle.ui.view.my.MyFollowActivity;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
@@ -34,6 +35,7 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -62,6 +64,8 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
     private    RecyclerView  rc_contacts;
 
     public   ProgressDialog dialog;
+
+    private  List<ContactsBean.DataBean> list=new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -109,20 +113,58 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        Gson gson = new Gson();
-                        String str = response.body().toString();
-                        Type type = new TypeToken<ContactsBean>() {}.getType();
-                        ContactsBean contactsBean = gson.fromJson(str, type);
-                        if ((contactsBean.getResult()).equals("200")) {
-                            contacsAdapter=new ContacsAdapter(R.layout.item_contacts,contactsBean.getData());
-                            rc_contacts.setAdapter(contacsAdapter);
-                            contacsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-                                @Override
-                                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                                    String uid="2";
-                                    ActivityUtil.startMyInfoWditActivity(ContactsActivity.this,uid);
-                                }
-                            });
+                        try {
+                            JSONObject jsonObject=new JSONObject(response.body().toString());
+                            if (jsonObject.get("result").equals("200")){
+                                 if (!jsonObject.get("data").equals("")&&!jsonObject.get("data").equals("[]")){
+                                     Gson gson = new Gson();
+                                     String str = response.body().toString();
+                                     Type type = new TypeToken<ContactsBean>() {}.getType();
+                                      ContactsBean contactsBean = gson.fromJson(str, type);
+                                     if ((contactsBean.getResult()).equals("200")) {
+                                         list=contactsBean.getData();
+                                         contacsAdapter=new ContacsAdapter(R.layout.item_contacts,list,ContactsActivity.this);
+                                         rc_contacts.setAdapter(contacsAdapter);
+                                         contacsAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                                             @Override
+                                             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                                                 String uid=list.get(position).getPuid();
+                                                 ActivityUtil.startMyInfoWditActivity(ContactsActivity.this,uid);
+                                             }
+                                         });
+                                         contacsAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+                                             @Override
+                                             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                                                 final String puid=list.get(position).getPuid();
+                                                 OkGo.<String>post(GlobalHttpUrl.MY_SHOP_CHANGEFOLLOWER)
+                                                         .tag(this)
+                                                         .params("uid", GlobalVariable.uid)
+                                                         .params("puid", puid)
+                                                         .params("do", "2")
+                                                         .execute(new StringCallback() {
+                                                             @Override
+                                                             public void onSuccess(Response<String> response) {
+                                                                 //数据移除
+                                                                 Iterator it = list.iterator();
+                                                                 while (it.hasNext())
+                                                                 {
+                                                                     ContactsBean.DataBean obj = (ContactsBean.DataBean) it.next();
+                                                                     if (obj.getPuid().equals(puid)){
+                                                                         it.remove();
+                                                                     }
+                                                                 }
+                                                                 contacsAdapter.notifyDataSetChanged();
+                                                             }
+                                                         });
+                                             }
+                                         });
+                                     }
+                                 }
+                            }else {
+                                ToastUtils.showToast(jsonObject.getString("msg"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
                     @Override

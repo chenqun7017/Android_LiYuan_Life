@@ -1,8 +1,12 @@
 package com.lifecircle.ui.view.publicui;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.RelativeLayout;
@@ -10,6 +14,11 @@ import android.widget.TextView;
 
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
+
+import java.util.List;
+
+import me.nereo.multi_image_selector.MultiImageSelector;
+import me.nereo.multi_image_selector.MultiImageSelectorActivity;
 
 /**
  * Created by lenovo on 2017/11/22.
@@ -19,13 +28,16 @@ public class ReleasePublicActivity extends BaseActivity implements View.OnClickL
     //头部
     private TextView toolbar_tv_back;
     private  TextView toolbar_right_text;
-
     private RelativeLayout rl_release_tab01;
     private RelativeLayout rl_release_tab02;
     private RelativeLayout rl_release_tab03;
     private RelativeLayout rl_release_tab04;
     private RelativeLayout rl_release_tab05;
 
+    //网络请求标识
+    private  String NET_TYPE="";
+    //选 择图像返回URL
+    private String pathImag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +83,13 @@ public class ReleasePublicActivity extends BaseActivity implements View.OnClickL
                 }
                 break;
             case R.id.rl_release_tab02:
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                } else {
+                    MultiImageSelector.create(this)
+                            .single() // 单选模式
+                            .start(this, 1);
+                }
 
                 break;
             case R.id.rl_release_tab03:
@@ -84,5 +103,22 @@ public class ReleasePublicActivity extends BaseActivity implements View.OnClickL
                 break;
         }
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //获取图片路径
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                NET_TYPE="IMG";
+                // 获取返回的图片列表
+                List<String> path = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
+                if (path != null){
+                    pathImag = path.get(0);
+
+                  //  submitData();
+                }
+            }
+        }
     }
 }

@@ -42,13 +42,19 @@ public class MyRunnWaterRecordActivity extends BaseActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myrunwaterrecord);
         toolbar_center_text=findViewById(R.id.toolbar_center_text);
-        toolbar_center_text.setText("收入记录");
+        String state=getIntent().getStringExtra("state");
+        if (state.equals("1")){
+            toolbar_center_text.setText("收入记录");
+        }else {
+            toolbar_center_text.setText("支出记录");
+        }
         toolbar_iv_back=findViewById(R.id.toolbar_iv_back);
         toolbar_iv_back.setImageResource(R.drawable.zuo);
         toolbar_iv_back.setOnClickListener(this);
         iv_myseleced=findViewById(R.id.iv_myseleced);
         iv_myseleced.setOnClickListener(this);
         rc_record_calendar=findViewById(R.id.rc_record_calendar);
+        submitData();
 
     }
     @Override
@@ -63,7 +69,7 @@ public class MyRunnWaterRecordActivity extends BaseActivity implements View.OnCl
                     @Override
                     public void onTimeSelect(final Date date, View v) {
                         dateTime= TimeDataUtils.DateTime(date);
-                        //submitData();
+                        submitData();
                     }
                 })
                         .setType(new boolean[]{true, true, false, false, false, false})// 默认全部显示
@@ -77,9 +83,10 @@ public class MyRunnWaterRecordActivity extends BaseActivity implements View.OnCl
     }
 
     private void submitData() {
-        OkGo.<String>post(GlobalHttpUrl.LOGIN_SENDCODE)
+        OkGo.<String>post(GlobalHttpUrl.MY_MONEY_CAR)
                 .tag(this)
                 .params("uid", GlobalVariable.uid)
+                .params("type","1")
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
@@ -88,7 +95,6 @@ public class MyRunnWaterRecordActivity extends BaseActivity implements View.OnCl
                             if (jsonObject.getString("result").equals("200")){
 
                             }
-                            ToastUtils.showToast(jsonObject.getString("msg"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
