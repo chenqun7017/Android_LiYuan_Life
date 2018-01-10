@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/pop_layout"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:id="@+id/iv_shop_vehicle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="16px"
+        android:src="@drawable/gouwuche"
+        />
+    <com.lifecircle.widget.removerecyclerview.ItemRemoveRecyclerView
+        android:id="@+id/shop_search_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"/>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_go_shopcar1"
+        android:layout_width="match_parent"
+        android:layout_height="134px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/activityback">
+        <TextView
+            android:id="@+id/tv_shop_total_price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_back"
+            android:textSize="29px"
+            android:layout_marginTop="20px"
+            android:layout_marginLeft="160px"
+            android:text="￥ 23"/>
+
+        <TextView
+            android:id="@+id/tv_account1"
+            android:layout_width="118px"
+            android:layout_height="match_parent"
+            android:textSize="30px"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:text="去结算"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+</LinearLayout>

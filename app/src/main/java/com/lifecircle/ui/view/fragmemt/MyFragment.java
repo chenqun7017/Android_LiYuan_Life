@@ -2,6 +2,7 @@ package com.lifecircle.ui.view.fragmemt;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +17,7 @@ import com.lifecircle.base.BaseFragment;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.view.dialog.DialogSign;
+import com.lifecircle.ui.view.my.ExchangelistActivity;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
 import com.lifecircle.utils.TimeDataUtils;
@@ -87,13 +89,10 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         ll_my_storecollection.setOnClickListener(this);
         LinearLayout ll_my_opinionfeedback=view.findViewById(R.id.ll_my_opinionfeedback);
         ll_my_opinionfeedback.setOnClickListener(this);
-        LinearLayout ll_my_myinvitation=view.findViewById(R.id.ll_my_myinvitation);
-        ll_my_myinvitation.setOnClickListener(this);
         RelativeLayout rl_info=view.findViewById(R.id.rl_info);
         rl_info.setOnClickListener(this);
         initDialog();
         return view;
-
     }
     public  void initDialog(){
         dialog=new ProgressDialog(getActivity());
@@ -102,7 +101,6 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setMessage("签到中...");
     }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -116,7 +114,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         String url=SharedPreferencesUtils.getParam(getActivity(), "img", "")+"";
         if (!url.equals("")){
             Glide.with(getActivity())
-                    .load(GlobalHttpUrl.BASE_URL+url)
+                    .load(url)
                     .into(iv_my_userimage);
         }
         if ((SharedPreferencesUtils.getParam(getActivity(), "name", "")+"").equals("")){
@@ -126,7 +124,6 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         }
         String address=SharedPreferencesUtils.getParam(getActivity(), "address", "")+"";
         String time=SharedPreferencesUtils.getParam(getActivity(), "time", 0)+"";
-        tv_my_address.setText(address+" | "+time);
         tv_my_desc.setText(SharedPreferencesUtils.getParam(getActivity(), "desc", "")+"");
 
         tv_my_integral.setText(SharedPreferencesUtils.getParam(getActivity(), "points", "")+"分");
@@ -138,7 +135,6 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
         }
         tv_my_sign.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -160,7 +156,6 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 }else {
                     ActivityUtil.startMySingActivity(getActivity());
                 }
-
                 break;
             case R.id.tv_my_integral_tag:
                 ActivityUtil.startIntegralActivity(getActivity());
@@ -179,14 +174,12 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                 ActivityUtil.startFollowActivity(getActivity());
                 break;
             case R.id.ll_my_storecollection:
+                Intent intent=new Intent(getActivity(), ExchangelistActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ll_my_opinionfeedback:
                 ActivityUtil.startFeedBackActivity(getActivity());
                 break;
-            case R.id.ll_my_myinvitation:
-                ActivityUtil.startMyinvitationActivity(getActivity());
-                break;
-
             case R.id.toolbar_right_text:
                 ActivityUtil.startMySetActivity(getActivity());
                 break;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activityback">
@@ -50,7 +51,7 @@
                     android:layout_toLeftOf="@+id/iv_mypostdetails_point"
                     android:gravity="top"
                     android:text="1"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="20px" />
 
                 <ImageView
@@ -70,8 +71,8 @@
                     android:layout_marginRight="30px"
                     android:layout_toLeftOf="@+id/iv_mypostdetails_share"
                     android:gravity="top"
-                    android:text="5"
-                    android:textColor="@color/colorPrimary"
+                    android:text="0"
+                    android:textColor="@color/text_back"
                     android:textSize="20px" />
 
                 <ImageView
@@ -81,7 +82,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5px"
                     android:layout_toLeftOf="@+id/tv_postdetails_fabulous"
-                    android:src="@drawable/zan_lv" />
+                    android:src="@drawable/zan" />
 
 
             </com.zhy.autolayout.AutoRelativeLayout>
@@ -175,10 +176,10 @@
                     android:id="@+id/tv_mypost_letter"
                     android:layout_width="94px"
                     android:layout_height="48px"
-                    android:layout_marginRight="10px"
+                    android:layout_marginRight="160px"
                     android:layout_marginTop="50px"
-                    android:layout_toLeftOf="@+id/tv_mypost_follow"
                     android:background="@drawable/shape_mypost_nor"
+                    android:layout_alignParentRight="true"
                     android:gravity="center"
                     android:paddingBottom="5px"
                     android:paddingLeft="15px"
@@ -202,24 +203,35 @@
                     android:textSize="30px" />
 
 
-                <TextView
-                    android:id="@+id/tv_mypost_content"
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_mypost_content"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/tv_mypost_title"-->
+                    <!--android:layout_marginLeft="30px"-->
+                    <!--android:layout_marginRight="30px"-->
+                    <!--android:layout_marginTop="50px"-->
+                    <!--android:text="今年4月，北京市发布了《北京市2017-2021年及2017年度住宅用地供应计划》，计划明确，今后五年，北京将继续加大租赁住房供应，计划供地1300公顷，建设租赁住房50万套。而这50万套租赁住房，其中的大部分将通过集体建设用地安排。"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="23px" />-->
+                <WebView
+                    android:id="@+id/web_mypost_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_mypost_title"
                     android:layout_marginLeft="30px"
                     android:layout_marginRight="30px"
                     android:layout_marginTop="50px"
-                    android:text="今年4月，北京市发布了《北京市2017-2021年及2017年度住宅用地供应计划》，计划明确，今后五年，北京将继续加大租赁住房供应，计划供地1300公顷，建设租赁住房50万套。而这50万套租赁住房，其中的大部分将通过集体建设用地安排。"
-                    android:textColor="@color/black"
-                    android:textSize="23px" />
+                    tools:ignore="WebViewLayout">
+                    
+                </WebView>
 
 
                 <TextView
                     android:id="@+id/tv_mypost_tel"
                     android:layout_width="164px"
                     android:layout_height="46px"
-                    android:layout_below="@+id/tv_mypost_content"
+                    android:layout_below="@+id/web_mypost_content"
                     android:layout_marginLeft="30px"
                     android:layout_marginTop="50px"
                     android:background="@drawable/shape_mypost_pre"
@@ -343,6 +355,7 @@
         android:focusableInTouchMode="true">
 
         <EditText
+            android:id="@+id/et_reply_post"
             android:layout_width="516px"
             android:layout_height="68px"
             android:layout_centerVertical="true"
@@ -365,6 +378,7 @@
 
 
         <TextView
+            android:id="@+id/tv_reply_post"
             android:layout_width="162px"
             android:layout_height="68px"
             android:layout_alignParentRight="true"

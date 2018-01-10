@@ -1,21 +1,16 @@
 package com.lifecircle.ui.view.my;
 
 import android.Manifest;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -215,7 +210,7 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
         dialog.setMessage("图像上传中...");
     }
 
-
+ 
     @Override
     protected void onResume() {
         super.onResume();
@@ -223,7 +218,7 @@ public class MyModifyPersonalDataActivity extends BaseActivity implements View.O
         String url = SharedPreferencesUtils.getParam(this, "img", "") + "";
         if (!url.equals("")) {
             Glide.with(this)
-                    .load(GlobalHttpUrl.BASE_URL + url)
+                    .load(url)
                     .into(iv_persondata_imag);
         }
         //用户昵称

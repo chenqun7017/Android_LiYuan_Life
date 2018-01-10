@@ -3,6 +3,7 @@ package com.lifecircle.ui.view.my;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -11,7 +12,6 @@ import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.utils.ActivityUtil;
-import com.lifecircle.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -35,6 +35,7 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
     private  TextView tv_my_money_nums;
     private  TextView tv_my_money_in;
     private  TextView tv_my_money_out;
+    private ImageView toolbar_iv_back;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +43,17 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
         setContentView(R.layout.activity_mywallet);
         toolbar_center_text=findViewById(R.id.toolbar_center_text);
         toolbar_center_text.setText("我的钱包");
+
+        toolbar_iv_back = findViewById(R.id.toolbar_iv_back);
+        toolbar_iv_back.setImageResource(R.drawable.zuo);
+        toolbar_iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        
+        
         rl_recharge=findViewById(R.id.rl_recharge);
         rl_recharge.setOnClickListener(this);
         rl_cashwithdrawal=findViewById(R.id.rl_cashwithdrawal);
@@ -88,6 +100,7 @@ public class MyWalletActivity extends BaseActivity implements View.OnClickListen
         switch (view.getId()){
             case R.id.rl_recharge:
                 ActivityUtil.startMyRechageActivity(this);
+                finish();
                 break;
             case R.id.rl_cashwithdrawal:
                 ActivityUtil.startWithdrawalActivity(this);

@@ -1,20 +1,29 @@
 package com.lifecircle.ui.view.publicui;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
-
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
 import com.lifecircle.base.BaseActivity;
+import com.lifecircle.global.GlobalHttpUrl;
+import com.lifecircle.global.GlobalVariable;
+import com.lifecircle.ui.model.TokenBean;
 import com.lifecircle.ui.view.fragmemt.GuangChangFragment;
 import com.lifecircle.ui.view.fragmemt.LinJuFragment;
 import com.lifecircle.ui.view.fragmemt.MyFragment;
 import com.lifecircle.ui.view.fragmemt.ZhouBianServiceFragment;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
+
+import java.lang.reflect.Type;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -46,13 +55,34 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         initView();
         initTab();
+        //initToken();
+        
     }
+    private void initToken() {
+        OkGo.<String>get(GlobalHttpUrl.GETTOKEN)
+                .tag(this)
+                .params("uid", GlobalVariable.uid)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Gson gson=new Gson();
+                        String str=response.body().toString();
+                        Type type = new TypeToken<TokenBean>(){}.getType();
+                        TokenBean tokenBean=gson.fromJson(str, type);
+                        if ((tokenBean.getResult()).equals("200")){
+                            GlobalVariable.TOKEN=tokenBean.getData().getRong_token();
+                        }
+                    }
+
+                });
+    }
+
     private void initView() {
         iv_guangchang= findViewById(R.id.iv_guangchang);
         iv_zhoubianservices= findViewById(R.id.iv_zhoubianservices);
         iv_linju= findViewById(R.id.iv_linju);
         iv_my=  findViewById(R.id.iv_my);
-
+        //判断当前是否有新消息显示红点
         tv_guangchang= findViewById(R.id.tv_guangchang);
         tv_zhoubianservices= findViewById(R.id.tv_zhoubianservices);
         tv_linju= findViewById(R.id.tv_linju);

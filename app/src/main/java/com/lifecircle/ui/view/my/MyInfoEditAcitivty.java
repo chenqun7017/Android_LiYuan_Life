@@ -1,6 +1,5 @@
 package com.lifecircle.ui.view.my;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -23,18 +22,14 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
-import com.lifecircle.global.GlobalHttpUrl;
-import com.lifecircle.ui.view.login.m.LoginBean;
-import com.lifecircle.utils.DensityUtil;
-import com.lifecircle.utils.SharedPreferencesUtils;
-import com.lifecircle.utils.ToastUtils;
-import com.lifecircle.widget.spinerwindow.AbstractSpinerAdapter;
 import com.lifecircle.adapter.MyInfoAdapter;
+import com.lifecircle.base.BaseActivity;
+import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.model.MyInfoBean;
-import com.lifecircle.base.BaseActivity;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.widget.DividerItemDecoration;
+import com.lifecircle.widget.spinerwindow.AbstractSpinerAdapter;
 import com.lifecircle.widget.spinerwindow.SpinerPopWindow;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -60,8 +55,10 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
     //是否点过赞
     private boolean isNot = false;
 
-    //用户id
-    private String uid;
+    //被查看用户id
+    private String uid="69";
+    //当前用户ID
+    public String uided="84";
     public ProgressDialog dialog;
 
 
@@ -109,14 +106,18 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
     private  RelativeLayout rl_nodate;
 
     //度部控件
-    private LinearLayout ll_bottom;
+    private LinearLayout ll_bottoms;
     private TextView tv_info_follow;
     private TextView tv_info_send;
+    private MyInfoBean myInfoBean;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myinfoedit);
+
+
         //得到当前界面的装饰视图
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
@@ -139,12 +140,17 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
         tv_myinfo_follow = findViewById(R.id.tv_myinfo_follow);
         tv_myinfo_fans = findViewById(R.id.tv_myinfo_fans);
         tv_myinfo_integral = findViewById(R.id.tv_myinfo_integral);
+        ll_bottoms = findViewById(R.id.ll_bottom);
+
+        tv_info_follow = findViewById(R.id.tv_info_follow);
+        tv_info_send = findViewById(R.id.tv_info_send);
 
         //获取上个界面传入的uid ，判断是不是用户自已
-        uid = getIntent().getStringExtra("uid");
+           uid = getIntent().getStringExtra("uid");
+
         if (!uid.equals(GlobalVariable.uid)) {
             rl_thumbup.setOnClickListener(this);
-            ll_bottom.setVisibility(View.VISIBLE);
+            ll_bottoms.setVisibility(View.VISIBLE);
             tv_info_follow.setOnClickListener(this);
             tv_info_send.setOnClickListener(this);
         }
@@ -172,9 +178,7 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
         tv_myinfo_screen = findViewById(R.id.tv_myinfo_screen);
         tv_myinfo_screen.setOnClickListener(this);
         tv_myinfo_screen_name = findViewById(R.id.tv_myinfo_screen_name);
-        ll_bottom = findViewById(R.id.ll_bottom);
-        tv_info_follow = findViewById(R.id.tv_info_follow);
-        tv_info_send = findViewById(R.id.tv_info_send);
+
 
         tv_infostyle = findViewById(R.id.tv_infostyle);
         tv_infostyle.setOnClickListener(this);
@@ -208,7 +212,6 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
         rc_myinfolist.addItemDecoration(dividerItemDecoration);
         //获取数据
         initDate(type);
-
     }
 
     public void initDialog() {
@@ -222,54 +225,57 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
     private void initDate(String type) {
         OkGo.<String>post(GlobalHttpUrl.MY_INFO)
                 .tag(this)
-                .params("uid", uid)
+                .params("uided","69")
+                .params("uid", GlobalVariable.uid)
                 .params("type", type)
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
                         Gson gson = new Gson();
                         String str = response.body().toString();
-                        Type type = new TypeToken<MyInfoBean>() {
-                        }.getType();
+                        Type type = new TypeToken<MyInfoBean>() {}.getType();
                         MyInfoBean myInfoBean = gson.fromJson(str, type);
+                        Log.e("woqule",str+"");
                         if ((myInfoBean.getResult()).equals("200")) {
                             //头部信息
                             Glide.with(MyInfoEditAcitivty.this)
-                                    .load(GlobalHttpUrl.BASE_URL + myInfoBean.getData().getUserInfo().getImg())
+                                    .load(myInfoBean.getData().getUserInfo().getImg())
                                     .into(iv_myinfo_image);
                             tv_thumbup.setText(myInfoBean.getData().getUserInfo().getLike());
                             tv_myinfo_username.setText(myInfoBean.getData().getUserInfo().getName());
                             String sex = myInfoBean.getData().getUserInfo().getSex();
-                            if (sex.equals("男")) {
-                                iv_myinfo_sex.setImageResource(R.drawable.nan_biaoshi);
 
-                            } else if (sex.equals("女")) {
+                                if ("男".equals(sex)) {
+                                iv_myinfo_sex.setImageResource(R.drawable.nan_biaoshi);
+                            } else if ("女".equals(sex)) {
                                 iv_myinfo_sex.setImageResource(R.drawable.nv_nan_biaoshi);
                             }
                             String levle=myInfoBean.getData().getUserInfo().getLevel();
-                            if (levle.equals("1")){
+                            if ("1".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v1);
                             }
-                            if (levle.equals("2")){
+                            if ("2".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v2);
                             }
-                            if (levle.equals("3")){
+                            if ("3".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v3);
                             }
-                            if (levle.equals("4")){
+                            if ("4".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v4);
                             }
-                            if (levle.equals("5")){
+                            if ("5".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v5);
                             }
-                            if (levle.equals("6")){
+                            if ("6".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v6);
-                            }  if (levle.equals("7")){
+                            }
+                            if ("7".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v7);
-                            }  if (levle.equals("8")){
+                            }
+                            if ("8".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v8);
                             }
-                            if (levle.equals("9")){
+                            if ("9".equals(levle)){
                                 iv_myinfo_levle.setImageResource(R.drawable.v9);
                             }
                             tv_myinfo_desc.setText(myInfoBean.getData().getUserInfo().getAbstractX());
@@ -278,21 +284,22 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
                             tv_myinfo_fans.setText("粉丝 " + myInfoBean.getData().getUserInfo().getFans());
                             tv_myinfo_integral.setText("积分 " + myInfoBean.getData().getUserInfo().getPoints());
                             //个人展示界面
-                            if (myInfoBean.getData().getPersonal() != null) {
+                            Log.e("woquleaaaa",myInfoBean.getData().getPersonal()+"");
+                            if (myInfoBean.getData().getPersonal().equals("[]")) {
                                 WindowManager wm = MyInfoEditAcitivty.this.getWindowManager();
                                 int height = (int) (wm.getDefaultDisplay().getHeight() * 0.4197);
                                 RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) rl_backgroud.getLayoutParams();
                                 params.height = height;//设置当前控件布局的高度
                                 rl_backgroud.setLayoutParams(params);
-                                rl_myinfo_isshow.setVisibility(View.VISIBLE);
+                               rl_myinfo_isshow.setVisibility(View.VISIBLE);
+                               Log.e("quzeheng",myInfoBean.getData().getPersonal().get(0).getPhoto()+"");
                                 Glide.with(MyInfoEditAcitivty.this)
-                                        .load(GlobalHttpUrl.BASE_URL + myInfoBean.getData().getPersonal().getPhoto())
-                                        .into(iv_myinfoedit_img);
-                                tv_myinfoedit_title.setText(myInfoBean.getData().getPersonal().getTitle());
-                                tv_myinfoedit_content.setText(myInfoBean.getData().getPersonal().getDes());
-                                phone = myInfoBean.getData().getPersonal().getPhone();
-                                iv_myinfoedit_tel.setOnClickListener(MyInfoEditAcitivty.this);
-
+                                           .load(myInfoBean.getData().getPersonal().get(0).getPhoto())
+                                           .into(iv_myinfoedit_img);
+                                  tv_myinfoedit_title.setText(myInfoBean.getData().getPersonal().get(0).getTitle());
+                                  tv_myinfoedit_content.setText(myInfoBean.getData().getPersonal().get(0).getDes());
+                                  phone = myInfoBean.getData().getPersonal().get(0).getPhone();
+                                  iv_myinfoedit_tel.setOnClickListener(MyInfoEditAcitivty.this);
                             } else {
                                 //个人资料框的展示
                                 WindowManager wm = MyInfoEditAcitivty.this.getWindowManager();
@@ -332,7 +339,6 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
                             dialog.show();
                         }
                     }
-
                     @Override
                     public void onFinish() {
                         super.onFinish();
@@ -427,4 +433,5 @@ public class MyInfoEditAcitivty extends BaseActivity implements View.OnClickList
             }
         }
     }
+
 }

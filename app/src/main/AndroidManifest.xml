@@ -23,13 +23,13 @@
             </intent-filter>
         </activity>
 
-
+        <activity android:name=".ui.view.guangchang.AmendSiteActivity"/>
         <activity android:name=".ui.view.publicui.MainActivity"/>
         <activity android:name=".ui.view.my.MySetActivity"/>
         <activity android:name=".ui.view.my.MyOrderActivity"/>
         <activity android:name=".ui.view.my.MyWalletActivity"/>
         <activity android:name=".ui.view.my.MyIntegralActivity"/>
-
+        <activity android:name=".ui.model.SearchParticulars"/>
         <activity android:name=".ui.view.publicui.SearchActivity"/>
         <activity android:name=".ui.view.my.MyTaskActivity"/>
         <activity android:name=".ui.view.my.MyFollowActivity"/>
@@ -74,6 +74,25 @@
         <activity android:name=".ui.view.guangchang.ShopOrderActivity"/>
         <activity android:name=".ui.view.my.MyEditDataActivity"/>
         <activity android:name=".ui.view.my.CodeShopActivity"/>
+        <activity android:name=".ui.view.guangchang.AdvertisingActivity"/>
+        <activity android:name=".ui.view.my.ExchangelistActivity"/>
+        <activity android:name=".ui.view.my.IntegralRuleActivity"/>
+        <activity android:name=".ui.view.my.MyExchangeActivity"/>
+        
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
 
 
 
@@ -90,6 +109,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

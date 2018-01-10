@@ -55,10 +55,8 @@ public class MyCollectionAdapter extends RecyclerView.Adapter {
 
         TextView name= viewHolder.layout.findViewById(R.id.tv_name);
         name.setText(listDate.get(position).getName());
-
         TextView tv_comments= viewHolder.layout.findViewById(R.id.tv_comments);
         tv_comments.setText(listDate.get(position).getTopic_comment());
-
         TextView tv_times= viewHolder.layout.findViewById(R.id.tv_times);
         tv_times.setText(listDate.get(position).getTopic_time());
 

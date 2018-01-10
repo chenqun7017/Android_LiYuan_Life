@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/im_exchangelist"
+        android:layout_width="324px"
+        android:layout_height="176px"
+        />
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_below="@+id/im_exchangelist"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="20px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="美的便宜手巾"
+        />
+
+        <ImageView
+            android:id="@+id/iv_imag"
+            android:layout_below="@+id/tv_product_name"
+            android:layout_marginLeft="20px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:background="@drawable/jifen_lv" />
+
+        <TextView
+            android:layout_below="@+id/tv_product_name"
+            android:layout_toRightOf="@+id/iv_imag"
+            android:layout_marginLeft="10px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:text="1000" 
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/tv_integral" />
+
+    <TextView
+        android:id="@+id/tv_conversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_product_name"
+        android:layout_below="@+id/tv_product_name"
+        android:text="兑换" 
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="10px"
+        android:paddingLeft="24px"
+        android:paddingBottom="10px"
+        android:paddingRight="24px"
+        android:layout_marginBottom="10px"
+        android:layout_marginLeft="15px"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>

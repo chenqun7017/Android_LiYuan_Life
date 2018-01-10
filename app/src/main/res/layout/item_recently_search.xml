@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="10px"
+    android:layout_marginLeft="22px"
+    android:layout_marginBottom="10px">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_search_userimage"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/userdefaultimage"
+        />
+    <TextView
+        android:id="@+id/tv_search_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="生活大爆料"/>
+</com.zhy.autolayout.AutoLinearLayout>

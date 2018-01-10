@@ -60,6 +60,7 @@ public class HomeBean {
             private String id;
             private String carousel_columnid;
             private String carousel_img;
+            private String link;
 
             public String getId() {
                 return id;
@@ -83,6 +84,14 @@ public class HomeBean {
 
             public void setCarousel_img(String carousel_img) {
                 this.carousel_img = carousel_img;
+            }
+            
+            
+            public  String getLink(){
+                return link;
+            }
+            public void setLink(String link){
+                this.link=link;
             }
         }
 

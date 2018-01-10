@@ -9,7 +9,7 @@ public class GlobalVariable {
     public   static  String uid="";
 
     public static   int pop=0;
-
+    public static  String TOKEN="";
 
 
 }

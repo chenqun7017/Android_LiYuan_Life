@@ -24,6 +24,7 @@
         android:text="小清晰的生活"/>
 
     <TextView
+        android:id="@+id/tv_content"
         android:layout_width="450px"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/iv_linju_img"

@@ -58,6 +58,7 @@ public class LinJuFragment extends BaseFragment implements View.OnClickListener{
         linjuAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                //跳转聊天界面
                 ActivityUtil.startWithFriendsChatActivity(getActivity());
             }
         });

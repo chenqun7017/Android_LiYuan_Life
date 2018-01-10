@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/activityback"
@@ -89,23 +90,34 @@
             android:textColor="@color/black"
             android:textSize="29px" />
 
-        <TextView
-            android:id="@+id/tv_mydynamics_connext"
+        <!--<TextView-->
+        <!--android:id="@+id/tv_mydynamics_connext"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="30px"-->
+        <!--android:layout_marginRight="30px"-->
+        <!--android:layout_marginTop="20px"-->
+        <!--android:text="更小更强大! 网易有道首款智能硬件“翻译蛋“上线更小更强大! 网易有道首款智能硬件“翻译蛋“上线更小更强大! 网易有道首款智能硬件“翻译蛋“上线"-->
+        <!--android:textColor="@color/text_back"-->
+        <!--android:textSize="24px" />-->
+
+        <!--<com.lifecircle.widget.RoundImageView-->
+        <!--android:id="@+id/iv_contacts_img"-->
+        <!--android:layout_width="170px"-->
+        <!--android:layout_height="198px"-->
+        <!--android:layout_marginLeft="30px"-->
+        <!--android:layout_marginTop="30px"-->
+        <!--android:src="@drawable/net_bitmap" />-->
+        <WebView
+            android:id="@+id/web_mydynamcs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30px"
             android:layout_marginRight="30px"
             android:layout_marginTop="20px"
-            android:text="更小更强大! 网易有道首款智能硬件“翻译蛋“上线更小更强大! 网易有道首款智能硬件“翻译蛋“上线更小更强大! 网易有道首款智能硬件“翻译蛋“上线"
-            android:textColor="@color/text_back"
-            android:textSize="24px" />
+            tools:ignore="WebViewLayout">
 
-        <com.lifecircle.widget.RoundImageView
-            android:layout_width="170px"
-            android:layout_height="198px"
-            android:layout_marginLeft="30px"
-            android:layout_marginTop="30px"
-            android:src="@drawable/net_bitmap" />
+        </WebView>
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
@@ -113,6 +125,7 @@
             android:layout_marginTop="24px">
 
             <TextView
+                android:id="@+id/tv_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60px"
@@ -137,6 +150,7 @@
                 android:textSize="25px" />
 
             <ImageView
+                android:id="@+id/iv_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -148,11 +162,12 @@
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="270px"
+            android:layout_marginBottom="20px"
             android:layout_marginLeft="30px"
-            android:layout_marginTop="20px"
             android:layout_marginRight="30px"
-          android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
             android:background="@color/activityback">
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/rl_point"
                 android:layout_width="match_parent"
@@ -165,15 +180,15 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20px"
-                    android:src="@drawable/zan_lan"/>
+                    android:src="@drawable/zan_lan" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rc_mypost_fabulous"
-                    android:layout_toRightOf="@+id/iv_tag"
                     android:layout_width="match_parent"
                     android:layout_height="70px"
+                    android:layout_marginLeft="20px"
                     android:layout_marginRight="66px"
-                    android:layout_marginLeft="20px" />
+                    android:layout_toRightOf="@+id/iv_tag" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -182,94 +197,35 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@drawable/rightt" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="2px"
-                    android:background="@color/text_back"
+                    android:layout_below="@+id/iv_tag"
                     android:layout_marginTop="15px"
-                    android:layout_below="@+id/iv_tag"/>
+                    android:background="@color/text_back" />
             </com.zhy.autolayout.AutoRelativeLayout>
-            <TextView
-                android:id="@+id/tv_comments_name_first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_mypost_comments"
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="66px"
+                android:layout_marginTop="20px"
                 android:layout_below="@+id/rl_point"
-                android:textColor="@color/colorPrimary"
-                android:textSize="23px"
-                android:layout_marginLeft="30px"
-                android:text="北京小样"
-                android:layout_marginTop="20px"/>
-
-            <TextView
-                android:id="@+id/tv_comments_text_fist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rl_point"
-                android:layout_toRightOf="@+id/tv_comments_name_first"
-                android:textColor="@color/text_back"
-                android:textSize="23px"
-                android:layout_marginLeft="3px"
-                android:text=":你是一个大傻子"
-                android:layout_marginTop="20px"/>
-
-
-            <TextView
-                android:id="@+id/tv_comments_name_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_comments_name_first"
-                android:textColor="@color/colorPrimary"
-                android:textSize="23px"
-                android:layout_marginLeft="30px"
-                android:text="北京小样"
-                android:layout_marginTop="20px"/>
-
-            <TextView
-                android:id="@+id/tv_comments_text_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_comments_name_first"
-                android:layout_toRightOf="@+id/tv_comments_name_second"
-                android:textColor="@color/text_back"
-                android:textSize="23px"
-                android:layout_marginLeft="3px"
-                android:text=":你是一个大傻子"
-                android:layout_marginTop="20px"/>
-
-            <TextView
-                android:id="@+id/tv_comments_name_third"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_comments_name_second"
-                android:textColor="@color/colorPrimary"
-                android:textSize="23px"
-                android:layout_marginLeft="30px"
-                android:text="北京小样"
-                android:layout_marginTop="20px"/>
-
-            <TextView
-                android:id="@+id/tv_comments_text_third"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_comments_name_second"
-                android:layout_toRightOf="@+id/tv_comments_name_second"
-                android:textColor="@color/text_back"
-                android:textSize="23px"
-                android:layout_marginLeft="3px"
-                android:text=":你是一个大傻子"
-                android:layout_marginTop="20px"/>
-
+                />
             <TextView
                 android:id="@+id/tv_item_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="23px"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentBottom="true"
-                android:text="查看更多>>"
                 android:layout_alignParentRight="true"
+                android:layout_marginBottom="20px"
                 android:layout_marginRight="10px"
-                android:layout_marginBottom="20px"/>
+                android:text="查看更多>>"
+                android:textColor="@color/colorPrimary"
+                android:textSize="23px" />
         </com.zhy.autolayout.AutoRelativeLayout>
 
 

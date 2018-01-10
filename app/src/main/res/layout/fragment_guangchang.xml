@@ -4,7 +4,11 @@
     android:layout_height="match_parent"
     android:background="@color/activityback">
     <include layout="@layout/include_search" />
-
+<com.scwang.smartrefresh.layout.SmartRefreshLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="86px"
+    android:id="@+id/smartRefreshLayout">
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,9 +19,13 @@
             android:layout_height="wrap_content"
             android:descendantFocusability="blocksDescendants"
             android:orientation="vertical">
+
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_home_advertising"
                 android:layout_width="match_parent"
-                android:layout_height="336px">
+                android:layout_height="336px"
+                android:visibility="gone">
+
                 <com.youth.banner.Banner
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
@@ -27,28 +35,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/bag"/>
+                    android:background="@drawable/bag" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1px"
-                    android:background="@color/white"
-                    android:layout_marginRight="3px"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginLeft="2px"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_marginRight="3px"
+                    android:background="@color/white" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <android.support.v4.view.ViewPager
                 android:id="@+id/guangchang_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"/>
+                android:background="@android:color/white" />
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rc_guangchang_list"
-                android:layout_marginTop="10px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/guangchang_viewpager"
-                android:background="@android:color/white"/>
+                android:layout_marginTop="10px"
+                android:background="@android:color/white" />
         </com.zhy.autolayout.AutoLinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -32,22 +32,23 @@
         android:layout_marginRight="30px"
         android:gravity="center"
         android:text="消息"
-        android:textSize="24px" />
+        android:textSize="24px" 
+        android:textColor="@color/black"/>
 
-    <TextView
-        android:id="@+id/tv_badge"
-        android:layout_width="23px"
-        android:layout_height="23px"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="22px"
-        android:layout_marginTop="18px"
-        android:background="@drawable/viewbadger"
-        android:gravity="center"
-        android:padding="1px"
-        android:text="99+"
-        android:textColor="@android:color/white"
-        android:textSize="13px"
-        app:layout_auto_basewidth="height" />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_badge"-->
+        <!--android:layout_width="23px"-->
+        <!--android:layout_height="23px"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginRight="22px"-->
+        <!--android:layout_marginTop="18px"-->
+        <!--android:background="@drawable/viewbadger"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="1px"-->
+        <!--android:text="99+"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="13px"-->
+        <!--app:layout_auto_basewidth="height" />-->
 
 </com.zhy.autolayout.AutoRelativeLayout>

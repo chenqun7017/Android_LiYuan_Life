@@ -442,7 +442,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100px"
-                 android:layout_centerHorizontal="true"
+                    android:layout_centerHorizontal="true"
                     android:src="@drawable/zhelishenmedoumeiyou"/>
 
                 <TextView
@@ -469,7 +469,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/activityback"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/tv_info_follow"

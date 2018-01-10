@@ -1,6 +1,5 @@
 package com.lifecircle.ui.view.linju;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,8 +20,6 @@ import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.global.GlobalVariable;
 import com.lifecircle.ui.model.ContactsBean;
-import com.lifecircle.ui.view.login.m.LoginBean;
-import com.lifecircle.ui.view.my.MyFollowActivity;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.ToastUtils;
 import com.lzy.okgo.OkGo;
@@ -85,6 +82,7 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
 
         rl_me_fans=findViewById(R.id.rl_me_fans);
         rl_me_fans.setOnClickListener(this);
+        
         tv_me_fans=findViewById(R.id.tv_me_fans);
         tv_me_fans_lines=findViewById(R.id.tv_me_fans_lines);
         tv_title_name=findViewById(R.id.tv_title_name);

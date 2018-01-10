@@ -40,18 +40,18 @@
                 android:textColor="@color/black"
                 android:layout_marginBottom="10px"
                 android:textSize="25px"/>
-            <TextView
-                android:id="@+id/tv_badge_guangchang"
-                android:layout_width="21px"
-                android:layout_height="21px"
-                app:layout_auto_basewidth="height"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:background="@drawable/viewbadger"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10px"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="40px"/>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_badge_guangchang"-->
+                <!--android:layout_width="21px"-->
+                <!--android:layout_height="21px"-->
+                <!--app:layout_auto_basewidth="height"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@drawable/viewbadger"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginTop="10px"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="40px"/>-->
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -80,18 +80,18 @@
                 android:textColor="@color/black"
                 android:text="生活服务"
                 android:textSize="25px" />
-            <TextView
-                android:id="@+id/tv_badge_zhoubianservices"
-                android:layout_width="21px"
-                android:layout_height="21px"
-                app:layout_auto_basewidth="height"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:background="@drawable/viewbadger"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10px"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="40px"/>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_badge_zhoubianservices"-->
+                <!--android:layout_width="21px"-->
+                <!--android:layout_height="21px"-->
+                <!--app:layout_auto_basewidth="height"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@drawable/viewbadger"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginTop="10px"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="40px"/>-->
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
             android:id="@+id/rl_linju"
@@ -119,18 +119,18 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10px"
                 android:textSize="25px" />
-            <TextView
-                android:id="@+id/tv_badge_linju"
-                android:layout_width="21px"
-                android:layout_height="21px"
-                app:layout_auto_basewidth="height"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:background="@drawable/viewbadger"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10px"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="40px"/>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_badge_linju"-->
+                <!--android:layout_width="21px"-->
+                <!--android:layout_height="21px"-->
+                <!--app:layout_auto_basewidth="height"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@drawable/viewbadger"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginTop="10px"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="40px"/>-->
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -159,18 +159,18 @@
                 android:layout_marginBottom="10px"
                 android:text="我的"
                 android:textSize="25px"/>
-            <TextView
-                android:id="@+id/tv_badge_my"
-                android:layout_width="21px"
-                android:layout_height="21px"
-                app:layout_auto_basewidth="height"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:background="@drawable/viewbadger"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10px"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="40px"/>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_badge_my"-->
+                <!--android:layout_width="21px"-->
+                <!--android:layout_height="21px"-->
+                <!--app:layout_auto_basewidth="height"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@drawable/viewbadger"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginTop="10px"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="40px"/>-->
         </com.zhy.autolayout.AutoRelativeLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 

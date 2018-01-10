@@ -10,5 +10,4 @@ import com.lifecircle.widget.CountTimer;
 public interface LoginPresenter {
     void sendCode(String phone, CountTimer countTimer);
     void goLogin(String phone,String code);
-
 }

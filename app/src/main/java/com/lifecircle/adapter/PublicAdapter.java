@@ -8,10 +8,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lifecircle.R;
-import com.lifecircle.global.GlobalHttpUrl;
-import com.lifecircle.ui.model.HomeBean;
 import com.lifecircle.ui.model.PublicBean;
-import com.lifecircle.ui.model.ViewPageMenuBean;
 
 import java.util.List;
 
@@ -30,7 +27,7 @@ public class PublicAdapter extends BaseQuickAdapter<PublicBean.DataBean.ColumnBe
     @Override
     protected void convert(BaseViewHolder helper, PublicBean.DataBean.ColumnBean item) {
         Glide.with(context)
-                .load(GlobalHttpUrl.BASE_URL + item.getTwocolumn_img())
+                .load(item.getTwocolumn_img())
                 .into((ImageView) helper.getView(R.id.iv_item_menu_image));
         helper.setText(R.id.tv_item_menu_name,item.getTwocolumn_name());
 

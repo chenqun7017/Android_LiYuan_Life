@@ -8,6 +8,7 @@
     <include layout="@layout/include_apptoolbar_b" />
 
     <com.zhy.autolayout.AutoRelativeLayout
+        
         android:id="@+id/rl_notification_settings"
         android:background="@android:color/white"
         android:layout_width="match_parent"
@@ -29,9 +30,7 @@
            android:layout_centerVertical="true"
            android:layout_marginRight="30px"
            android:layout_alignParentRight="true"/>
-
-
-
+        
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_feedback"
@@ -114,6 +113,24 @@
 
 
 
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_quit"
+        android:background="#16b626"
+        android:layout_width="match_parent"
+        android:layout_marginTop="70px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_height="84px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="退出"
+            />
     </com.zhy.autolayout.AutoRelativeLayout>
 
 

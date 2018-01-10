@@ -14,19 +14,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
 import com.lifecircle.adapter.PublicAdapter;
-import com.lifecircle.adapter.PublicTopicAdapter;
-import com.lifecircle.adapter.PublicListAdapter;
 import com.lifecircle.adapter.PublicHotAdapter;
+import com.lifecircle.adapter.PublicListAdapter;
+import com.lifecircle.adapter.PublicTopicAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
 import com.lifecircle.ui.model.PublicBean;
-import com.lifecircle.ui.model.HomeBean;
 import com.lifecircle.ui.model.PublicNote;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.ToastUtils;
@@ -35,7 +35,13 @@ import com.lifecircle.widget.GlideImageLoader;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -74,7 +80,9 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
     private  PublicListAdapter publicListAdapter;
 
     //获取上个界面数据
-    private String id;
+    public String id;
+    public int page=1;
+    private SmartRefreshLayout rl_smartrefreshlayout_lower;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -90,16 +98,34 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
         ll_public_topic=findViewById(R.id.ll_public_topic);
         rc_public_topic=findViewById(R.id.rc_public_topic);
         rc_public_list=findViewById(R.id.rc_public_list);
+        rl_smartrefreshlayout_lower = findViewById(R.id.rl_smartrefreshlayout_lower);
+        setPullRefresher();
         //头部
         initHead();
-        String id=getIntent().getStringExtra("id");
+         id=getIntent().getStringExtra("id");
         //获取数据
         initNetDate();
         //列表
        initList();
 
     }
-
+    private void setPullRefresher() {
+        rl_smartrefreshlayout_lower.setRefreshHeader(new ClassicsHeader(PublicActivity.this));
+        rl_smartrefreshlayout_lower.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                //initNetDate();
+                //initDate();
+                refreshlayout.finishRefresh(2000);
+            }
+        });
+        rl_smartrefreshlayout_lower.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadmore(2000);
+            }
+        });
+    }
     private void initNetDate() {
         OkGo.<String>get(GlobalHttpUrl.MY_HOME_LIFE+id)
                 .tag(this)
@@ -109,18 +135,28 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                         Gson gson=new Gson();
                         String str=response.body().toString();
                         Type type = new TypeToken<PublicBean>(){}.getType();
-                        PublicBean publicBean=gson.fromJson(str, type);
+                        final PublicBean publicBean=gson.fromJson(str, type);
                         if ((publicBean.getResult()).equals("200")){
                             //广告位
                             if (!publicBean.getData().getCarousel().toString().equals("[]")){
                                 //设置图片加载器
                                 banner.setImageLoader(new GlideImageLoader());
                                 if (publicBean.getData().getCarousel().size()>0){
+                                    banner.setVisibility(View.VISIBLE);
                                     for (int i=0;i<publicBean.getData().getCarousel().size();i++){
-                                        list.add(GlobalHttpUrl.BASE_URL+publicBean.getData().getCarousel().get(i).getCarousel_img());
+                                        list.add(publicBean.getData().getCarousel().get(i).getCarousel_img());
                                     }
+                                    banner.setOnBannerListener(new OnBannerListener() {
+                                        @Override
+                                        public void OnBannerClick(int position) {
+                                            ActivityUtil.startAdvertisingActivity(PublicActivity.this,publicBean.getData().getCarousel().get(position).getLink());
+                                            ToastUtils.showToast(position+"");
+                                        }
+                                    });
                                     banner.setImages(list);
                                     banner.start();
+                                }else {
+                                    banner.setVisibility(View.GONE);
                                 }
 
                             }else {
@@ -128,6 +164,7 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                             }
                             //栏目
                            if (!publicBean.getData().getColumn().toString().equals("[]")){
+                                viewPage.setVisibility(View.VISIBLE);
                                columnList=publicBean.getData().getColumn();
                                initViewPageMens();
                            }else {
@@ -137,7 +174,15 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                             if (!publicBean.getData().getHot_type().toString().equals("[]")){
                                 GridLayoutManager mg = new GridLayoutManager(PublicActivity.this, 5);
                                 rc_public_hot.setLayoutManager(mg);
-                                rc_public_hot.setAdapter(new PublicHotAdapter(R.layout.item_zhoubian_first,publicBean.getData().getHot_type(),PublicActivity.this));
+                               PublicHotAdapter publicHotAdapter=new PublicHotAdapter(R.layout.item_zhoubian_first,publicBean.getData().getHot_type(),PublicActivity.this);
+                                rc_public_hot.setAdapter(publicHotAdapter);
+                               publicHotAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                                   @Override
+                                   public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                                       ToastUtils.showToast(position+"");
+                                   }
+                               });
+                                
                             }else {
                                 ll_public_hot.setVisibility(View.GONE);
 
@@ -151,7 +196,8 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                                 publicSecondAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                                        ActivityUtil.startTopicActivity(PublicActivity.this);
+                                        Toast.makeText(PublicActivity.this,publicBean.getData().getTopic().get(position).getId()+"",Toast.LENGTH_SHORT).show();
+                                        ActivityUtil.startTopicActivity(PublicActivity.this,publicBean.getData().getTopic().get(position).getId()+"");
                                     }
                                 });
 
@@ -159,27 +205,19 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                                 ll_public_topic.setVisibility(View.GONE);
                             }
 
-
-
-
                         }else {
                             ToastUtils.showToast(publicBean.getMsg());
                         }
                     }
-
                 });
-
-
-
-
-
     }
 
 
 
     private void initList() {
-        OkGo.<String>post(GlobalHttpUrl.MY_HOME_PUBLIC_NOTE+id)
+        OkGo.<String>get(GlobalHttpUrl.MY_HOME_PUBLIC_NOTE+id)
                 .tag(this)
+                .params("page",page)
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
@@ -195,13 +233,13 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                             dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
                             dividerItemDecoration.setSize(10);
                             rc_public_list.addItemDecoration(dividerItemDecoration);
-                            List<PublicNote.DataBean> list=publicNote.getData();
+                            final List<PublicNote.DataBean> list=publicNote.getData();
                             publicListAdapter =new PublicListAdapter(R.layout.public_item_list,list,PublicActivity.this);
                             rc_public_list.setAdapter(publicListAdapter);
                             publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                                 @Override
                                 public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                                    ActivityUtil.startPostDetailsActivity(PublicActivity.this,position);
+                                    ActivityUtil.startPostDetailsActivity(PublicActivity.this,list.get(position).getId());
                                 }
                             });
 
@@ -338,7 +376,7 @@ public class PublicActivity extends BaseActivity implements View.OnClickListener
                 ActivityUtil.startReleaseFactActivity(this);
                 break;
             case R.id.tv_public_search:
-                ActivityUtil.startSearchActivity(this);
+               ActivityUtil.startSearchActivity(this);
                 break;
         }
 

@@ -70,6 +70,8 @@ public class ReleasePublicActivity extends BaseActivity implements View.OnClickL
         toolbar_right_text.setOnClickListener(this);
     }
 
+    
+    //发布界面内容下方按钮
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -104,6 +106,7 @@ public class ReleasePublicActivity extends BaseActivity implements View.OnClickL
         }
 
     }
+    //相册选择上传
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -115,7 +118,6 @@ public class ReleasePublicActivity extends BaseActivity implements View.OnClickL
                 List<String> path = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
                 if (path != null){
                     pathImag = path.get(0);
-
                   //  submitData();
                 }
             }

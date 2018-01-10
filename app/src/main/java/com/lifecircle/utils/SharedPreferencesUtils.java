@@ -42,7 +42,6 @@ public class SharedPreferencesUtils {
         else if("Long".equals(type)){
             editor.putLong(key, (Long)object);
         }
-
         editor.commit();
     }
 
@@ -72,9 +71,9 @@ public class SharedPreferencesUtils {
         else if("Long".equals(type)){
             return sp.getLong(key, (Long)defaultObject);
         }
-
         return null;
     }
+    
     //保存数据
     /*SharedPreferencesUtils.setParam(this, "String", "xiaanming");
 SharedPreferencesUtils.setParam(this, "int", 10);

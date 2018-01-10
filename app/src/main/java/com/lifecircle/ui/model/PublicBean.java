@@ -78,7 +78,7 @@ public class PublicBean {
 
             private String carousel_img;
             private String column_name;
-
+            private String link;
             public String getCarousel_img() {
                 return carousel_img;
             }
@@ -93,6 +93,13 @@ public class PublicBean {
 
             public void setColumn_name(String column_name) {
                 this.column_name = column_name;
+            }
+            
+            public String getLink(){
+                return link;
+            }
+            public void setLink(String link){
+                this.link=link;
             }
         }
 

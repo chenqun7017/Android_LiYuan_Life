@@ -3,53 +3,56 @@ package com.lifecircle.utils;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.lifecircle.ui.view.guangchang.AdvertisingActivity;
+import com.lifecircle.ui.view.guangchang.ShopActivity;
 import com.lifecircle.ui.view.guangchang.ShopOrderActivity;
 import com.lifecircle.ui.view.guangchang.ShoppingCartActivity;
-import com.lifecircle.ui.view.my.CodeShopActivity;
-import com.lifecircle.ui.view.my.MyEditDataActivity;
-import com.lifecircle.ui.view.publicui.ParticipantsActivity;
-import com.lifecircle.ui.view.publicui.ReleasePublicActivity;
-import com.lifecircle.ui.view.my.MyOrderDetails;
-import com.lifecircle.ui.view.publicui.ReaseTopicActivity;
-import com.lifecircle.ui.view.publicui.SearchActivity;
-import com.lifecircle.ui.view.publicui.MainActivity;
-import com.lifecircle.ui.view.publicui.PublicActivity;
 import com.lifecircle.ui.view.linju.ContactsActivity;
 import com.lifecircle.ui.view.linju.NewsListActivity;
+import com.lifecircle.ui.view.login.v.LoginActivity;
+import com.lifecircle.ui.view.my.CodeShopActivity;
 import com.lifecircle.ui.view.my.EditorialShowA;
-import com.lifecircle.ui.view.my.MyCollection;
-import com.lifecircle.ui.view.my.MyCommetnsActivity;
-import com.lifecircle.ui.view.my.MyDynamicsActivity;
-import com.lifecircle.ui.view.my.MyModifyPersonalDataActivity;
+import com.lifecircle.ui.view.my.ExchangelistActivity;
 import com.lifecircle.ui.view.my.MyAddWithdrawal;
 import com.lifecircle.ui.view.my.MyCashWithdrawalActivity;
+import com.lifecircle.ui.view.my.MyCollection;
+import com.lifecircle.ui.view.my.MyCommetnsActivity;
 import com.lifecircle.ui.view.my.MyDelWithdrawal;
+import com.lifecircle.ui.view.my.MyDynamicsActivity;
+import com.lifecircle.ui.view.my.MyEditDataActivity;
 import com.lifecircle.ui.view.my.MyFeedBackActivity;
 import com.lifecircle.ui.view.my.MyFollowActivity;
 import com.lifecircle.ui.view.my.MyInfoEditAcitivty;
 import com.lifecircle.ui.view.my.MyIntegralActivity;
+import com.lifecircle.ui.view.my.MyModifyPersonalDataActivity;
+import com.lifecircle.ui.view.my.MyNotificationSettingsActivity;
 import com.lifecircle.ui.view.my.MyOrderActivity;
+import com.lifecircle.ui.view.my.MyOrderDetails;
 import com.lifecircle.ui.view.my.MyPostDetailsActivity;
 import com.lifecircle.ui.view.my.MyPostsActiivty;
 import com.lifecircle.ui.view.my.MyRechargeActivity;
 import com.lifecircle.ui.view.my.MyRepostActivity;
 import com.lifecircle.ui.view.my.MyRunnWaterRecordActivity;
 import com.lifecircle.ui.view.my.MySetActivity;
-import com.lifecircle.ui.view.my.v.MySingActivity;
 import com.lifecircle.ui.view.my.MySingTime;
+import com.lifecircle.ui.view.my.MyTaskActivity;
 import com.lifecircle.ui.view.my.MyThumbUplistActivity;
 import com.lifecircle.ui.view.my.MyWalletActivity;
-import com.lifecircle.ui.view.my.MyTaskActivity;
 import com.lifecircle.ui.view.my.MyWithLifeCirleActivity;
 import com.lifecircle.ui.view.my.MyWithdrawalActivity;
 import com.lifecircle.ui.view.my.MyinvitationActivity;
-import com.lifecircle.ui.view.my.MyNotificationSettingsActivity;
 import com.lifecircle.ui.view.my.PersonalInformationStyleActivity;
 import com.lifecircle.ui.view.my.PointPraiseListActivity;
 import com.lifecircle.ui.view.my.WithFriendsChatActivity;
+import com.lifecircle.ui.view.my.v.MySingActivity;
+import com.lifecircle.ui.view.publicui.MainActivity;
+import com.lifecircle.ui.view.publicui.ParticipantsActivity;
+import com.lifecircle.ui.view.publicui.PublicActivity;
+import com.lifecircle.ui.view.publicui.ReaseTopicActivity;
+import com.lifecircle.ui.view.publicui.ReleasePublicActivity;
+import com.lifecircle.ui.view.publicui.SearchActivity;
 import com.lifecircle.ui.view.publicui.TopicActivity;
 import com.lifecircle.ui.view.zhoubianservices.ReleaseActivity;
-import com.lifecircle.ui.view.guangchang.ShopActivity;
 
 public class ActivityUtil {
 
@@ -118,9 +121,9 @@ public class ActivityUtil {
      * @param _activity
      */
 
-    public static void startSearchActivity(Activity _activity,String id) {
+    public static void startSearchActivity(Activity _activity) {
         Intent localIntent = new Intent(_activity, SearchActivity.class);
-        localIntent.putExtra("column_id",id);
+        //localIntent.putExtra("column_id",id);
         _activity.startActivity(localIntent);
     }
     /**
@@ -133,7 +136,7 @@ public class ActivityUtil {
         Intent localIntent = new Intent(_activity, MyTaskActivity.class);
         _activity.startActivity(localIntent);
     }
-
+    
     /**
      * 跳转到关注页面
      *
@@ -343,8 +346,9 @@ public class ActivityUtil {
      * @param _activity
      */
 
-    public static void startThumbUpActivity(Activity _activity) {
+    public static void startThumbUpActivity(Activity _activity,String note_id) {
         Intent localIntent = new Intent(_activity, MyThumbUplistActivity.class);
+        localIntent.putExtra( "note_id", note_id+"" );
         _activity.startActivity(localIntent);
     }
 
@@ -486,8 +490,9 @@ public class ActivityUtil {
      *
      * @param _activity
      */
-    public static void startTopicActivity(Activity _activity) {
+    public static void startTopicActivity(Activity _activity,String id) {
         Intent localIntent = new Intent(_activity, TopicActivity.class);
+        localIntent.putExtra("id",id);
         _activity.startActivity(localIntent);
     }
 
@@ -560,4 +565,30 @@ public class ActivityUtil {
         _activity.startActivity(localIntent);
     }
 
+    /**
+     * 
+     * 广告页面跳转
+     */
+    
+    public static void startAdvertisingActivity(Activity _activity,String advertising) {
+        Intent localIntent = new Intent(_activity, AdvertisingActivity.class);
+        localIntent.putExtra("advertising",advertising);
+        _activity.startActivity(localIntent);
+    }
+
+    /**
+     *跳转到登录界面 
+     */
+    
+    public static void starLoginActivity(Activity _activity) {
+        Intent localIntent = new Intent(_activity, LoginActivity.class);
+        _activity.startActivity(localIntent);
+    }
+    /**
+     * 获取兑换列表
+     */
+    public static void starExchangelist(Activity _activity) {
+        Intent localIntent = new Intent(_activity, ExchangelistActivity.class);
+        _activity.startActivity(localIntent);
+    }
 }

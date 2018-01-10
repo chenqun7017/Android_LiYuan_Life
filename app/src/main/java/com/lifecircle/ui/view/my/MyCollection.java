@@ -7,30 +7,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
-import com.lifecircle.adapter.MyCollectionAdapter;
-import com.lifecircle.adapter.MyCommentsAdapter;
+import com.lifecircle.adapter.MyPostCollectionAdapter;
 import com.lifecircle.base.BaseActivity;
 import com.lifecircle.global.GlobalHttpUrl;
-import com.lifecircle.global.GlobalVariable;
-import com.lifecircle.ui.model.RepostOrCommentBean;
-import com.lifecircle.utils.ActivityUtil;
-import com.lifecircle.widget.removerecyclerview.OnItemClickListener;
-import com.lifecircle.ui.model.MyCollectionBean;
+import com.lifecircle.ui.model.MyPostCollectionBean;
 import com.lifecircle.widget.DividerItemDecoration;
 import com.lifecircle.widget.removerecyclerview.ItemRemoveRecyclerView;
+import com.lifecircle.widget.removerecyclerview.OnItemClickListener;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,8 +32,8 @@ public class MyCollection extends BaseActivity implements View.OnClickListener{
     private TextView toolbar_center_text;
     private ImageView toolbar_iv_back;
 
-    private  MyCollectionAdapter adapter;
-    private  List<MyCollectionBean.DataBean> listDate=new ArrayList<MyCollectionBean.DataBean>();
+
+    
     private  ItemRemoveRecyclerView rc_mycollection;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,34 +58,31 @@ public class MyCollection extends BaseActivity implements View.OnClickListener{
     private void submitData() {
         OkGo.<String>post(GlobalHttpUrl.MY_COLLECTION)
                 .tag(this)
-                .params("uid", GlobalVariable.uid)
+                .params("uid", "69")
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        try {
-                            JSONObject jsonObject=new JSONObject(response.body().toString()) ;
-                            if (jsonObject.getString("result").equals("200")){
-                                Gson gson = new Gson();
-                                String str = response.body().toString();
-                                Type type = new TypeToken<MyCollectionBean>() {}.getType();
-                                MyCollectionBean myCollectionBean = gson.fromJson(str, type);
-                                listDate=myCollectionBean.getData();
-                                adapter = new MyCollectionAdapter(MyCollection.this, listDate);
+                        Gson gson = new Gson();
+                        String str = response.body().toString();
+                        Type type = new TypeToken<MyPostCollectionBean>() {}.getType();
+                        MyPostCollectionBean myCollectionBean = gson.fromJson(str, type);
+                            if (myCollectionBean.getResult().equals("200")){
+                                List<MyPostCollectionBean.DataBean> listDate=myCollectionBean.getData();
+                                MyPostCollectionAdapter adapter=new MyPostCollectionAdapter(R.layout.item_collection,listDate,MyCollection.this);
                                 rc_mycollection.setAdapter(adapter);
                                 rc_mycollection.setOnItemVClickListener(new OnItemClickListener() {
                                     @Override
                                     public void onItemClick(View view, int position) {
-
+                                        
                                     }
+
                                     @Override
                                     public void onDeleteClick(int position) {
-                                        adapter.removeItem(position);
+
                                     }
                                 });
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        
                     }
                 });
     }

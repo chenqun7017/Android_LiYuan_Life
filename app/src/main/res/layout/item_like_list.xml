@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="30px"
+        android:id="@+id/iv_mypost_like_userimage"
+        android:layout_width="108px"
+        android:layout_height="108px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30px"
+        android:src="@drawable/userdefaultimage"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="0px"
+        app:layout_auto_basewidth="height" />
+<TextView
+    android:id="@+id/tv_name_like"
+    android:layout_marginTop="40px"
+    android:layout_marginLeft="20px"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="xasdasdasdasdad"
+    android:layout_toRightOf="@+id/iv_mypost_like_userimage"/>
+    <TextView
+        android:id="@+id/tv_like_column"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="爆料"
+        android:layout_marginTop="40px"
+        android:layout_marginLeft="20px"
+        android:layout_below="@+id/tv_name_like"
+        android:layout_toRightOf="@+id/iv_mypost_like_userimage"
+        />
+    <TextView
+        android:id="@+id/tv_like_headline"
+        android:layout_marginTop="40px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="asdfasdfsadfdas"
+        android:layout_below="@+id/tv_name_like"
+        android:layout_toRightOf="@+id/tv_like_column"/>
+    <TextView
+        android:layout_marginTop="20px"
+        android:layout_marginBottom="40px"
+        android:layout_marginLeft="20px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="asdfsdfasdf"
+        android:layout_below="@+id/tv_like_headline"
+        android:layout_toRightOf="@+id/iv_mypost_like_userimage"/>
+
+    <TextView
+        android:id="@+id/tv_like_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_name_like"
+        android:layout_alignBottom="@+id/tv_name_like"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="金谷美丽城" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

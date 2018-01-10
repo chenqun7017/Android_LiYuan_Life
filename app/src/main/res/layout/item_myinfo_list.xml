@@ -105,12 +105,19 @@
         android:layout_width="match_parent"
         android:layout_marginLeft="30px"
         android:layout_marginRight="30px"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginBottom="20px"
         android:background="@color/activityback"
         android:layout_below="@+id/tv_item_comments"
         android:layout_marginTop="20px"
         android:layout_height="98px">
+        <WebView
+            android:id="@+id/web_myinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            
+        </WebView>
         <TextView
             android:id="@+id/tv_note_content"
             android:layout_width="wrap_content"
@@ -119,16 +126,16 @@
             android:textColor="@color/text_back"
             android:layout_marginLeft="20px"
             android:textSize="24px"
-            android:text=" 巫山老妖 - 博客园"/>
+            android:text=""/>
 
-        <ImageView
-            android:id="@+id/iv_note_img"
-            android:layout_width="78px"
-            android:layout_height="78px"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20px"
-            android:src="@drawable/net_bitmap"/>
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_note_img"-->
+            <!--android:layout_width="78px"-->
+            <!--android:layout_height="78px"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="20px"-->
+            <!--android:src="@drawable/net_bitmap"/>-->
 
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoLinearLayout

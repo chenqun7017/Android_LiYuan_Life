@@ -6,10 +6,68 @@
     android:background="@color/activityback"
     android:orientation="vertical">
     <include layout="@layout/include_apptoolbar_b" />
+    <!--<com.zhy.autolayout.AutoLinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="90px"-->
+        <!--android:layout_marginTop="3px"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@android:color/white">-->
+        <!--<com.zhy.autolayout.AutoRelativeLayout-->
+            <!--android:id="@+id/rl_me_like_list"-->
+            <!--android:layout_width="0px"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_who_like_list_my"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:textSize="30px"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:text="谁赞过我"/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/tv_who_like_lines_my"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="3px"-->
+                <!--android:background="@color/colorPrimary"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_alignParentBottom="true"/>-->
+
+        <!--</com.zhy.autolayout.AutoRelativeLayout>-->
+
+        <!--<com.zhy.autolayout.AutoRelativeLayout-->
+            <!--android:id="@+id/rl_my_like_who"-->
+            <!--android:layout_width="0px"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_my_like_who"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/text"-->
+                <!--android:textSize="30px"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:text="我赞过谁"/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/tv_my_like_lines_who"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="3px"-->
+                <!--android:visibility="gone"-->
+                <!--android:background="@color/colorPrimary"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_alignParentBottom="true"/>-->
+
+        <!--</com.zhy.autolayout.AutoRelativeLayout>-->
+
+
+    <!--</com.zhy.autolayout.AutoLinearLayout>-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rc_thumbup"
         android:background="@color/white"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+    
 </com.zhy.autolayout.AutoLinearLayout>

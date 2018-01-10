@@ -13,15 +13,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lifecircle.R;
-import com.lifecircle.adapter.PublicTopicAdapter;
-import com.lifecircle.adapter.PublicListAdapter;
 import com.lifecircle.adapter.PublicHotAdapter;
+import com.lifecircle.adapter.PublicListAdapter;
+import com.lifecircle.adapter.PublicTopicAdapter;
 import com.lifecircle.base.BaseFragment;
 import com.lifecircle.global.GlobalHttpUrl;
-import com.lifecircle.ui.model.HomeBean;
 import com.lifecircle.ui.model.PublicBean;
 import com.lifecircle.ui.model.PublicNote;
-import com.lifecircle.ui.view.publicui.PublicActivity;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.ToastUtils;
 import com.lifecircle.widget.DividerItemDecoration;
@@ -112,6 +110,7 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
                                         TextView  line=v.get(i).findViewById(R.id.tv_item_zhoubianfirst_line);
                                         name.setTextColor(getResources().getColor(R.color.text_back));
                                         line.setVisibility(View.GONE);
+                                        
                                     }
                                     TextView T=view.findViewById(R.id.tv_item_zhoubianfirst_name);
                                     TextView  line=view.findViewById(R.id.tv_item_zhoubianfirst_line);
@@ -121,13 +120,21 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
                             });
 
                             //话题
-                            List<PublicBean.DataBean.TopicBean> list_topic=publicBean.getData().getTopic();
+                            final List<PublicBean.DataBean.TopicBean> list_topic=publicBean.getData().getTopic();
                             publicTopicAdapter=new PublicTopicAdapter(R.layout.item_zhoubian_second,list_topic,getActivity());
                             rc_zhoubian_topic.setAdapter(publicTopicAdapter);
                             publicTopicAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
                                 @Override
                                 public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-
+                                    
+                                    
+                                }
+                            });
+                            publicTopicAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                                    ToastUtils.showToast(position+"");
+                                    ActivityUtil.startTopicActivity(getActivity(),list_topic.get(position).getId()+"");
                                 }
                             });
                         }
@@ -138,8 +145,9 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
 
     }
     private void initList() {
-        OkGo.<String>post(GlobalHttpUrl.MY_HOME_PUBLIC_NOTE+"-1")
+        OkGo.<String>get(GlobalHttpUrl.MY_HOME_PUBLIC_NOTE+"-1")
                 .tag(this)
+                .params("page","1")
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
@@ -155,13 +163,13 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
                             dividerItemDecoration.getPaint().setColor(getResources().getColor(R.color.activityback));
                             dividerItemDecoration.setSize(10);
                             rc_zhoubian_list.addItemDecoration(dividerItemDecoration);
-                            List<PublicNote.DataBean> list=publicNote.getData();
+                            final List<PublicNote.DataBean> list=publicNote.getData();
                             publicListAdapter =new PublicListAdapter(R.layout.public_item_list,list,getActivity());
                             rc_zhoubian_list.setAdapter(publicListAdapter);
                             publicListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                                 @Override
                                 public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                                    ActivityUtil.startPostDetailsActivity(getActivity(),position);
+                                    ActivityUtil.startPostDetailsActivity(getActivity(),list.get(position).getId());
                                 }
                             });
 
@@ -177,7 +185,8 @@ public class ZhouBianServiceFragment extends BaseFragment implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.rl_xhoubian_search:
-                ActivityUtil.startSearchActivity(getActivity(),"-1");
+                ActivityUtil.startSearchActivity(getActivity());
+                //ActivityUtil.startSearchActivity(getActivity(),"-1");
                 break;
             case R.id.toolbar_right_image:
                 ActivityUtil.startReleaseFactActivity(getActivity());

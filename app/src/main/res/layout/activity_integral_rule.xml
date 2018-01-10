@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    
+    >
+    <include layout="@layout/include_apptoolbar_b" />
+<com.zhy.autolayout.AutoRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="84px">
+    <TextView
+        android:layout_marginLeft="20px"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="当前总积分"/>
+
+    <TextView
+        android:id="@+id/tv_point"
+        android:layout_marginRight="20px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:text="20分" />
+</com.zhy.autolayout.AutoRelativeLayout>
+<com.zhy.autolayout.AutoRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="88px">
+    <TextView
+        android:layout_marginLeft="20px"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="今日获得积分(每日上线100)"/>
+    <TextView
+        android:id="@+id/tv_point1"
+        android:layout_marginRight="20px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="2分"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+</com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10px"
+        android:layout_height="88px">
+        <TextView
+            android:layout_marginLeft="20px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="如何赚取积分?"/>
+        <TextView
+            android:layout_marginRight="20px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/you"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

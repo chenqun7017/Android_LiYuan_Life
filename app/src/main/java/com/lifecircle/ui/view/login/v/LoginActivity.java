@@ -3,7 +3,6 @@ package com.lifecircle.ui.view.login.v;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -17,7 +16,6 @@ import com.lifecircle.ui.view.login.p.LoginPresenterCompl;
 import com.lifecircle.utils.ActivityUtil;
 import com.lifecircle.utils.EditViewUtil;
 import com.lifecircle.utils.SharedPreferencesUtils;
-import com.lifecircle.utils.TimeDataUtils;
 import com.lifecircle.widget.CountTimer;
 
 
@@ -93,14 +91,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 ActivityUtil.startnActivity(this);
                 break;
             case R.id.rl_login_weibo:
-
                 break;
             case R.id.tv_login_code:
                 phone=et_login_phone.getText().toString().trim();
                 countTimer.start();
                 loginPresenter.sendCode(phone,countTimer);
                 break;
-
         }
 
     }

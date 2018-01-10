@@ -86,7 +86,7 @@
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:drawablePadding="10px"
-            android:text="微信"/>
+            android:text="支付宝"/>
 
 
         <ImageView
